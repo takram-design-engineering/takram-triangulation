@@ -32,6 +32,7 @@
 #include <vector>
 
 #include "cinder/app/App.h"
+#include "cinder/gl/Vbo.h"
 #include "cinder/Vector.h"
 #include "takram/cinder.h"
 
@@ -57,6 +58,7 @@ class Example {
  private:
   // Data members
   std::vector<ci::Vec2f> points_;
+  ci::gl::VboMesh triangle_mesh_;
 };
 
 #endif  // EXAMPLE_H_

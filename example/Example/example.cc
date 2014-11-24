@@ -27,6 +27,7 @@
 
 #include "example.h"
 
+#include <cstdint>
 #include <vector>
 
 #include "cinder/Color.h"
@@ -58,16 +59,40 @@ void Example::draw() {
   }
   ci::gl::color(ci::ColorA(0.0, 0.0, 0.0, 0.5));
   ci::gl::draw(ci::PolyLine2f(points_));
-  if (points_.size() >= 3) {
+  if (!triangle_mesh_ && points_.size() >= 3) {
     takram::Triangulation triangulation;
     triangulation(points_);
-    ci::gl::color(ci::ColorA(0.0, 0.0, 0.0, 0.1));
+    std::vector<ci::Vec3f> positions;
+    std::vector<std::uint32_t> indices;
+    std::uint32_t index = 0;
     for (const auto& triangle : triangulation) {
-      ci::gl::drawStrokedTriangle(
-          ci::Vec2f(triangle.a().x(), triangle.a().y()),
-          ci::Vec2f(triangle.b().x(), triangle.b().y()),
-          ci::Vec2f(triangle.c().x(), triangle.c().y()));
+      positions.emplace_back(triangle.a().x(), triangle.a().y(), 0.0);
+      positions.emplace_back(triangle.b().x(), triangle.b().y(), 0.0);
+      positions.emplace_back(triangle.b().x(), triangle.b().y(), 0.0);
+      positions.emplace_back(triangle.c().x(), triangle.c().y(), 0.0);
+      positions.emplace_back(triangle.c().x(), triangle.c().y(), 0.0);
+      positions.emplace_back(triangle.a().x(), triangle.a().y(), 0.0);
+      indices.emplace_back(index++);
+      indices.emplace_back(index++);
+      indices.emplace_back(index++);
+      indices.emplace_back(index++);
+      indices.emplace_back(index++);
+      indices.emplace_back(index++);
     }
+    ci::gl::VboMesh::Layout layout;
+    layout.setStaticPositions();
+    layout.setStaticIndices();
+    triangle_mesh_ = ci::gl::VboMesh(
+        positions.size(),
+        indices.size(),
+        layout,
+        GL_LINES);
+    triangle_mesh_.bufferPositions(positions);
+    triangle_mesh_.bufferIndices(indices);
+  }
+  if (triangle_mesh_) {
+    ci::gl::color(ci::ColorA(0.0, 0.0, 0.0, 0.1));
+    ci::gl::draw(triangle_mesh_);
   }
   ci::gl::popMatrices();
 }
@@ -97,6 +122,7 @@ void Example::mouseUp(const takram::cinder::MouseEvent& event) {
 void Example::mouseDrag(const takram::cinder::MouseEvent& event) {
   // Outside OpenGL context.
   points_.emplace_back(event.getX(), event.getY());
+  triangle_mesh_.reset();
 }
 
 void Example::mouseMove(const takram::cinder::MouseEvent& event) {
