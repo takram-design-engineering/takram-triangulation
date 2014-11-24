@@ -1,6 +1,38 @@
 Triangulation
 =============
 
+## Dependencies
+
+### Libraries
+
+- [glog](https://code.google.com/p/google-glog/)
+- [triangle](http://www.cs.cmu.edu/~quake/triangle.html)
+
+Install those via [Homebrew](http://brew.sh) on OS X.
+
+```
+$ brew install glog
+$ brew install triangle
+```
+
+### Submodules
+
+- [googletest](https://github.com/sgss/mirror-googletest)
+- [cinder](https://github.com/cinder/Cinder)
+- [cpplint](https://github.com/sgss/mirror-cpplint)
+
+Don't forget to initialize submodules:
+
+```
+$ git submodule update --init --recursive
+```
+
+Then build googletest by running the script:
+
+```
+$ scripts/build_googletest.sh
+```
+
 ## Style Guide
 
 This project tries to conform to [Google's C++ Style Guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml) except:
