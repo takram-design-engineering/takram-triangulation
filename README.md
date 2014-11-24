@@ -8,7 +8,7 @@ Triangulation
 - [glog](https://code.google.com/p/google-glog/)
 - [triangle](http://www.cs.cmu.edu/~quake/triangle.html)
 
-Install those via [Homebrew](http://brew.sh) on OS X.
+Install those via [Homebrew](http://brew.sh) on OS X:
 
 ```
 $ brew install glog
