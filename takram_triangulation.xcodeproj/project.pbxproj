@@ -334,6 +334,11 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lglog",
+					"-ltriangle",
+				);
 				SDKROOT = macosx;
 				SYMROOT = build;
 				USE_HEADERMAP = NO;
@@ -414,6 +419,11 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lglog",
+					"-ltriangle",
+				);
 				SDKROOT = macosx;
 				SYMROOT = build;
 				USE_HEADERMAP = NO;

@@ -29,6 +29,9 @@
 #ifndef TAKRAM_TRIANGULATION_H_
 #define TAKRAM_TRIANGULATION_H_
 
+#include "takram/triangulation/point.h"
+#include "takram/triangulation/triangle.h"
+#include "takram/triangulation/triangle_iterator.h"
 #include "takram/triangulation/triangulation.h"
 
 namespace takram {

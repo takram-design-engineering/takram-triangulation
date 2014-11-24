@@ -74,7 +74,7 @@ bool Triangulation::operator()(const std::vector<Point>& points) {
 bool Triangulation::operator()(const std::vector<double>& points) {
   const auto point_size = points.size();
   using Size = decltype(::triangulateio::numberofpoints);
-  if (point_size <= std::numeric_limits<Size>::max()) {
+  if (point_size > std::numeric_limits<Size>::max()) {
     LOG(ERROR) << "The number of points " << point_size <<
         " exceeds the limit " << std::numeric_limits<Size>::max() << "." <<
         " This is a limitation of the triangle library.";
@@ -88,11 +88,9 @@ bool Triangulation::operator()(const std::vector<double>& points) {
 
   // Build edges including the one between front and back
   std::vector<Size> edges;
-  auto points_itr = points.begin();
-  ++points_itr;
-  for (; points_itr != points.end(); ++points_itr) {
-    edges.emplace_back(*std::prev(points_itr));
-    edges.emplace_back(*points_itr);
+  for (Size i = 0; i < point_size - 1; ++i) {
+    edges.emplace_back(i);
+    edges.emplace_back(i + 1);
   }
   edges.emplace_back(edges.back());
   edges.emplace_back(edges.front());
