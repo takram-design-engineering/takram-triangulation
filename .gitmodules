@@ -1,0 +1,6 @@
+[submodule "gtest"]
+	path = gtest
+	url = git@github.com:sgss/mirror-googletest.git
+[submodule "cpplint"]
+	path = cpplint
+	url = git@github.com:sgss/mirror-cpplint.git
