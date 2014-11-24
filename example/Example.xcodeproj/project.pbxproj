@@ -256,8 +256,8 @@
 				937BFD171A226CEA00DDAAE1 /* Configurations */,
 				937BFCFA1A226A8D00DDAAE1 /* Frameworks */,
 				93F8AD7017C8B39800310877 /* Products */,
-				9388F1E81A231BF1002CF82A /* takram_cocoa_cinder.xcodeproj */,
 				9388F1F61A231C99002CF82A /* takram_triangulation.xcodeproj */,
+				9388F1E81A231BF1002CF82A /* takram_cocoa_cinder.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
