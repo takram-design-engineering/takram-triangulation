@@ -113,6 +113,8 @@ void Example::keyUp(const ci::app::KeyEvent& event) {
 
 void Example::mouseDown(const takram::cinder::MouseEvent& event) {
   // Outside OpenGL context.
+  points_.emplace_back(event.getX(), event.getY());
+  triangle_mesh_.reset();
 }
 
 void Example::mouseUp(const takram::cinder::MouseEvent& event) {
