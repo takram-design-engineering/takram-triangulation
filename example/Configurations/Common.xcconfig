@@ -1,0 +1,2 @@
+CINDER_PATH = $(SRCROOT)/cxx-takram-cocoa-cinder/cinder
+HEADER_SEARCH_PATHS = $(inherited) $(CINDER_PATH)/include

@@ -1,0 +1,2 @@
+#include "Common.xcconfig"
+OTHER_LDFLAGS = $(inherited) $(CINDER_PATH)/lib/libcinder_d.a

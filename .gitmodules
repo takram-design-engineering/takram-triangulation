@@ -4,3 +4,6 @@
 [submodule "cpplint"]
 	path = cpplint
 	url = git@github.com:sgss/mirror-cpplint.git
+[submodule "example/cxx-takram-cocoa-cinder"]
+	path = example/cxx-takram-cocoa-cinder
+	url = git@github.com:takram-design-engineering/cxx-takram-cocoa-cinder.git
