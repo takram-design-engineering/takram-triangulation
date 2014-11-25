@@ -26,7 +26,7 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
-readonly SRCROOT="$(dirname "$(pwd)")"
+readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
 readonly FILES=("Global/OSX" "Global/Windows" "Global/Xcode")
 
 repository_dir=$(mktemp -d -t "com.takram.make_gitignore")

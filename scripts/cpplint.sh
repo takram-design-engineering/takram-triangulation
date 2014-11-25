@@ -26,7 +26,7 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
-readonly SRCROOT="$(dirname "$(pwd)")"
+readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
 readonly CPPLINT="${SRCROOT}/cpplint/cpplint.py"
 readonly FILTERS="-readability/streams"
 
