@@ -43,7 +43,7 @@ if [[ ! -f "${CLANG_CXX}" ]]; then
   exit 1
 fi
 
-readonly SRCROOT="$(dirname "$(pwd)")"
+readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
 readonly GTEST_DIR="${SRCROOT}/gtest"
 readonly GTEST_BUILD_DIR="${GTEST_DIR}/build"
 
