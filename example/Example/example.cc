@@ -35,6 +35,39 @@
 
 #include "takram/triangulation.h"
 
+Example::Example()
+    : needs_update_mesh_(false) {}
+
+void Example::updateMesh() {
+  if (points_.size() < 3) {
+    mesh_.reset();
+    return;
+  }
+  takram::Triangulation triangulation;
+  triangulation(points_);
+  std::vector<ci::Vec3f> positions;
+  std::vector<std::uint32_t> indices;
+  std::uint32_t index = 0;
+  for (const auto& triangle : triangulation) {
+    positions.emplace_back(triangle.a().x(), triangle.a().y(), 0.0);
+    positions.emplace_back(triangle.b().x(), triangle.b().y(), 0.0);
+    positions.emplace_back(triangle.c().x(), triangle.c().y(), 0.0);
+    indices.emplace_back(index);
+    indices.emplace_back(index + 1);
+    indices.emplace_back(index + 1);
+    indices.emplace_back(index + 2);
+    indices.emplace_back(index + 2);
+    indices.emplace_back(index);
+    index += 3;
+  }
+  ci::gl::VboMesh::Layout layout;
+  layout.setStaticPositions();
+  layout.setStaticIndices();
+  mesh_ = ci::gl::VboMesh(positions.size(), indices.size(), layout, GL_LINES);
+  mesh_.bufferPositions(positions);
+  mesh_.bufferIndices(indices);
+}
+
 void Example::setup() {
   // Inside OpenGL context.
   // Write your setup codes here.
@@ -59,40 +92,16 @@ void Example::draw() {
   }
   ci::gl::color(ci::ColorA(0.0, 0.0, 0.0, 0.5));
   ci::gl::draw(ci::PolyLine2f(points_));
-  if (!triangle_mesh_ && points_.size() >= 3) {
-    takram::Triangulation triangulation;
-    triangulation(points_);
-    std::vector<ci::Vec3f> positions;
-    std::vector<std::uint32_t> indices;
-    std::uint32_t index = 0;
-    for (const auto& triangle : triangulation) {
-      positions.emplace_back(triangle.a().x(), triangle.a().y(), 0.0);
-      positions.emplace_back(triangle.b().x(), triangle.b().y(), 0.0);
-      positions.emplace_back(triangle.b().x(), triangle.b().y(), 0.0);
-      positions.emplace_back(triangle.c().x(), triangle.c().y(), 0.0);
-      positions.emplace_back(triangle.c().x(), triangle.c().y(), 0.0);
-      positions.emplace_back(triangle.a().x(), triangle.a().y(), 0.0);
-      indices.emplace_back(index++);
-      indices.emplace_back(index++);
-      indices.emplace_back(index++);
-      indices.emplace_back(index++);
-      indices.emplace_back(index++);
-      indices.emplace_back(index++);
-    }
-    ci::gl::VboMesh::Layout layout;
-    layout.setStaticPositions();
-    layout.setStaticIndices();
-    triangle_mesh_ = ci::gl::VboMesh(
-        positions.size(),
-        indices.size(),
-        layout,
-        GL_LINES);
-    triangle_mesh_.bufferPositions(positions);
-    triangle_mesh_.bufferIndices(indices);
+  ci::gl::color(ci::ColorA(0.0, 0.0, 0.0, 0.1));
+  for (const auto& mesh : meshes_) {
+    ci::gl::draw(mesh);
   }
-  if (triangle_mesh_) {
-    ci::gl::color(ci::ColorA(0.0, 0.0, 0.0, 0.1));
-    ci::gl::draw(triangle_mesh_);
+  if (needs_update_mesh_) {
+    updateMesh();
+    needs_update_mesh_ = false;
+  }
+  if (mesh_) {
+    ci::gl::draw(mesh_);
   }
   ci::gl::popMatrices();
 }
@@ -114,17 +123,22 @@ void Example::keyUp(const ci::app::KeyEvent& event) {
 void Example::mouseDown(const takram::cinder::MouseEvent& event) {
   // Outside OpenGL context.
   points_.emplace_back(event.getX(), event.getY());
-  triangle_mesh_.reset();
+  needs_update_mesh_ = true;
 }
 
 void Example::mouseUp(const takram::cinder::MouseEvent& event) {
   // Outside OpenGL context.
+  if (mesh_) {
+    meshes_.emplace_back(mesh_);
+    points_.clear();
+    needs_update_mesh_ = true;
+  }
 }
 
 void Example::mouseDrag(const takram::cinder::MouseEvent& event) {
   // Outside OpenGL context.
   points_.emplace_back(event.getX(), event.getY());
-  triangle_mesh_.reset();
+  needs_update_mesh_ = true;
 }
 
 void Example::mouseMove(const takram::cinder::MouseEvent& event) {

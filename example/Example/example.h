@@ -29,6 +29,7 @@
 #ifndef EXAMPLE_H_
 #define EXAMPLE_H_
 
+#include <list>
 #include <vector>
 
 #include "cinder/app/App.h"
@@ -38,6 +39,9 @@
 
 class Example {
  public:
+  // Constructors
+  Example();
+
   // Framework methods
   void setup();
   void update();
@@ -56,9 +60,13 @@ class Example {
   void fileDrop(const ci::app::FileDropEvent& event);
 
  private:
+  void updateMesh();
+
   // Data members
   std::vector<ci::Vec2f> points_;
-  ci::gl::VboMesh triangle_mesh_;
+  std::list<ci::gl::VboMesh> meshes_;
+  ci::gl::VboMesh mesh_;
+  bool needs_update_mesh_;
 };
 
 #endif  // EXAMPLE_H_
