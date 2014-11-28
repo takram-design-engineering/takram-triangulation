@@ -29,10 +29,9 @@
 
 extern "C" {
 
-#define REAL double
 #define VOID void
-#define ANSI_DECLARATORS
 #include "triangle/triangle.h"
+#undef VOID
 
 }  // extern "C"
 
@@ -84,7 +83,7 @@ bool Triangulation::operator()(const std::vector<double>& points) {
     return false;
   }
   // Clear the previous result if any
-  ClearResult();
+  clearResult();
 
   // Build edges including the one between front and back
   std::vector<Size> edges;
@@ -131,7 +130,7 @@ TriangleIterator Triangulation::end() const {
 
 #pragma mark -
 
-void Triangulation::ClearResult() {
+void Triangulation::clearResult() {
   if (result_) {
     std::free(result_->pointlist);
     std::free(result_->pointmarkerlist);

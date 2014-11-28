@@ -71,7 +71,7 @@ class Triangulation final {
 
  private:
   // Clear and deallocate the result
-  void ClearResult();
+  void clearResult();
 
   // Data members
   struct triangulateio *result_;
@@ -83,7 +83,7 @@ inline Triangulation::Triangulation()
     : result_(nullptr) {}
 
 inline Triangulation::~Triangulation() {
-  ClearResult();
+  clearResult();
 }
 
 #pragma mark Functional operators
