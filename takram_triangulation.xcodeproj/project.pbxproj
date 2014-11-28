@@ -17,7 +17,7 @@
 		93F1BA06180283C8002A5A5C /* libgtest_main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F1BA04180283C8002A5A5C /* libgtest_main.a */; };
 		93F1BA07180283C8002A5A5C /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F1BA05180283C8002A5A5C /* libgtest.a */; };
 		93F8F3651A28484C007DDBE4 /* libglog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F8F3641A284843007DDBE4 /* libglog.a */; };
-		93F8F3711A284949007DDBE4 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; };
+		93F8F3711A284949007DDBE4 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; settings = {COMPILER_FLAGS = "-Wno-missing-prototypes -Wno-uninitialized -Wno-conditional-uninitialized"; }; };
 		93F8F3721A284949007DDBE4 /* triangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F8F36D1A284949007DDBE4 /* triangle.h */; };
 /* End PBXBuildFile section */
 
@@ -310,8 +310,11 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
+					"TRILIBRARY=1",
+					"ANSI_DECLARATORS=1",
+					"REAL=double",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = NO;
@@ -396,6 +399,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"TRILIBRARY=1",
+					"ANSI_DECLARATORS=1",
+					"REAL=double",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = NO;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = NO;
