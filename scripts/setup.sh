@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-#  build_gtest.sh
+#  setup.sh
 #
 #  MIT License
 #
-#  Copyright (C) 2013-2014 Shota Matsuda
+#  Copyright (C) 2014 Shota Matsuda
 #  Copyright (C) 2014 takram design engineering
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a
@@ -26,35 +26,9 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
-readonly CMAKE=$(which cmake)
-readonly CLANG_CC=$(which clang)
-readonly CLANG_CXX=$(which clang++)
-
-if [[ ! -f "${CMAKE}" ]]; then
-  echo "cmake was not found."
-  exit 1
-fi
-if [[ ! -f "${CLANG_CC}" ]]; then
-  echo "clang was not found."
-  exit 1
-fi
-if [[ ! -f "${CLANG_CXX}" ]]; then
-  echo "clang++ was not found."
-  exit 1
-fi
-
 readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
-readonly TARGET_DIR="${SRCROOT}/gtest"
-readonly TARGET_BUILD_DIR="${SRCROOT}/build/gtest"
 
-mkdir -p "${TARGET_BUILD_DIR}"
-pushd "${TARGET_BUILD_DIR}"
-  "${CMAKE}" -G "Unix Makefiles" \
-      -DCMAKE_BUILD_TYPE="RELEASE" \
-      -DCMAKE_C_COMPILER="${CLANG_CC}" \
-      -DCMAKE_CXX_COMPILER="${CLANG_CXX}" \
-      -DCMAKE_CXX_FLAGS="-stdlib=libc++" \
-      -DCMAKE_OSX_ARCHITECTURES="i386;x86_64" \
-      "${TARGET_DIR}"
-  make -j8
-popd
+git submodule update --init --git-dir="${SRCROOT}"
+
+"${SRCROOT}/scripts/build.sh" configure "glog" "build/glog"
+"${SRCROOT}/scripts/build.sh" cmake "gtest" "build/gtest"

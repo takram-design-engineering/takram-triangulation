@@ -26,14 +26,14 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
+readonly TYPE=$1
+readonly TARGET_PATH=$2
+readonly TARGET_BUILD_PATH=$3
+
 readonly CMAKE=$(which cmake)
 readonly CLANG_CC=$(which clang)
 readonly CLANG_CXX=$(which clang++)
 
-if [[ ! -f "${CMAKE}" ]]; then
-  echo "cmake was not found."
-  exit 1
-fi
 if [[ ! -f "${CLANG_CC}" ]]; then
   echo "clang was not found."
   exit 1
@@ -44,16 +44,35 @@ if [[ ! -f "${CLANG_CXX}" ]]; then
 fi
 
 readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
-readonly TARGET_DIR="${SRCROOT}/glog"
-readonly TARGET_BUILD_DIR="${SRCROOT}/build/glog"
+readonly TARGET_DIR="${SRCROOT}/${TARGET_PATH}"
+readonly TARGET_BUILD_DIR="${SRCROOT}/${TARGET_BUILD_PATH}"
 
-mkdir -p "${TARGET_BUILD_DIR}"
-pushd "${TARGET_BUILD_DIR}"
-  "${TARGET_DIR}/configure" --prefix="${TARGET_BUILD_DIR}" \
-      CC="${CLANG_CC}" \
-      CXX="${CLANG_CXX}" \
-      CXXFLAGS="-stdlib=libc++"
-  make -j8
-  make install
-  make clean
-popd
+if [[ "${TYPE}" == "cmake" ]]; then
+  if [[ ! -f "${CMAKE}" ]]; then
+    echo "cmake was not found."
+    exit 1
+  fi
+  mkdir -p "${TARGET_BUILD_DIR}"
+  pushd "${TARGET_BUILD_DIR}"
+    "${CMAKE}" -G "Unix Makefiles" \
+        -DCMAKE_BUILD_TYPE="RELEASE" \
+        -DCMAKE_C_COMPILER="${CLANG_CC}" \
+        -DCMAKE_CXX_COMPILER="${CLANG_CXX}" \
+        -DCMAKE_CXX_FLAGS="-stdlib=libc++" \
+        -DCMAKE_OSX_ARCHITECTURES="i386;x86_64" \
+        "${TARGET_DIR}"
+    make -j8
+  popd
+elif [[ "${TYPE}" == "configure" ]]; then
+  mkdir -p "${TARGET_BUILD_DIR}"
+  pushd "${TARGET_BUILD_DIR}"
+    "${TARGET_DIR}/configure" \
+        --prefix="${TARGET_BUILD_DIR}" \
+        CC="${CLANG_CC}" \
+        CXX="${CLANG_CXX}" \
+        CXXFLAGS="-stdlib=libc++"
+    make -j8
+    make install
+    make clean
+  popd
+fi
