@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#  cpplint.sh
+#  build_glog.sh
 #
 #  MIT License
 #
@@ -26,21 +26,34 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
-readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
-readonly CPPLINT="${SRCROOT}/cpplint/cpplint/cpplint.py"
-readonly FILTERS="-readability/streams"
-readonly PATTERN=".*/[a-z0-9_]*\."
+readonly CMAKE=$(which cmake)
+readonly CLANG_CC=$(which clang)
+readonly CLANG_CXX=$(which clang++)
 
-for file in $(find -E "${SRCROOT}/src" -type f -regex "${PATTERN}(h|cc)$"); do
-  python "${CPPLINT}" --root "src" --filter="${FILTERS}" "${file}"
-done
-if [[ -f "${SRCROOT}/include" ]]; then
-  for file in $(find -E "${SRCROOT}/include" -type f -regex "${PATTERN}h$"); do
-    python "${CPPLINT}" --root "include" --filter="${FILTERS}" "${file}"
-  done
+if [[ ! -f "${CMAKE}" ]]; then
+  echo "cmake was not found."
+  exit 1
 fi
-if [[ -f "${SRCROOT}/test" ]]; then
-  for file in $(find -E "${SRCROOT}/test" -type f -regex "${PATTERN}cc$"); do
-    python "${CPPLINT}" --root "test" --filter="${FILTERS}" "${file}"
-  done
+if [[ ! -f "${CLANG_CC}" ]]; then
+  echo "clang was not found."
+  exit 1
 fi
+if [[ ! -f "${CLANG_CXX}" ]]; then
+  echo "clang++ was not found."
+  exit 1
+fi
+
+readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
+readonly TARGET_DIR="${SRCROOT}/glog"
+readonly TARGET_BUILD_DIR="${SRCROOT}/build/glog"
+
+mkdir -p "${TARGET_BUILD_DIR}"
+pushd "${TARGET_BUILD_DIR}"
+  "${TARGET_DIR}/configure" --prefix="${TARGET_BUILD_DIR}" \
+      CC="${CLANG_CC}" \
+      CXX="${CLANG_CXX}" \
+      CXXFLAGS="-stdlib=libc++"
+  make -j8
+  make install
+  make clean
+popd

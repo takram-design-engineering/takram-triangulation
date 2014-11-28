@@ -32,7 +32,7 @@ extern "C" {
 #define REAL double
 #define VOID void
 #define ANSI_DECLARATORS
-#include <triangle.h>
+#include "triangle/triangle.h"
 
 }  // extern "C"
 
@@ -73,7 +73,7 @@ bool Triangulation::operator()(const std::vector<Point>& points) {
 
 bool Triangulation::operator()(const std::vector<double>& points) {
   const auto point_size = points.size();
-  using Size = decltype(::triangulateio::numberofpoints);
+  using Size = decltype(triangulateio::numberofpoints);
   if (point_size > std::numeric_limits<Size>::max()) {
     LOG(ERROR) << "The number of points " << point_size <<
         " exceeds the limit " << std::numeric_limits<Size>::max() << "." <<
@@ -96,8 +96,8 @@ bool Triangulation::operator()(const std::vector<double>& points) {
   edges.emplace_back(edges.front());
 
   // Perform constrained delaunay triangulation
-  struct ::triangulateio in;
-  result_ = new struct ::triangulateio;
+  struct triangulateio in;
+  result_ = new struct triangulateio;
   std::memset(&in, 0, sizeof(in));
   std::memset(result_, 0, sizeof(*result_));
   in.pointlist = const_cast<double *>(points.data());
@@ -107,7 +107,7 @@ bool Triangulation::operator()(const std::vector<double>& points) {
   // p: Triangulates a planar straight line graph
   // z: Numbers all items starting from zero
   // Q: Quiet. No terminal output except errors
-  ::triangulate(const_cast<char *>("pzQ"), &in, result_, nullptr);
+  triangulate(const_cast<char *>("pzQ"), &in, result_, nullptr);
   return true;
 }
 

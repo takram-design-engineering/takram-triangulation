@@ -74,7 +74,7 @@ class Triangulation final {
   void ClearResult();
 
   // Data members
-  struct ::triangulateio *result_;
+  struct triangulateio *result_;
 };
 
 #pragma mark - Inline Implementations

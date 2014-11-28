@@ -44,17 +44,17 @@ if [[ ! -f "${CLANG_CXX}" ]]; then
 fi
 
 readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
-readonly GTEST_DIR="${SRCROOT}/gtest"
-readonly GTEST_BUILD_DIR="${GTEST_DIR}/build"
+readonly TARGET_DIR="${SRCROOT}/gtest"
+readonly TARGET_BUILD_DIR="${SRCROOT}/build/gtest"
 
-mkdir -p "${GTEST_BUILD_DIR}"
-pushd "${GTEST_BUILD_DIR}"
+mkdir -p "${TARGET_BUILD_DIR}"
+pushd "${TARGET_BUILD_DIR}"
   "${CMAKE}" -G "Unix Makefiles" \
       -DCMAKE_BUILD_TYPE="RELEASE" \
       -DCMAKE_C_COMPILER="${CLANG_CC}" \
       -DCMAKE_CXX_COMPILER="${CLANG_CXX}" \
       -DCMAKE_CXX_FLAGS="-stdlib=libc++" \
       -DCMAKE_OSX_ARCHITECTURES="i386;x86_64" \
-      "${GTEST_DIR}"
+      "${TARGET_DIR}"
   make -j8
 popd
