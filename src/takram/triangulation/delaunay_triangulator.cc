@@ -27,6 +27,11 @@
 
 #include "takram/triangulation/delaunay_triangulator.h"
 
+#include <cassert>
+#include <cstdlib>
+#include <limits>
+#include <vector>
+
 extern "C" {
 
 #define VOID void
@@ -34,11 +39,6 @@ extern "C" {
 #undef VOID
 
 }  // extern "C"
-
-#include <cassert>
-#include <cstdlib>
-#include <limits>
-#include <vector>
 
 #include "glog/logging.h"
 

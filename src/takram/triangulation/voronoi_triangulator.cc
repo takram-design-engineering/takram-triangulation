@@ -27,6 +27,9 @@
 
 #include "takram/triangulation/voronoi_triangulator.h"
 
+#include <limits>
+#include <vector>
+
 extern "C" {
 
 #define VOID void
@@ -34,9 +37,6 @@ extern "C" {
 #undef VOID
 
 }  // extern "C"
-
-#include <limits>
-#include <vector>
 
 #include "glog/logging.h"
 

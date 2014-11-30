@@ -27,6 +27,10 @@
 
 #include "takram/triangulation/triangulator_base.h"
 
+#include <algorithm>
+#include <cstdlib>
+#include <vector>
+
 extern "C" {
 
 #define VOID void
@@ -34,10 +38,6 @@ extern "C" {
 #undef VOID
 
 }  // extern "C"
-
-#include <algorithm>
-#include <cstdlib>
-#include <vector>
 
 namespace takram {
 namespace triangulation {
