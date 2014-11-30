@@ -18,6 +18,7 @@ This project tries to conform to [Google's C++ Style Guide](http://google-styleg
 - Use of lambda expressions
 - Use of exceptions in exceptional cases
 - Use of streams when strongly needed for convenience
+- Naming convention of non-inline functions
 
 ## License
 
