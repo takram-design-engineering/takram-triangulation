@@ -27,7 +27,10 @@
 
 #include "takram/triangulation/voronoi_triangulator.h"
 
+#include <cstdlib>
 #include <limits>
+#include <memory>
+#include <string>
 #include <vector>
 
 extern "C" {
@@ -48,48 +51,47 @@ namespace triangulation {
 #pragma mark Performing triangulation
 
 bool VoronoiTriangulator::operator()(const std::vector<double>& points) {
-  const auto point_size = points.size();
+  const auto size = points.size();
   using Size = decltype(triangulateio::numberofpoints);
-  if (point_size > std::numeric_limits<Size>::max()) {
-    LOG(ERROR) << "The number of points " << point_size <<
+  if (size > std::numeric_limits<Size>::max()) {
+    LOG(ERROR) << "The number of points " << size <<
         " exceeds the limit " << std::numeric_limits<Size>::max() << "." <<
         " This is a limitation of the triangle library.";
     return false;
-  } else if (point_size < 6) {
+  } else if (size < 6) {
     LOG(ERROR) << "The provided parameter must have at least 3 points.";
     return false;
   }
   // Prepare data
-  out_ = std::make_shared<TriangulatorBase::Out>();
-  std::unique_ptr<struct triangulateio> in(new struct triangulateio);
-  std::unique_ptr<struct triangulateio> out(new struct triangulateio);
-  std::memset(in.get(), 0, sizeof(*in));
-  std::memset(out.get(), 0, sizeof(*out));
-  in->pointlist = const_cast<double *>(points.data());
-  in->numberofpoints = static_cast<Size>(point_size / 2);
+  result_ = std::make_shared<TriangulatorBase::Result>();
+  TriangulatorBase::Result out;
+  struct triangulateio in;
+  std::memset(&in, 0, sizeof(in));
+  std::vector<double> mutable_points(points);
+  in.pointlist = mutable_points.data();
+  in.numberofpoints = size / 2;
 
   // Perform triangulation
-  triangulate(const_cast<char *>("vzQ"), in.get(), out.get(), out_->get());
-  return true;
+  return TriangulatorBase::operator()("vzQ", &in, &*out, &**result_);
 }
 
 #pragma mark Iterators
 
 LineIterator VoronoiTriangulator::begin() const {
-  if (out_) {
-    return LineIterator(out_->ptr->edgelist,
-                        out_->ptr->pointlist,
-                        out_->ptr->normlist);
+  if (result_) {
+    return LineIterator((*result_)->edgelist,
+                        (*result_)->pointlist,
+                        (*result_)->normlist);
   }
   return LineIterator();
 }
 
 LineIterator VoronoiTriangulator::end() const {
-  if (out_) {
+  if (result_) {
     return LineIterator(
-        out_->ptr->edgelist + out_->ptr->numberofedges * 2,
-        out_->ptr->pointlist,
-        out_->ptr->normlist);
+        (*result_)->edgelist + (*result_)->numberofedges * 2,
+        (*result_)->pointlist,
+        (*result_)->normlist);
   }
   return LineIterator();
 }

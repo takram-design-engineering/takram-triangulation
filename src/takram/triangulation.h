@@ -40,6 +40,7 @@
 
 namespace takram {
 
+using TriangulatorBase = triangulation::TriangulatorBase;
 using DelaunayTriangulator = triangulation::DelaunayTriangulator;
 using VoronoiTriangulator = triangulation::VoronoiTriangulator;
 

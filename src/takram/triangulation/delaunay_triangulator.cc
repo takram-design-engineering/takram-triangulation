@@ -30,6 +30,8 @@
 #include <cassert>
 #include <cstdlib>
 #include <limits>
+#include <memory>
+#include <string>
 #include <vector>
 
 extern "C" {
@@ -51,70 +53,67 @@ namespace triangulation {
 #pragma mark Performing triangulation
 
 bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
-  const auto point_size = points.size();
+  const auto size = points.size();
   using Size = decltype(triangulateio::numberofpoints);
-  if (point_size > std::numeric_limits<Size>::max()) {
-    LOG(ERROR) << "The number of points " << point_size <<
+  if (size > std::numeric_limits<Size>::max()) {
+    LOG(ERROR) << "The number of points " << size <<
         " exceeds the limit " << std::numeric_limits<Size>::max() << "." <<
         " This is a limitation of the triangle library.";
     return false;
-  } else if (point_size < 6) {
+  } else if (size < 6) {
     LOG(ERROR) << "The provided parameter must have at least 3 points.";
     return false;
   }
   // Prepare data
-  out_ = std::make_shared<TriangulatorBase::Out>();
-  std::unique_ptr<struct triangulateio> in(new struct triangulateio);
-  std::memset(in.get(), 0, sizeof(*in));
-  in->pointlist = const_cast<double *>(points.data());
-  in->numberofpoints = static_cast<Size>(point_size / 2);
+  result_ = std::make_shared<TriangulatorBase::Result>();
+  struct triangulateio in;
+  std::memset(&in, 0, sizeof(in));
+  std::vector<double> mutable_points(points);
+  in.pointlist = mutable_points.data();
+  in.numberofpoints = size / 2;
 
   // Perform triangulation
-  const char *options;
+  std::string options;
+  std::vector<Size> segments;
   switch (type_) {
-    case Type::DEFAULT: {
+    case Type::DEFAULT:
       options = "zQ";
       break;
-    }
-    case Type::CONSTRAINED: {
+    case Type::CONSTRAINED:
       options = "pzQ";
       // Build edges including the one between front and back
-      std::vector<Size> segments;
-      for (Size i = 0; i < point_size - 1; ++i) {
+      for (Size i = 0; i < size - 1; ++i) {
         segments.emplace_back(i);
         segments.emplace_back(i + 1);
       }
       segments.emplace_back(segments.back());
       segments.emplace_back(segments.front());
-      in->segmentlist = segments.data();
-      in->numberofsegments = static_cast<Size>(point_size / 2);
+      in.segmentlist = segments.data();
+      in.numberofsegments = size / 2;
       break;
-    }
-    case Type::CONFORMING_CONSTRAINED: {
+    case Type::CONFORMING_CONSTRAINED:
       options = "zDQ";
       break;
-    }
     default:
       assert(false);
   }
-  triangulate(const_cast<char *>(options), in.get(), out_->get(), nullptr);
-  return true;
+  return TriangulatorBase::operator()(options, &in, &**result_, nullptr);
 }
 
 #pragma mark Iterators
 
 TriangleIterator DelaunayTriangulator::begin() const {
-  if (out_) {
-    return TriangleIterator(out_->ptr->trianglelist, out_->ptr->pointlist);
+  if (result_) {
+    return TriangleIterator((*result_)->trianglelist, (*result_)->pointlist);
   }
   return TriangleIterator();
 }
 
 TriangleIterator DelaunayTriangulator::end() const {
-  if (out_) {
+  if (result_) {
     return TriangleIterator(
-        out_->ptr->trianglelist + out_->ptr->numberoftriangles * 3,
-        out_->ptr->pointlist);
+        (*result_)->trianglelist + (*result_)->numberoftriangles * 3,
+        (*result_)->pointlist);
   }
   return TriangleIterator();
 }

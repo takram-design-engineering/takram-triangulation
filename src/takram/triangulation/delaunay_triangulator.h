@@ -62,6 +62,10 @@ class DelaunayTriangulator : public TriangulatorBase {
   bool operator()(const std::vector<Vec2>& points);
   bool operator()(const std::vector<double>& points) override;
 
+  // Parameters
+  Type type() const { return type_; }
+  void set_type(Type value) { type_ = value; }
+
   // Iterators
   TriangleIterator begin() const;
   TriangleIterator end() const;

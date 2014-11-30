@@ -31,7 +31,9 @@
 
 #include <algorithm>
 #include <cstddef>
+#include <limits>
 #include <memory>
+#include <string>
 #include <vector>
 
 #include "takram/triangulation/point.h"
@@ -44,7 +46,7 @@ namespace triangulation {
 class TriangulatorBase {
  public:
   // Constructors
-  TriangulatorBase() {}
+  TriangulatorBase();
   TriangulatorBase(const TriangulatorBase& other);
   virtual ~TriangulatorBase() = 0;
 
@@ -56,23 +58,60 @@ class TriangulatorBase {
   bool operator()(const std::vector<Vec2>& points);
   virtual bool operator()(const std::vector<Point>& points);
   virtual bool operator()(const std::vector<double>& points) = 0;
+  void clear() { result_.reset<Result>(nullptr); }
+
+  // Parameters
+  double min_angle() const { return min_angle_; }
+  void set_min_angle(double value) { min_angle_ = value; }
+  double max_area() const { return max_area_; }
+  void set_max_area(double value) { max_area_ = value; }
+  int max_steiner_points() const { return max_steiner_points_; }
+  void set_max_steiner_points(int value) { max_steiner_points_ = value; }
 
  protected:
-  struct Out final {
-    Out();
-    ~Out();
-    struct triangulateio * get() { return ptr.get(); }
-    std::unique_ptr<struct triangulateio> ptr;
-  };
+  class Result;
+
+  // Performing triangulation
+  bool operator()(const std::string& options,
+                  struct triangulateio *in,
+                  struct triangulateio *out,
+                  struct triangulateio *voronoi);
 
   // Data members
-  std::shared_ptr<Out> out_;
+  double min_angle_;
+  double max_area_;
+  int max_steiner_points_;
+  std::shared_ptr<Result> result_;
+};
+
+class TriangulatorBase::Result final {
+ public:
+  // Constructors
+  Result();
+  ~Result();
+
+  // Operators
+  struct triangulateio& operator*() { return *get(); }
+  struct triangulateio * operator->() { return get(); }
+  struct triangulateio * get() { return data_.get(); }
+
+ private:
+  // Data members
+  std::unique_ptr<struct triangulateio> data_;
 };
 
 #pragma mark - Inline Implementations
 
+inline TriangulatorBase::TriangulatorBase()
+    : min_angle_(std::numeric_limits<double>::quiet_NaN()),
+      max_area_(std::numeric_limits<double>::quiet_NaN()),
+      max_steiner_points_(-1) {}
+
 inline TriangulatorBase::TriangulatorBase(const TriangulatorBase& other)
-    : out_(other.out_) {}
+    : min_angle_(other.min_angle_),
+      max_area_(other.max_area_),
+      max_steiner_points_(other.max_steiner_points_),
+      result_(other.result_) {}
 
 inline TriangulatorBase::~TriangulatorBase() {}
 
@@ -82,7 +121,10 @@ inline TriangulatorBase& TriangulatorBase::operator=(
     const TriangulatorBase& other) {
   TriangulatorBase::operator=(other);
   if (&other != this) {
-    out_ = other.out_;
+    min_angle_ = other.min_angle_;
+    max_area_ = other.max_area_;
+    max_steiner_points_ = other.max_steiner_points_;
+    result_ = other.result_;
   }
   return *this;
 }
