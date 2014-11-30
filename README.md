@@ -7,9 +7,9 @@ Run "setup.sh" inside "scripts" directory to initialize submodules and build dep
 
 ### Submodules
 
-- [googletest](https://github.com/sgss/mirror-googletest)
-- [cinder](https://github.com/cinder/Cinder)
 - [cpplint](https://github.com/sgss/mirror-cpplint)
+- [glog](https://github.com/sgss/mirror-glog)
+- [gtest](https://github.com/sgss/mirror-googletest)
 
 ## Style Guide
 
