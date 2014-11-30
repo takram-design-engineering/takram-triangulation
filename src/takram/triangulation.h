@@ -29,14 +29,19 @@
 #ifndef TAKRAM_TRIANGULATION_H_
 #define TAKRAM_TRIANGULATION_H_
 
+#include "takram/triangulation/delaunay_triangulator.h"
+#include "takram/triangulation/line.h"
+#include "takram/triangulation/line_iterator.h"
 #include "takram/triangulation/point.h"
 #include "takram/triangulation/triangle.h"
 #include "takram/triangulation/triangle_iterator.h"
-#include "takram/triangulation/triangulation.h"
+#include "takram/triangulation/triangulator_base.h"
+#include "takram/triangulation/voronoi_triangulator.h"
 
 namespace takram {
 
-using Triangulation = triangulation::Triangulation;
+using DelaunayTriangulator = triangulation::DelaunayTriangulator;
+using VoronoiTriangulator = triangulation::VoronoiTriangulator;
 
 }  // namespace takram
 

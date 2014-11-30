@@ -33,17 +33,14 @@
 #include <iterator>
 
 #include "takram/triangulation/triangle.h"
-#include "takram/triangulation/triangulation.h"
+#include "takram/triangulation/delaunay_triangulator.h"
 
 namespace takram {
 namespace triangulation {
 
 class TriangleIterator final : public std::iterator<
     std::forward_iterator_tag,
-    Triangulation,
-    std::ptrdiff_t,
-    const Triangle *,
-    const Triangle&> {
+    const Triangle> {
  public:
   // Constructors
   TriangleIterator();

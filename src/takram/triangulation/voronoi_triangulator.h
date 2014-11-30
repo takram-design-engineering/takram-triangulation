@@ -1,5 +1,5 @@
 //
-//  takram/triangulation/triangulation.h
+//  takram/triangulation/voronoi_triangulator.h
 //
 //  MIT License
 //
@@ -26,81 +26,62 @@
 //
 
 #pragma once
-#ifndef TAKRAM_TRIANGULATION_TRIANGULATION_H_
-#define TAKRAM_TRIANGULATION_TRIANGULATION_H_
+#ifndef TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_
+#define TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_
 
-#include <algorithm>
-#include <cstddef>
+#include <memory>
 #include <vector>
 
-#include "takram/triangulation/point.h"
+#include "takram/triangulation/triangulator_base.h"
 
 struct triangulateio;
 
 namespace takram {
 namespace triangulation {
 
-class TriangleIterator;
+class LineIterator;
 
-class Triangulation final {
+class VoronoiTriangulator : public TriangulatorBase {
  public:
-  enum class Type {
-    DELAUNAY,
-    CONSTRAINED_DELAUNAY,
-    CONFORMING_CONSTRAINED_DELAUNAY,
-    VORONOI
-  };
-
   // Constructors
-  Triangulation();
-  ~Triangulation();
+  VoronoiTriangulator() {}
+  VoronoiTriangulator(const VoronoiTriangulator& other);
 
-  // Disallow copy and assign
-  Triangulation(const Triangulation&) = delete;
-  Triangulation& operator=(const Triangulation&) = delete;
+  // Assignment
+  VoronoiTriangulator& operator=(const VoronoiTriangulator& other);
 
   // Performing triangulation
   template <typename Vec2>
   bool operator()(const std::vector<Vec2>& points);
-  bool operator()(const std::vector<Point>& points);
-  bool operator()(const std::vector<double>& points);
+  bool operator()(const std::vector<double>& points) override;
 
   // Iterators
-  TriangleIterator begin() const;
-  TriangleIterator end() const;
-
- private:
-  // Clear and deallocate the result
-  void clearResult();
-
-  // Data members
-  struct triangulateio *result_;
+  LineIterator begin() const;
+  LineIterator end() const;
 };
 
 #pragma mark - Inline Implementations
 
-inline Triangulation::Triangulation()
-    : result_(nullptr) {}
+inline VoronoiTriangulator::VoronoiTriangulator(
+    const VoronoiTriangulator& other)
+    : TriangulatorBase(other) {}
 
-inline Triangulation::~Triangulation() {
-  clearResult();
+#pragma mark Assignment
+
+inline VoronoiTriangulator& VoronoiTriangulator::operator=(
+    const VoronoiTriangulator& other) {
+  TriangulatorBase::operator=(other);
+  return *this;
 }
 
 #pragma mark Functional operators
 
 template <typename Vec2>
-inline bool Triangulation::operator()(const std::vector<Vec2>& points) {
-  std::size_t index = 0;
-  std::vector<Point> indexed_point(points.size());
-  std::transform(
-      points.begin(), points.end(), indexed_point.begin(),
-      [&index](const Vec2& point) {
-        return Point(point.x, point.y, index++);
-      });
-  return operator()(indexed_point);
+inline bool VoronoiTriangulator::operator()(const std::vector<Vec2>& points) {
+  return TriangulatorBase::operator()<Vec2>(points);
 }
 
 }  // namespace triangulation
 }  // namespace takram
 
-#endif  // TAKRAM_TRIANGULATION_TRIANGULATION_H_
+#endif  // TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_

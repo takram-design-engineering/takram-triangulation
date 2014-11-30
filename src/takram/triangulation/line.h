@@ -1,5 +1,5 @@
 //
-//  takram/triangulation/triangle.h
+//  takram/triangulation/line.h
 //
 //  MIT License
 //
@@ -26,71 +26,71 @@
 //
 
 #pragma once
-#ifndef TAKRAM_TRIANGULATION_TRIANGLE_H_
-#define TAKRAM_TRIANGULATION_TRIANGLE_H_
+#ifndef TAKRAM_TRIANGULATION_LINE_H_
+#define TAKRAM_TRIANGULATION_LINE_H_
 
 #include "takram/triangulation/point.h"
 
 namespace takram {
 namespace triangulation {
 
-class Triangle final {
+class Line final {
  public:
   // Constructors
-  Triangle() {}
-  Triangle(const Point& a, const Point& b, const Point& c);
-  Triangle(const Triangle& other);
+  Line() {}
+  Line(const Point& a, const Point& b, bool finite);
+  Line(const Line& other);
 
   // Assignment
-  Triangle& operator=(const Triangle& other);
-  void set(const Point& a, const Point& b, const Point& c);
+  Line& operator=(const Line& other);
+  void set(const Point& a, const Point& b, bool finite);
 
   // Comparison
-  bool operator==(const Triangle& other) const;
-  bool operator!=(const Triangle& other) const { return !operator==(other); }
+  bool operator==(const Line& other) const;
+  bool operator!=(const Line& other) const { return !operator==(other); }
 
   // Properties
   Point a;
   Point b;
-  Point c;
+  bool finite;
 };
 
 #pragma mark - Inline Implementations
 
-inline Triangle::Triangle(const Point& a, const Point& b, const Point& c)
+inline Line::Line(const Point& a, const Point& b, bool finite)
     : a(a),
       b(b),
-      c(c) {}
+      finite(finite) {}
 
-inline Triangle::Triangle(const Triangle& other)
+inline Line::Line(const Line& other)
     : a(other.a),
       b(other.b),
-      c(other.c) {}
+      finite(other.finite) {}
 
 #pragma mark Assignment
 
-inline Triangle& Triangle::operator=(const Triangle& other) {
+inline Line& Line::operator=(const Line& other) {
   if (&other != this) {
     a = other.a;
     b = other.b;
-    c = other.c;
+    finite = other.finite;
   }
   return *this;
 }
 
-inline void Triangle::set(const Point& a, const Point& b, const Point& c) {
+inline void Line::set(const Point& a, const Point& b, bool finite) {
   this->a = a;
   this->b = b;
-  this->c = c;
+  this->finite = finite;
 }
 
 #pragma mark Comparison
 
-inline bool Triangle::operator==(const Triangle &other) const {
-  return a == other.a && b == other.b && c == other.c;
+inline bool Line::operator==(const Line &other) const {
+  return a == other.a && b == other.b && finite == other.finite;
 }
 
 }  // namespace triangulation
 }  // namespace takram
 
-#endif  // TAKRAM_TRIANGULATION_TRIANGLE_H_
+#endif  // TAKRAM_TRIANGULATION_LINE_H_

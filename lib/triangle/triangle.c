@@ -100,11 +100,11 @@
 /*                                                                           */
 /*  Their O(n log n) divide-and-conquer algorithm is adapted from Der-Tsai   */
 /*    Lee and Bruce J. Schachter, "Two Algorithms for Constructing the       */
-/*    Delaunay Triangulation," International Journal of Computer and         */
+/*    Delaunay Triangulator," International Journal of Computer and         */
 /*    Information Science 9(3):219-242, 1980.  Triangle's improvement of the */
 /*    divide-and-conquer algorithm by alternating between vertical and       */
 /*    horizontal cuts was introduced by Rex A. Dwyer, "A Faster Divide-and-  */
-/*    Conquer Algorithm for Constructing Delaunay Triangulations,"           */
+/*    Conquer Algorithm for Constructing Delaunay Triangulators,"           */
 /*    Algorithmica 2(2):137-151, 1987.                                       */
 /*                                                                           */
 /*  The incremental insertion algorithm was first proposed by C. L. Lawson,  */
@@ -112,7 +112,7 @@
 /*    John R. Rice, editor, Academic Press, New York, pp. 161-194, 1977.     */
 /*    For point location, I use the algorithm of Ernst P. Mucke, Isaac       */
 /*    Saias, and Binhai Zhu, "Fast Randomized Point Location Without         */
-/*    Preprocessing in Two- and Three-Dimensional Delaunay Triangulations,"  */
+/*    Preprocessing in Two- and Three-Dimensional Delaunay Triangulators,"  */
 /*    Proceedings of the Twelfth Annual Symposium on Computational Geometry, */
 /*    ACM, May 1996.  [*]  If I were to randomize the order of vertex        */
 /*    insertion (I currently don't bother), their result combined with the   */
@@ -154,13 +154,13 @@
 /*  The method of inserting new vertices off-center (not precisely at the    */
 /*    circumcenter of every poor-quality triangle) is from Alper Ungor,      */
 /*    "Off-centers:  A New Type of Steiner Points for Computing Size-Optimal */
-/*    Quality-Guaranteed Delaunay Triangulations," Proceedings of LATIN      */
+/*    Quality-Guaranteed Delaunay Triangulators," Proceedings of LATIN      */
 /*    2004 (Buenos Aires, Argentina), April 2004.                            */
 /*                                                                           */
 /*  For definitions of and results involving Delaunay triangulations,        */
 /*    constrained and conforming versions thereof, and other aspects of      */
 /*    triangular mesh generation, see the excellent survey by Marshall Bern  */
-/*    and David Eppstein, "Mesh Generation and Optimal Triangulation," in    */
+/*    and David Eppstein, "Mesh Generation and Optimal Triangulator," in    */
 /*    Computing and Euclidean Geometry, Ding-Zhu Du and Frank Hwang,         */
 /*    editors, World Scientific, Singapore, pp. 23-90, 1992.  [*]            */
 /*                                                                           */
@@ -2444,7 +2444,7 @@ void info()
   printf(
 "  all) in your input files.  In the output files, all boundary vertices,\n");
   printf("  edges, and segments will be assigned the value one.\n\n");
-  printf("Triangulation Iteration Numbers:\n\n");
+  printf("Triangulator Iteration Numbers:\n\n");
   printf(
 "  Because Triangle can read and refine its own triangulations, input\n");
   printf(

@@ -1,5 +1,5 @@
 //
-//  takram/triangulation/triangulation_test.cc
+//  takram/triangulation/line_iterator.cc
 //
 //  MIT License
 //
@@ -25,12 +25,38 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#include "gtest/gtest.h"
+#include "takram/triangulation/line_iterator.h"
 
-#include "takram/triangulation/triangulation.h"
+#include <iostream>
+
+#include "takram/triangulation/point.h"
 
 namespace takram {
 namespace triangulation {
+
+#pragma mark Operators
+
+const Line& LineIterator::operator*() const {
+  if (current_edge_ != edges_) {
+    const int a = *(edges_ + 0) * 2;
+    const int b = *(edges_ + 1) * 2;
+    if (b < 0) {
+      derived_line_.set(Point(points_ + a), Point(normals_), false);
+    } else {
+      derived_line_.set(Point(points_ + a), Point(points_ + b), true);
+    }
+    current_edge_ = edges_;
+  }
+  return derived_line_;
+}
+
+LineIterator& LineIterator::operator++() {
+  if (edges_) {
+    edges_ += 2;
+    normals_ += 2;
+  }
+  return *this;
+}
 
 }  // namespace triangulation
 }  // namespace takram

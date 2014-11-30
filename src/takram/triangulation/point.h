@@ -56,78 +56,69 @@ class Point final {
   bool operator>=(const Point& other) const;
 
   // Index comparator
-  static bool CompareIndex(const Point& a, const Point& b);
+  static bool compareIndex(const Point& a, const Point& b);
 
   // Properties
-  double x() const { return x_; }
-  void set_x(double value) { x_ = value; }
-  double y() const { return y_; }
-  void set_y(double value) { y_ = value; }
-  std::size_t index() const { return index_; }
-  void set_index(std::size_t value) { index_ = value; }
-
- private:
-  // Data members
-  double x_;
-  double y_;
-  std::size_t index_;
+  double x;
+  double y;
+  std::size_t index;
 };
 
 #pragma mark - Inline Implementations
 
 inline Point::Point()
-    : x_(0.0),
-      y_(0.0),
-      index_(0) {}
+    : x(0.0),
+      y(0.0),
+      index(0) {}
 
 inline Point::Point(const double *xy)
-    : x_(xy[0]),
-      y_(xy[1]),
-      index_(0) {}
+    : x(xy[0]),
+      y(xy[1]),
+      index(0) {}
 
 inline Point::Point(double x, double y)
-    : x_(x),
-      y_(y),
-      index_(0) {}
+    : x(x),
+      y(y),
+      index(0) {}
 
 inline Point::Point(double x, double y, std::size_t index)
-    : x_(x),
-      y_(y),
-      index_(index) {}
+    : x(x),
+      y(y),
+      index(index) {}
 
 inline Point::Point(const Point& other)
-    : x_(other.x_),
-      y_(other.y_),
-      index_(other.index_) {}
+    : x(other.x),
+      y(other.y),
+      index(other.index) {}
 
 #pragma mark Assignment
 
 inline Point& Point::operator=(const Point& other) {
   if (&other != this) {
-    x_ = other.x_;
-    y_ = other.y_;
-    index_ = other.index_;
+    x = other.x;
+    y = other.y;
+    index = other.index;
   }
   return *this;
 }
 
 inline void Point::set(double x, double y) {
-  x_ = x;
-  y_ = y;
+  this->x = x;
+  this->y = y;
 }
 
 #pragma mark Comparison
 
 inline bool Point::operator==(const Point &other) const {
-  return x_ == other.x_ && y_ == other.y_;
+  return x == other.x && y == other.y;
 }
 
 inline bool Point::operator<(const Point& other) const {
-  return x_ < other.x_ || (x_ == other.x_ && y_ < other.y_);
+  return x < other.x || (x == other.x && y < other.y);
 }
 
 inline bool Point::operator>(const Point& other) const {
-  return x_ > other.x_ || (x_ == other.x_ && y_ > other.y_);
+  return x > other.x || (x == other.x && y > other.y);
 }
 
 inline bool Point::operator<=(const Point& other) const {
@@ -140,8 +131,8 @@ inline bool Point::operator>=(const Point& other) const {
 
 #pragma mark Index comparator
 
-inline bool Point::CompareIndex(const Point& a, const Point& b) {
-  return a.index_ < b.index_;
+inline bool Point::compareIndex(const Point& a, const Point& b) {
+  return a.index < b.index;
 }
 
 }  // namespace triangulation
