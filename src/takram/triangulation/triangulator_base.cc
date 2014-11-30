@@ -28,7 +28,10 @@
 #include "takram/triangulation/triangulator_base.h"
 
 #include <algorithm>
+#include <cmath>
 #include <cstdlib>
+#include <memory>
+#include <string>
 #include <vector>
 
 extern "C" {
@@ -49,9 +52,8 @@ bool TriangulatorBase::operator()(const std::vector<Point>& points) {
   std::vector<Point> unique_points(points.size());
   std::copy(points.begin(), points.end(), unique_points.begin());
   std::sort(unique_points.begin(), unique_points.end());
-  unique_points.resize(std::distance(
-      unique_points.begin(),
-      std::unique(unique_points.begin(), unique_points.end())));
+  unique_points.erase(std::unique(unique_points.begin(), unique_points.end()),
+                      unique_points.end());
 
   // Sort again, now on their indexes
   std::sort(unique_points.begin(), unique_points.end(), Point::compareIndex);
@@ -63,28 +65,51 @@ bool TriangulatorBase::operator()(const std::vector<Point>& points) {
   return operator()(coordinates);
 }
 
-#pragma mark -
-
-TriangulatorBase::Out::Out()
-    : ptr(new struct triangulateio) {
-  std::memset(ptr.get(), 0, sizeof(*ptr));
+bool TriangulatorBase::operator()(const std::string& options,
+                                  struct triangulateio *in,
+                                  struct triangulateio *out,
+                                  struct triangulateio *voronoi) {
+  std::string additional_options;
+  if (!std::isnan(min_angle_)) {
+    additional_options += "q" + std::to_string(min_angle_);
+  }
+  if (!std::isnan(max_area_)) {
+    additional_options += "a" + std::to_string(max_area_);
+  }
+  if (max_steiner_points_ >= 0) {
+    additional_options += "S" + std::to_string(max_steiner_points_);
+  }
+  std::vector<char> mutable_options(options.begin(), options.end());
+  mutable_options.insert(mutable_options.end(),
+                         additional_options.begin(),
+                         additional_options.end());
+  mutable_options.emplace_back('\0');
+  triangulate(mutable_options.data(), in, out, voronoi);
+  return true;
 }
 
-TriangulatorBase::Out::~Out() {
-  std::free(ptr->pointlist);
-  std::free(ptr->pointmarkerlist);
-  std::free(ptr->pointattributelist);
-  std::free(ptr->trianglelist);
-  std::free(ptr->triangleattributelist);
-  std::free(ptr->trianglearealist);
-  std::free(ptr->neighborlist);
-  std::free(ptr->segmentlist);
-  std::free(ptr->segmentmarkerlist);
-  std::free(ptr->holelist);
-  std::free(ptr->regionlist);
-  std::free(ptr->edgelist);
-  std::free(ptr->edgemarkerlist);
-  std::free(ptr->normlist);
+#pragma mark -
+
+TriangulatorBase::Result::Result()
+    : data_(std::make_unique<struct triangulateio>()) {
+  std::memset(data_.get(), 0, sizeof(*data_));
+}
+
+TriangulatorBase::Result::~Result() {
+  std::free(data_->pointlist);
+  std::free(data_->pointmarkerlist);
+  std::free(data_->pointattributelist);
+  std::free(data_->trianglelist);
+  std::free(data_->triangleattributelist);
+  std::free(data_->trianglearealist);
+  std::free(data_->neighborlist);
+  std::free(data_->segmentlist);
+  std::free(data_->segmentmarkerlist);
+  std::free(data_->holelist);
+  std::free(data_->regionlist);
+  std::free(data_->edgelist);
+  std::free(data_->edgemarkerlist);
+  std::free(data_->normlist);
 }
 
 }  // namespace triangulation
