@@ -7,3 +7,6 @@
 [submodule "glog"]
 	path = glog
 	url = git@github.com:sgss/mirror-glog.git
+[submodule "gflags"]
+	path = gflags
+	url = https://code.google.com/p/gflags/

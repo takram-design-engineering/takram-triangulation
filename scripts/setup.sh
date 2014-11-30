@@ -32,5 +32,6 @@ pushd "${SRCROOT}"
   git submodule update --init
 popd
 
+"${SRCROOT}/scripts/build.sh" cmake "gflags" "build/gflags"
 "${SRCROOT}/scripts/build.sh" configure "glog" "build/glog"
 "${SRCROOT}/scripts/build.sh" cmake "gtest" "build/gtest"

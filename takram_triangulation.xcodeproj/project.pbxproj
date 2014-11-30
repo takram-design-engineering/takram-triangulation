@@ -22,6 +22,7 @@
 		93447D951A2AAA950024396C /* line_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93447D931A2AAA950024396C /* line_iterator.cc */; };
 		93447D961A2AAA950024396C /* line_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93447D931A2AAA950024396C /* line_iterator.cc */; };
 		93447D971A2AAA950024396C /* line_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 93447D941A2AAA950024396C /* line_iterator.h */; };
+		93447DC11A2B0E870024396C /* libgflags.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93447DBF1A2B0E750024396C /* libgflags.a */; };
 		93F1BA06180283C8002A5A5C /* libgtest_main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F1BA04180283C8002A5A5C /* libgtest_main.a */; };
 		93F1BA07180283C8002A5A5C /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F1BA05180283C8002A5A5C /* libgtest.a */; };
 		93F8F3651A28484C007DDBE4 /* libglog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F8F3641A284843007DDBE4 /* libglog.a */; };
@@ -44,6 +45,7 @@
 		93447D931A2AAA950024396C /* line_iterator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = line_iterator.cc; sourceTree = "<group>"; };
 		93447D941A2AAA950024396C /* line_iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = line_iterator.h; sourceTree = "<group>"; };
 		93447D981A2AAABB0024396C /* line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = line.h; sourceTree = "<group>"; };
+		93447DBF1A2B0E750024396C /* libgflags.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgflags.a; path = build/gflags/lib/libgflags.a; sourceTree = "<group>"; };
 		93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtakram_triangulation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F1B9F6180282B0002A5A5C /* takram_triangulation_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = takram_triangulation_test; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F1BA04180283C8002A5A5C /* libgtest_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest_main.a; path = build/gtest/libgtest_main.a; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93447DC11A2B0E870024396C /* libgflags.a in Frameworks */,
 				93F8F3651A28484C007DDBE4 /* libglog.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				93F8F3671A284949007DDBE4 /* triangle */,
+				93447DBF1A2B0E750024396C /* libgflags.a */,
 				93F8F3641A284843007DDBE4 /* libglog.a */,
 				93F1BA04180283C8002A5A5C /* libgtest_main.a */,
 				93F1BA05180283C8002A5A5C /* libgtest.a */,
@@ -284,6 +288,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/gtest\"",
+					"$(PROJECT_DIR)/build/gflags/lib",
 				);
 				PRODUCT_NAME = takram_triangulation_test;
 			};
@@ -300,6 +305,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/gtest\"",
+					"$(PROJECT_DIR)/build/gflags/lib",
 				);
 				PRODUCT_NAME = takram_triangulation_test;
 			};
@@ -380,10 +386,12 @@
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/src\"",
 					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)/build/gflags/include\"",
 					"\"$(SRCROOT)/build/glog/include\"",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/build/gflags/lib\"",
 					"\"$(SRCROOT)/build/glog/lib\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -467,10 +475,12 @@
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/src\"",
 					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)/build/gflags/include\"",
 					"\"$(SRCROOT)/build/glog/include\"",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/build/gflags/lib\"",
 					"\"$(SRCROOT)/build/glog/lib\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
