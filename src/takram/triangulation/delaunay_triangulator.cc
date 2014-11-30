@@ -96,6 +96,7 @@ bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
       break;
     default:
       assert(false);
+      break;
   }
   return TriangulatorBase::operator()(options, &in, &**result_, nullptr);
 }
