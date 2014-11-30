@@ -8,6 +8,7 @@ Run "setup.sh" inside "scripts" directory to initialize submodules and build dep
 ### Submodules
 
 - [cpplint](https://github.com/sgss/mirror-cpplint)
+- [gflags](https://code.google.com/p/gflags/)
 - [glog](https://github.com/sgss/mirror-glog)
 - [gtest](https://github.com/sgss/mirror-googletest)
 
@@ -43,3 +44,28 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+---
+
+Triangle<br>
+A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator.<br>
+Version 1.6
+
+Copyright 1993, 1995, 1997, 1998, 2002, 2005 Jonathan Richard Shewchuk<br>
+2360 Woolsey #H<br>
+Berkeley, California  94705-1927<br>
+jrs@cs.berkeley.edu
+
+These programs may be freely redistributed under the condition that the
+copyright notices (including the copy of this notice in the code comments
+and the copyright notice printed when the `-h' switch is selected) are
+not removed, and no compensation is received. Private, research, and
+institutional use is free. You may distribute modified versions of this
+code UNDER THE CONDITION THAT THIS CODE AND ANY MODIFICATIONS MADE TO IT
+IN THE SAME FILE REMAIN UNDER COPYRIGHT OF THE ORIGINAL AUTHOR, BOTH
+SOURCE AND OBJECT CODE ARE MADE FREELY AVAILABLE WITHOUT CHARGE, AND
+CLEAR NOTICE IS GIVEN OF THE MODIFICATIONS. Distribution of this code as
+part of a commercial system is permissible ONLY BY DIRECT ARRANGEMENT
+WITH THE AUTHOR. (If you are not directly supplying this code to a
+customer, and you are instead telling them how they can obtain it for
+free, then you are not required to make any arrangement with me.)
