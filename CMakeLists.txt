@@ -39,12 +39,14 @@ endif()
 # Include directories
 include_directories("${${PROJECT_NAME}_SOURCE_DIR}/src")
 include_directories("${${PROJECT_NAME}_SOURCE_DIR}/include")
+include_directories("${${PROJECT_NAME}_SOURCE_DIR}/lib")
 
 # Compiler flags
-set(CMAKE_C_FLAGS "-Wall")
+set(TRIANGLE_FLAGS "-DTRILIBRARY=1 -DANSI_DECLARATORS=1 -DREAL=double")
+set(CMAKE_C_FLAGS "-Wall ${TRIANGLE_FLAGS}")
 set(CMAKE_C_FLAGS_DEBUG "-g -O0")
 set(CMAKE_C_FLAGS_RELEASE "-Os -DNDEBUG")
-set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++ -Wall")
+set(CMAKE_CXX_FLAGS "-std=c++1y -stdlib=libc++ -Wall ${TRIANGLE_FLAGS}")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-Os -DNDEBUG")
 message(STATUS "")
