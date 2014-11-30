@@ -29,6 +29,7 @@
 readonly TYPE=$1
 readonly TARGET_PATH=$2
 readonly TARGET_BUILD_PATH=$3
+readonly OPTIONS=$4
 
 readonly CMAKE=$(which cmake)
 readonly CLANG_CC=$(which clang)
@@ -60,6 +61,7 @@ if [[ "${TYPE}" == "cmake" ]]; then
         -DCMAKE_CXX_COMPILER="${CLANG_CXX}" \
         -DCMAKE_CXX_FLAGS="-stdlib=libc++" \
         -DCMAKE_OSX_ARCHITECTURES="i386;x86_64" \
+        "${OPTIONS}" \
         "${TARGET_DIR}"
     make -j8
   popd
