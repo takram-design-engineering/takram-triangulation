@@ -299,7 +299,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/gtest\"",
-					"$(PROJECT_DIR)/build/gflags/lib",
 				);
 				PRODUCT_NAME = takram_triangulation_test;
 			};
@@ -316,7 +315,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/gtest\"",
-					"$(PROJECT_DIR)/build/gflags/lib",
 				);
 				PRODUCT_NAME = takram_triangulation_test;
 			};
