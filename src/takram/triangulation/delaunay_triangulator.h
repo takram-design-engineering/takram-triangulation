@@ -46,6 +46,7 @@ class DelaunayTriangulator : public TriangulatorBase {
   enum class Type {
     DEFAULT = 0,
     CONSTRAINED,
+    CONFORMING,
     CONFORMING_CONSTRAINED
   };
 
