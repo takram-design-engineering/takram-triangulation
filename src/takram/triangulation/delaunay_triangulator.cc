@@ -91,8 +91,20 @@ bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
       in.segmentlist = segments.data();
       in.numberofsegments = size / 2;
       break;
-    case Type::CONFORMING_CONSTRAINED:
+    case Type::CONFORMING:
       options = "zDQ";
+      break;
+    case Type::CONFORMING_CONSTRAINED:
+      options = "pzDQ";
+      // Build edges including the one between front and back
+      for (Size i = 0; i < size - 1; ++i) {
+        segments.emplace_back(i);
+        segments.emplace_back(i + 1);
+      }
+      segments.emplace_back(segments.back());
+      segments.emplace_back(segments.front());
+      in.segmentlist = segments.data();
+      in.numberofsegments = size / 2;
       break;
     default:
       assert(false);
