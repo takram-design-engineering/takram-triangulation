@@ -75,6 +75,15 @@ bool VoronoiTriangulator::operator()(const std::vector<double>& points) {
   return TriangulatorBase::operator()("vzQ", &in, &*out, &**result_);
 }
 
+#pragma mark Properties
+
+std::size_t VoronoiTriangulator::size() const {
+  if (!result_) {
+    return 0;
+  }
+  return (*result_)->numberofedges / 2;
+}
+
 #pragma mark Iterators
 
 LineIterator VoronoiTriangulator::begin() const {

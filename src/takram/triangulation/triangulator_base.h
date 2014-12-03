@@ -68,6 +68,10 @@ class TriangulatorBase {
   int max_steiner_points() const { return max_steiner_points_; }
   void set_max_steiner_points(int value) { max_steiner_points_ = value; }
 
+  // Properties
+  bool empty() const { return !result_; }
+  virtual std::size_t size() const = 0;
+
  protected:
   class Result;
 

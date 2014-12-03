@@ -101,6 +101,15 @@ bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
   return TriangulatorBase::operator()(options, &in, &**result_, nullptr);
 }
 
+#pragma mark Properties
+
+std::size_t DelaunayTriangulator::size() const {
+  if (!result_) {
+    return 0;
+  }
+  return (*result_)->numberoftriangles / 3;
+}
+
 #pragma mark Iterators
 
 TriangleIterator DelaunayTriangulator::begin() const {

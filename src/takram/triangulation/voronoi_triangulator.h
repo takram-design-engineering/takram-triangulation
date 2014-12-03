@@ -55,6 +55,9 @@ class VoronoiTriangulator : public TriangulatorBase {
   bool operator()(const std::vector<Vec2>& points);
   bool operator()(const std::vector<double>& points) override;
 
+  // Properties
+  std::size_t size() const override;
+
   // Iterators
   LineIterator begin() const;
   LineIterator end() const;

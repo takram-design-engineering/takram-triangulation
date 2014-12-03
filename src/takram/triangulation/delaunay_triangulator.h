@@ -29,6 +29,7 @@
 #ifndef TAKRAM_TRIANGULATION_DELAUNAY_TRIANGULATOR_H_
 #define TAKRAM_TRIANGULATION_DELAUNAY_TRIANGULATOR_H_
 
+#include <cstddef>
 #include <memory>
 #include <vector>
 
@@ -65,6 +66,9 @@ class DelaunayTriangulator : public TriangulatorBase {
   // Parameters
   Type type() const { return type_; }
   void set_type(Type value) { type_ = value; }
+
+  // Properties
+  std::size_t size() const override;
 
   // Iterators
   TriangleIterator begin() const;
