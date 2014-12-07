@@ -118,6 +118,14 @@ inline bool LineIterator::operator!=(const LineIterator& other) const {
 
 #pragma mark Operators
 
+inline LineIterator& LineIterator::operator++() {
+  if (edges_) {
+    edges_ += 2;
+    normals_ += 2;
+  }
+  return *this;
+}
+
 inline LineIterator LineIterator::operator++(int) {
   LineIterator result(*this);
   operator++();

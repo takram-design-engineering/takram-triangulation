@@ -27,8 +27,7 @@
 
 #include "takram/triangulation/line_iterator.h"
 
-#include <iostream>
-
+#include "takram/triangulation/line.h"
 #include "takram/triangulation/point.h"
 
 namespace takram {
@@ -48,14 +47,6 @@ const Line& LineIterator::operator*() const {
     current_edge_ = edges_;
   }
   return derived_line_;
-}
-
-LineIterator& LineIterator::operator++() {
-  if (edges_) {
-    edges_ += 2;
-    normals_ += 2;
-  }
-  return *this;
 }
 
 }  // namespace triangulation

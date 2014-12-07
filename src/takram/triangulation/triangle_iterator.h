@@ -112,6 +112,13 @@ inline bool TriangleIterator::operator!=(const TriangleIterator& other) const {
 
 #pragma mark Operators
 
+inline TriangleIterator& TriangleIterator::operator++() {
+  if (triangles_) {
+    triangles_ += 3;
+  }
+  return *this;
+}
+
 inline TriangleIterator TriangleIterator::operator++(int) {
   TriangleIterator result(*this);
   operator++();

@@ -28,6 +28,7 @@
 #include "takram/triangulation/triangle_iterator.h"
 
 #include "takram/triangulation/point.h"
+#include "takram/triangulation/triangle.h"
 
 namespace takram {
 namespace triangulation {
@@ -45,13 +46,6 @@ const Triangle& TriangleIterator::operator*() const {
     current_triangle_ = triangles_;
   }
   return derived_triangle_;
-}
-
-TriangleIterator& TriangleIterator::operator++() {
-  if (triangles_) {
-    triangles_ += 3;
-  }
-  return *this;
 }
 
 }  // namespace triangulation
