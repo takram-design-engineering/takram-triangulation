@@ -14,7 +14,7 @@ Screenshots of [an example application](https://github.com/takram-design-enginee
 
 The following code outputs Voronoi lines and Delaunay triangles for randomly generated points.
 
-```
+```cc
 #include <cstdlib>
 #include <iostream>
 #include <random>
@@ -58,7 +58,7 @@ int main() {
 
 ### Parameters
 
-- *type* (DelaunayTriangulator only)
+- *type* ([DelaunayTriangulator](src/takram/triangulation/delaunay_triangulator.h) only)
     - takram::DelaunayTriangulator::Type::DEFAULT
         - Will generate a [Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#dt).
         - Equivalent to specifying neither [-p](http://www.cs.cmu.edu/~quake/triangle.p.html) nor [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
@@ -83,14 +83,14 @@ int main() {
 
 ### Classes
 
-- [takram::triangulation::Point](src/triangulation/point.h)
-- [takram::triangulation::Line](src/triangulation/line.h)
-- [takram::triangulation::Triangle](src/triangulation/triangle.h)
-- [takram::triangulation::LineIterator](src/triangulation/line_iterator.h)
-- [takram::triangulation::TriangleIterator](src/triangulation/triangle_iterator.h)
-- [takram::TriangulatorBase](src/triangulation/triangulator_base.h)
-- [takram::DelaunayTriangulator](src/triangulation/delaunay_triangulator.h)
-- [takram::VoronoiTriangulator](src/triangulation/voronoi_triangulator.h)
+- [takram::triangulation::Point](src/takram/triangulation/point.h)
+- [takram::triangulation::Line](src/takram/triangulation/line.h)
+- [takram::triangulation::Triangle](src/takram/triangulation/triangle.h)
+- [takram::triangulation::LineIterator](src/takram/triangulation/line_iterator.h)
+- [takram::triangulation::TriangleIterator](src/takram/triangulation/triangle_iterator.h)
+- [takram::TriangulatorBase](src/takram/triangulation/triangulator_base.h)
+- [takram::DelaunayTriangulator](src/takram/triangulation/delaunay_triangulator.h)
+- [takram::VoronoiTriangulator](src/takram/triangulation/voronoi_triangulator.h)
 
 ## Setup Guide
 
