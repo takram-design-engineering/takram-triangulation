@@ -1,6 +1,8 @@
 Triangulation
 =============
 
+A C++ library to perform Delaunay and Voronoi triangulation
+
 ## Example
 
 Screenshots of [an example application](https://github.com/takram-design-engineering/takram-cocoa-cinder/tree/master/example/Triangulation) using [takram-cocoa-cinder](https://github.com/takram-design-engineering/takram-cocoa-cinder).
@@ -10,8 +12,65 @@ Screenshots of [an example application](https://github.com/takram-design-enginee
 
 ## Basic Usage
 
+The following code outputs Voronoi lines and Delaunay triangles for randomly generated points.
+
+```
+#include <cstdlib>
+#include <iostream>
+#include <random>
+#include <vector>
+
+#include "takram/triangulation.h"
+
+namespace {
+
+struct Point {
+  double x;
+  double y;
+};
+
+}  // namespace
+
+int main() {
+  std::random_device random_device;
+  std::default_random_engine engine(random_device());
+  std::uniform_real_distribution<> distribution(0.0, 1.0);
+  std::vector<Point> points(10);
+  for (auto& point : points) {
+    point.x = distribution(engine);
+    point.y = distribution(engine);
+  }
+  takram::VoronoiTriangulator voronoi;
+  if (voronoi(points)) {
+    for (const auto& line : voronoi) {
+      std::cout << line << std::endl;
+    }
+  }
+  takram::DelaunayTriangulator delaunay;
+  if (delaunay(points)) {
+    for (const auto& triangle : delaunay) {
+      std::cout << triangle << std::endl;
+    }
+  }
+  return EXIT_SUCCESS;
+}
+```
+
 ### Parameters
 
+- *type* (DelaunayTriangulator only)
+    - takram::DelaunayTriangulator::Type::DEFAULT
+        - Will generate a [Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#dt).
+        - Equivalent to specifying neither [-p](http://www.cs.cmu.edu/~quake/triangle.p.html) nor [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
+    - takram::DelaunayTriangulator::Type::CONSTRAINED
+        - Will generate a [constrained Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#cdt).
+        - Equivalent to the [-p](http://www.cs.cmu.edu/~quake/triangle.p.html) command line switch of Triangle library.
+    - takram::DelaunayTriangulator::Type::CONFORMING
+        - Will generate a [conforming Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#conform).
+        - Equivalent to the [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
+    - takram::DelaunayTriangulator::Type::CONFORMING_CONSTRAINED
+        - Will generate a [constrained conforming Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#ccdt).
+        - Equivalent to specifying both [-p](http://www.cs.cmu.edu/~quake/triangle.p.html) and [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
 - *min_angle*
     - Quality mesh generation with no angles smaller than 20 degrees.
     - Equivalent to the [-q](http://www.cs.cmu.edu/~quake/triangle.q.html) command line switch of Triangle library.
@@ -21,6 +80,17 @@ Screenshots of [an example application](https://github.com/takram-design-enginee
 - *max_steiner_points*
     - Specifies the maximum number of added [Steiner points](http://www.cs.cmu.edu/~quake/triangle.defs.html#steiner).
     - Equivalent to the [-S](http://www.cs.cmu.edu/~quake/triangle.S.html) command line switch of Triangle library.
+
+### Classes
+
+- [takram::triangulation::Point](src/triangulation/point.h)
+- [takram::triangulation::Line](src/triangulation/line.h)
+- [takram::triangulation::Triangle](src/triangulation/triangle.h)
+- [takram::triangulation::LineIterator](src/triangulation/line_iterator.h)
+- [takram::triangulation::TriangleIterator](src/triangulation/triangle_iterator.h)
+- [takram::TriangulatorBase](src/triangulation/triangulator_base.h)
+- [takram::DelaunayTriangulator](src/triangulation/delaunay_triangulator.h)
+- [takram::VoronoiTriangulator](src/triangulation/voronoi_triangulator.h)
 
 ## Setup Guide
 
