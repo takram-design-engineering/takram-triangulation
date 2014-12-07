@@ -1,6 +1,27 @@
 Triangulation
 =============
 
+## Example
+
+Screenshots of [an example application](https://github.com/takram-design-engineering/takram-cocoa-cinder/tree/master/example/Triangulation) using [takram-cocoa-cinder](https://github.com/takram-design-engineering/takram-cocoa-cinder).
+
+![](other/voronoi.png)
+![](other/conforming_delaynay.png)
+
+## Basic Usage
+
+### Parameters
+
+- *min_angle*
+    - Quality mesh generation with no angles smaller than 20 degrees.
+    - Equivalent to the [-q](http://www.cs.cmu.edu/~quake/triangle.q.html) command line switch of Triangle library.
+- *max_area*
+    - Imposes a maximum triangle area constraint.
+    - Equivalent to the [-a](http://www.cs.cmu.edu/~quake/triangle.a.html) command line switch of Triangle library.
+- *max_steiner_points*
+    - Specifies the maximum number of added [Steiner points](http://www.cs.cmu.edu/~quake/triangle.defs.html#steiner).
+    - Equivalent to the [-S](http://www.cs.cmu.edu/~quake/triangle.S.html) command line switch of Triangle library.
+
 ## Setup Guide
 
 Run "setup.sh" inside "scripts" directory to initialize submodules and build dependant libraries.
