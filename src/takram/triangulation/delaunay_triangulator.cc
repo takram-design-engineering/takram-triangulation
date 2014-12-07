@@ -28,7 +28,8 @@
 #include "takram/triangulation/delaunay_triangulator.h"
 
 #include <cassert>
-#include <cstdlib>
+#include <cstddef>
+#include <cstring>
 #include <limits>
 #include <memory>
 #include <string>

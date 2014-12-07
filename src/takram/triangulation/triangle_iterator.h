@@ -29,7 +29,6 @@
 #ifndef TAKRAM_TRIANGULATION_TRIANGLE_ITERATOR_H_
 #define TAKRAM_TRIANGULATION_TRIANGLE_ITERATOR_H_
 
-#include <cstddef>
 #include <iterator>
 
 #include "takram/triangulation/triangle.h"

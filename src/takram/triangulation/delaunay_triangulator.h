@@ -30,7 +30,6 @@
 #define TAKRAM_TRIANGULATION_DELAUNAY_TRIANGULATOR_H_
 
 #include <cstddef>
-#include <memory>
 #include <vector>
 
 #include "takram/triangulation/triangulator_base.h"

@@ -27,7 +27,8 @@
 
 #include "takram/triangulation/voronoi_triangulator.h"
 
-#include <cstdlib>
+#include <cstddef>
+#include <cstring>
 #include <limits>
 #include <memory>
 #include <string>

@@ -29,7 +29,7 @@
 #ifndef TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_
 #define TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_
 
-#include <memory>
+#include <cstddef>
 #include <vector>
 
 #include "takram/triangulation/triangulator_base.h"
