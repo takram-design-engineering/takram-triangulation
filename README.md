@@ -1,7 +1,7 @@
 Triangulation
 =============
 
-A C++ library to perform Delaunay and Voronoi triangulation
+A C++ library to generate Delaunay and Voronoi triangulations
 
 ## Example
 
