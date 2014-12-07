@@ -29,6 +29,8 @@
 #ifndef TAKRAM_TRIANGULATION_LINE_H_
 #define TAKRAM_TRIANGULATION_LINE_H_
 
+#include <ostream>
+
 #include "takram/triangulation/point.h"
 
 namespace takram {
@@ -48,6 +50,9 @@ class Line final {
   // Comparison
   bool operator==(const Line& other) const;
   bool operator!=(const Line& other) const { return !operator==(other); }
+
+  // Stream
+  friend std::ostream& operator<<(std::ostream& os, const Line& value);
 
   // Properties
   Point a;
@@ -88,6 +93,14 @@ inline void Line::set(const Point& a, const Point& b, bool finite) {
 
 inline bool Line::operator==(const Line &other) const {
   return a == other.a && b == other.b && finite == other.finite;
+}
+
+#pragma mark Stream
+
+inline std::ostream& operator<<(std::ostream& os, const Line& value) {
+  os << "( " << value.a << ", " << value.b << ", " <<
+      (value.finite ? "finite" : "infinite") << " )";
+  return os;
 }
 
 }  // namespace triangulation

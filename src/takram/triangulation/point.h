@@ -30,6 +30,7 @@
 #define TAKRAM_TRIANGULATION_POINT_H_
 
 #include <cstddef>
+#include <ostream>
 
 namespace takram {
 namespace triangulation {
@@ -57,6 +58,9 @@ class Point final {
 
   // Index comparator
   static bool compareIndex(const Point& a, const Point& b);
+
+  // Stream
+  friend std::ostream& operator<<(std::ostream& os, const Point& value);
 
   // Properties
   double x;
@@ -133,6 +137,13 @@ inline bool Point::operator>=(const Point& other) const {
 
 inline bool Point::compareIndex(const Point& a, const Point& b) {
   return a.index < b.index;
+}
+
+#pragma mark Stream
+
+inline std::ostream& operator<<(std::ostream& os, const Point& value) {
+  os << "( " << value.x << ", " << value.y << " )";
+  return os;
 }
 
 }  // namespace triangulation

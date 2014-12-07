@@ -29,6 +29,8 @@
 #ifndef TAKRAM_TRIANGULATION_TRIANGLE_H_
 #define TAKRAM_TRIANGULATION_TRIANGLE_H_
 
+#include <ostream>
+
 #include "takram/triangulation/point.h"
 
 namespace takram {
@@ -48,6 +50,9 @@ class Triangle final {
   // Comparison
   bool operator==(const Triangle& other) const;
   bool operator!=(const Triangle& other) const { return !operator==(other); }
+
+  // Stream
+  friend std::ostream& operator<<(std::ostream& os, const Triangle& value);
 
   // Properties
   Point a;
@@ -88,6 +93,13 @@ inline void Triangle::set(const Point& a, const Point& b, const Point& c) {
 
 inline bool Triangle::operator==(const Triangle &other) const {
   return a == other.a && b == other.b && c == other.c;
+}
+
+#pragma mark Stream
+
+inline std::ostream& operator<<(std::ostream& os, const Triangle& value) {
+  os << "( " << value.a << ", " << value.b << ", " << value.c << " )";
+  return os;
 }
 
 }  // namespace triangulation
