@@ -48,7 +48,7 @@ class DelaunayTriangulator : public TriangulatorBase {
     DEFAULT = 0,
     CONSTRAINED,
     CONFORMING,
-    CONFORMING_CONSTRAINED
+    CONSTRAINED_CONFORMING
   };
 
   // Constructors

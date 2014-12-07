@@ -94,7 +94,7 @@ bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
     case Type::CONFORMING:
       options = "zDQ";
       break;
-    case Type::CONFORMING_CONSTRAINED:
+    case Type::CONSTRAINED_CONFORMING:
       options = "pzDQ";
       // Build edges including the one between front and back
       for (Size i = 0; i < size - 1; ++i) {

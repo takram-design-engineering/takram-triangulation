@@ -16,7 +16,7 @@ The following code outputs Voronoi lines and Delaunay triangles for randomly gen
 
 ```cc
 #include <cstdlib>
-#include <iostream>
+#include <ostream>
 #include <random>
 #include <vector>
 
@@ -68,7 +68,7 @@ int main() {
     - `takram::DelaunayTriangulator::Type::CONFORMING`
         - Will generate a [conforming Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#conform).
         - Equivalent to the [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
-    - `takram::DelaunayTriangulator::Type::CONFORMING_CONSTRAINED`
+    - `takram::DelaunayTriangulator::Type::CONSTRAINED_CONFORMING`
         - Will generate a [constrained conforming Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#ccdt).
         - Equivalent to specifying both [-p](http://www.cs.cmu.edu/~quake/triangle.p.html) and [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
 - *min_angle*
