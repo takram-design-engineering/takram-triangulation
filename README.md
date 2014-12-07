@@ -58,17 +58,17 @@ int main() {
 
 ### Parameters
 
-- *type* ([DelaunayTriangulator](src/takram/triangulation/delaunay_triangulator.h) only)
-    - takram::DelaunayTriangulator::Type::DEFAULT
+- *type* (Delaunay triangulation only)
+    - `takram::DelaunayTriangulator::Type::DEFAULT`
         - Will generate a [Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#dt).
         - Equivalent to specifying neither [-p](http://www.cs.cmu.edu/~quake/triangle.p.html) nor [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
-    - takram::DelaunayTriangulator::Type::CONSTRAINED
+    - `takram::DelaunayTriangulator::Type::CONSTRAINED`
         - Will generate a [constrained Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#cdt).
         - Equivalent to the [-p](http://www.cs.cmu.edu/~quake/triangle.p.html) command line switch of Triangle library.
-    - takram::DelaunayTriangulator::Type::CONFORMING
+    - `takram::DelaunayTriangulator::Type::CONFORMING`
         - Will generate a [conforming Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#conform).
         - Equivalent to the [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
-    - takram::DelaunayTriangulator::Type::CONFORMING_CONSTRAINED
+    - `takram::DelaunayTriangulator::Type::CONFORMING_CONSTRAINED`
         - Will generate a [constrained conforming Delaunay triangulation](http://www.cs.cmu.edu/~quake/triangle.defs.html#ccdt).
         - Equivalent to specifying both [-p](http://www.cs.cmu.edu/~quake/triangle.p.html) and [-D](http://www.cs.cmu.edu/~quake/triangle.switch.html) command line switch of Triangle library.
 - *min_angle*
@@ -83,14 +83,14 @@ int main() {
 
 ### Classes
 
-- [takram::triangulation::Point](src/takram/triangulation/point.h)
-- [takram::triangulation::Line](src/takram/triangulation/line.h)
-- [takram::triangulation::Triangle](src/takram/triangulation/triangle.h)
-- [takram::triangulation::LineIterator](src/takram/triangulation/line_iterator.h)
-- [takram::triangulation::TriangleIterator](src/takram/triangulation/triangle_iterator.h)
-- [takram::TriangulatorBase](src/takram/triangulation/triangulator_base.h)
-- [takram::DelaunayTriangulator](src/takram/triangulation/delaunay_triangulator.h)
-- [takram::VoronoiTriangulator](src/takram/triangulation/voronoi_triangulator.h)
+- [`takram::triangulation::Point`](src/takram/triangulation/point.h)
+- [`takram::triangulation::Line`](src/takram/triangulation/line.h)
+- [`takram::triangulation::Triangle`](src/takram/triangulation/triangle.h)
+- [`takram::triangulation::LineIterator`](src/takram/triangulation/line_iterator.h)
+- [`takram::triangulation::TriangleIterator`](src/takram/triangulation/triangle_iterator.h)
+- [`takram::TriangulatorBase`](src/takram/triangulation/triangulator_base.h)
+- [`takram::DelaunayTriangulator`](src/takram/triangulation/delaunay_triangulator.h)
+- [`takram::VoronoiTriangulator`](src/takram/triangulation/voronoi_triangulator.h)
 
 ## Setup Guide
 
