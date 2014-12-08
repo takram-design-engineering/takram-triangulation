@@ -65,7 +65,7 @@ if [[ "${TYPE}" == "cmake" ]]; then
         "${TARGET_DIR}"
     make -j8
   popd
-elif [[ "${TYPE}" == "configure" ]]; then
+elif [[ "${TYPE}" == "configure" && ! -d "${TARGET_BUILD_DIR}" ]]; then
   mkdir -p "${TARGET_BUILD_DIR}"
   pushd "${TARGET_BUILD_DIR}"
     "${TARGET_DIR}/configure" \
