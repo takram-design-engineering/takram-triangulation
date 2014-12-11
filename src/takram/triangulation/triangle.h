@@ -39,7 +39,7 @@ namespace triangulation {
 class Triangle final {
  public:
   // Constructors
-  Triangle() {}
+  Triangle() = default;
   Triangle(const Point& a, const Point& b, const Point& c);
   Triangle(const Triangle& other);
 

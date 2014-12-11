@@ -39,7 +39,7 @@ namespace triangulation {
 class Line final {
  public:
   // Constructors
-  Line() {}
+  Line();
   Line(const Point& a, const Point& b, bool finite);
   Line(const Line& other);
 
@@ -61,6 +61,9 @@ class Line final {
 };
 
 #pragma mark - Inline Implementations
+
+inline Line::Line()
+    : finite(false) {}
 
 inline Line::Line(const Point& a, const Point& b, bool finite)
     : a(a),

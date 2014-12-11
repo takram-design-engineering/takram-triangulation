@@ -44,7 +44,7 @@ class LineIterator;
 class VoronoiTriangulator : public TriangulatorBase {
  public:
   // Constructors
-  VoronoiTriangulator() {}
+  VoronoiTriangulator() = default;
   VoronoiTriangulator(const VoronoiTriangulator& other);
 
   // Assignment
