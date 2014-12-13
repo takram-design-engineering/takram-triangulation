@@ -36,11 +36,6 @@ if (DEFINED CMAKE_BUILD_TYPE)
                ${CMAKE_CONFIGURATION_TYPES})
 endif()
 
-# Include directories
-include_directories("${${PROJECT_NAME}_SOURCE_DIR}/src")
-include_directories("${${PROJECT_NAME}_SOURCE_DIR}/include")
-include_directories("${${PROJECT_NAME}_SOURCE_DIR}/lib")
-
 # Compiler flags
 set(TRIANGLE_FLAGS "-DTRILIBRARY=1 -DANSI_DECLARATORS=1 -DREAL=double")
 set(CMAKE_C_FLAGS "-Wall ${TRIANGLE_FLAGS}")
@@ -61,6 +56,11 @@ message(STATUS "C flags (Release): "
 message(STATUS "C flags (Debug): "
         "${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_DEBUG}")
 message(STATUS "")
+
+# Include directories
+include_directories("${${PROJECT_NAME}_SOURCE_DIR}/src")
+include_directories("${${PROJECT_NAME}_SOURCE_DIR}/include")
+include_directories("${${PROJECT_NAME}_SOURCE_DIR}/lib")
 
 # Library
 file(GLOB_RECURSE SOURCES "src/*.cc" "src/*.c")
