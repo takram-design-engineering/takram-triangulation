@@ -173,9 +173,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		93C6B51419B22F5500A1CF93 /* takram_triangulation */ = {
+		93C6B51419B22F5500A1CF93 /* takram_triangulation_static */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93C6B51619B22F5500A1CF93 /* Build configuration list for PBXNativeTarget "takram_triangulation" */;
+			buildConfigurationList = 93C6B51619B22F5500A1CF93 /* Build configuration list for PBXNativeTarget "takram_triangulation_static" */;
 			buildPhases = (
 				93C6B51119B22F5500A1CF93 /* Sources */,
 				93C6B51219B22F5500A1CF93 /* Frameworks */,
@@ -185,7 +185,7 @@
 			);
 			dependencies = (
 			);
-			name = takram_triangulation;
+			name = takram_triangulation_static;
 			productName = sgss_opaque;
 			productReference = 93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */;
 			productType = "com.apple.product-type.library.static";
@@ -228,7 +228,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93C6B51419B22F5500A1CF93 /* takram_triangulation */,
+				93C6B51419B22F5500A1CF93 /* takram_triangulation_static */,
 				93F1B9F5180282B0002A5A5C /* takram_triangulation_test */,
 			);
 		};
@@ -260,7 +260,7 @@
 /* Begin PBXTargetDependency section */
 		93447DC71A2B14500024396C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 93C6B51419B22F5500A1CF93 /* takram_triangulation */;
+			target = 93C6B51419B22F5500A1CF93 /* takram_triangulation_static */;
 			targetProxy = 93447DC61A2B14500024396C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -505,7 +505,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93C6B51619B22F5500A1CF93 /* Build configuration list for PBXNativeTarget "takram_triangulation" */ = {
+		93C6B51619B22F5500A1CF93 /* Build configuration list for PBXNativeTarget "takram_triangulation_static" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93C6B51719B22F5500A1CF93 /* Debug */,
