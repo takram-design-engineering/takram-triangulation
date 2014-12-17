@@ -45,7 +45,7 @@ class VoronoiTriangulator : public TriangulatorBase {
  public:
   // Constructors
   VoronoiTriangulator() = default;
-  VoronoiTriangulator(const VoronoiTriangulator& other);
+  VoronoiTriangulator(const VoronoiTriangulator& other) = default;
 
   // Assignment
   VoronoiTriangulator& operator=(const VoronoiTriangulator& other);
@@ -64,10 +64,6 @@ class VoronoiTriangulator : public TriangulatorBase {
 };
 
 #pragma mark - Inline Implementations
-
-inline VoronoiTriangulator::VoronoiTriangulator(
-    const VoronoiTriangulator& other)
-    : TriangulatorBase(other) {}
 
 #pragma mark Assignment
 
