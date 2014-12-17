@@ -57,7 +57,7 @@ bool TriangulatorBase::operator()(const std::vector<Point>& points) {
                       unique_points.end());
 
   // Sort again, now on their indexes
-  std::sort(unique_points.begin(), unique_points.end(), Point::compareIndex);
+  std::sort(unique_points.begin(), unique_points.end(), Point::CompareIndex);
   std::vector<double> coordinates;
   for (const auto& point : unique_points) {
     coordinates.emplace_back(point.x);

@@ -57,7 +57,7 @@ class Point final {
   bool operator>=(const Point& other) const;
 
   // Index comparator
-  static bool compareIndex(const Point& a, const Point& b);
+  static bool CompareIndex(const Point& a, const Point& b);
 
   // Stream
   friend std::ostream& operator<<(std::ostream& os, const Point& value);
@@ -135,7 +135,7 @@ inline bool Point::operator>=(const Point& other) const {
 
 #pragma mark Index comparator
 
-inline bool Point::compareIndex(const Point& a, const Point& b) {
+inline bool Point::CompareIndex(const Point& a, const Point& b) {
   return a.index < b.index;
 }
 
