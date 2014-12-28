@@ -51,6 +51,13 @@ message(STATUS "C flags (Release): ${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_RELEASE}")
 message(STATUS "C flags (Debug): ${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_DEBUG}")
 message(STATUS "")
 
+# Run path
+set(CMAKE_MACOSX_RPATH ON)
+set(CMAKE_SKIP_BUILD_RPATH FALSE)
+set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
 # Include directories
 include_directories("${${PROJECT_NAME}_SOURCE_DIR}/include")
 include_directories("${${PROJECT_NAME}_SOURCE_DIR}/lib/triangle")
