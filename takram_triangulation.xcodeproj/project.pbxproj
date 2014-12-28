@@ -68,13 +68,13 @@
 		930954F71A4FB1B600D09023 /* voronoi_triangulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = voronoi_triangulator.h; sourceTree = "<group>"; };
 		930954F81A4FB1B600D09023 /* triangulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangulation.h; sourceTree = "<group>"; };
 		930955031A4FB1E200D09023 /* product.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product.xcconfig; sourceTree = "<group>"; };
-		930955041A4FB1E200D09023 /* product_shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product_shared.xcconfig; sourceTree = "<group>"; };
-		930955051A4FB1E200D09023 /* product_static.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product_static.xcconfig; sourceTree = "<group>"; };
+		930955041A4FB1E200D09023 /* product_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product_release.xcconfig; sourceTree = "<group>"; };
+		930955051A4FB1E200D09023 /* product_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product_debug.xcconfig; sourceTree = "<group>"; };
 		930955061A4FB1E200D09023 /* product_test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product_test.xcconfig; sourceTree = "<group>"; };
-		930955071A4FB1E200D09023 /* project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project.xcconfig; sourceTree = "<group>"; };
-		930955081A4FB1E200D09023 /* project_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project_debug.xcconfig; sourceTree = "<group>"; };
-		930955091A4FB1E200D09023 /* project_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project_release.xcconfig; sourceTree = "<group>"; };
 		9309550E1A4FB1FC00D09023 /* libtakram_triangulation.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libtakram_triangulation.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		930959301A5062D400D09023 /* project_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project_debug.xcconfig; path = configuration/project_debug.xcconfig; sourceTree = "<group>"; };
+		930959311A5062D400D09023 /* project_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project_release.xcconfig; path = configuration/project_release.xcconfig; sourceTree = "<group>"; };
+		930959321A5062D400D09023 /* project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project.xcconfig; path = configuration/project.xcconfig; sourceTree = "<group>"; };
 		93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtakram_triangulation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F1B9F6180282B0002A5A5C /* takram_triangulation_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = takram_triangulation_test; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F36C1A284949007DDBE4 /* triangle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = triangle.c; sourceTree = "<group>"; };
@@ -156,12 +156,12 @@
 		930955021A4FB1E200D09023 /* xcode */ = {
 			isa = PBXGroup;
 			children = (
-				930955071A4FB1E200D09023 /* project.xcconfig */,
-				930955081A4FB1E200D09023 /* project_debug.xcconfig */,
-				930955091A4FB1E200D09023 /* project_release.xcconfig */,
+				930959321A5062D400D09023 /* project.xcconfig */,
+				930959301A5062D400D09023 /* project_debug.xcconfig */,
+				930959311A5062D400D09023 /* project_release.xcconfig */,
 				930955031A4FB1E200D09023 /* product.xcconfig */,
-				930955051A4FB1E200D09023 /* product_static.xcconfig */,
-				930955041A4FB1E200D09023 /* product_shared.xcconfig */,
+				930955051A4FB1E200D09023 /* product_debug.xcconfig */,
+				930955041A4FB1E200D09023 /* product_release.xcconfig */,
 				930955061A4FB1E200D09023 /* product_test.xcconfig */,
 			);
 			path = xcode;
@@ -377,29 +377,31 @@
 /* Begin XCBuildConfiguration section */
 		930955171A4FB1FC00D09023 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 930955041A4FB1E200D09023 /* product_shared.xcconfig */;
+			baseConfigurationReference = 930955051A4FB1E200D09023 /* product_debug.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = takram_triangulation;
 			};
 			name = Debug;
 		};
 		930955181A4FB1FC00D09023 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 930955041A4FB1E200D09023 /* product_shared.xcconfig */;
+			baseConfigurationReference = 930955041A4FB1E200D09023 /* product_release.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = takram_triangulation;
 			};
 			name = Release;
 		};
 		93C6B51719B22F5500A1CF93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 930955051A4FB1E200D09023 /* product_static.xcconfig */;
+			baseConfigurationReference = 930955051A4FB1E200D09023 /* product_debug.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -410,7 +412,7 @@
 		};
 		93C6B51819B22F5500A1CF93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 930955051A4FB1E200D09023 /* product_static.xcconfig */;
+			baseConfigurationReference = 930955041A4FB1E200D09023 /* product_release.xcconfig */;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -439,7 +441,7 @@
 		};
 		93F8AD7617C8B39800310877 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 930955081A4FB1E200D09023 /* project_debug.xcconfig */;
+			baseConfigurationReference = 930959301A5062D400D09023 /* project_debug.xcconfig */;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -449,7 +451,7 @@
 		};
 		93F8AD7717C8B39800310877 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 930955091A4FB1E200D09023 /* project_release.xcconfig */;
+			baseConfigurationReference = 930959311A5062D400D09023 /* project_release.xcconfig */;
 			buildSettings = {
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;

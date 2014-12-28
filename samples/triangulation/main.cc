@@ -1,5 +1,5 @@
 //
-//  product_shared.xcconfig
+//  main.cc
 //
 //  MIT License
 //
@@ -25,13 +25,10 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Configuration for Xcode 6.1
+#include "takram/cinder.h"
 
-#include "product.xcconfig"
+#include "app.h"
 
-// Linking
-OTHER_LDFLAGS = $(inherited) "$(SRCROOT)/build/glog/lib/libglog.a"
-
-// Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/include" "$(SRCROOT)/lib/triangle" "$(SRCROOT)/build/glog/include"
-LIBRARY_SEARCH_PATHS = $(inherited)
+int main() {
+  return takram::cinder::Run<example::App>();
+}

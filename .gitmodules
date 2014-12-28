@@ -10,3 +10,6 @@
 [submodule "gflags"]
 	path = gflags
 	url = https://code.google.com/p/gflags/
+[submodule "xcode/configuration"]
+	path = xcode/configuration
+	url = git@github.com:takram-design-engineering/takram-xcode-configuration.git

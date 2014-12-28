@@ -1,5 +1,5 @@
 //
-//  project_debug.xcconfig
+//  product_debug.xcconfig
 //
 //  MIT License
 //
@@ -27,20 +27,11 @@
 
 // Configuration for Xcode 6.1
 
-#include "project.xcconfig"
+#include "product.xcconfig"
 
-// Build Options
-DEBUG_INFORMATION_FORMAT =
+// Linking
+OTHER_LDFLAGS = $(inherited) "$(SRCROOT)/build/glog/lib/libglog.a"
 
-// Deployment
-COPY_PHASE_STRIP = NO
-
-// Apple LLVM 6.0 - Code Generation
-GCC_OPTIMIZATION_LEVEL = 0
-GCC_FAST_MATH = NO
-
-// Apple LLVM 6.0 - Preprocessing
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) DEBUG=1
-
-// User-Defined
-MTL_ENABLE_DEBUG_INFO = YES
+// Search Paths
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/include" "$(SRCROOT)/lib/triangle" "$(SRCROOT)/build/glog/include"
+LIBRARY_SEARCH_PATHS = $(inherited)

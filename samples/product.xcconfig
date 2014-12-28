@@ -1,5 +1,5 @@
 //
-//  project_release.xcconfig
+//  product.xcconfig
 //
 //  MIT License
 //
@@ -27,20 +27,12 @@
 
 // Configuration for Xcode 6.1
 
-#include "project.xcconfig"
+// Search Paths
+ALWAYS_SEARCH_USER_PATHS = NO
 
-// Build Options
-DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+// Linking
+OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
 
-// Deployment
-COPY_PHASE_STRIP = YES
-
-// Apple LLVM 6.0 - Code Generation
-GCC_OPTIMIZATION_LEVEL = s
-GCC_FAST_MATH = YES
-
-// Apple LLVM 6.0 - Preprocessing
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) NDEBUG=1
-
-// User-Defined
-MTL_ENABLE_DEBUG_INFO = NO
+// Search Paths
+HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/../include" "$(SRCROOT)/../../takram-cocoa-cinder/include" "$(SRCROOT)/../../takram-cocoa-cinder/cinder/include" "$(SRCROOT)/../../takram-cocoa-cinder/cinder/boost"
+LIBRARY_SEARCH_PATHS = $(inherited)

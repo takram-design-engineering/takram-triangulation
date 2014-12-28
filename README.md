@@ -5,7 +5,7 @@ A C++ library to generate Delaunay and Voronoi triangulations
 
 ## Example
 
-Screenshots of [an example application](https://github.com/takram-design-engineering/takram-cocoa-cinder/tree/master/example/Triangulation) using [takram-cocoa-cinder](https://github.com/takram-design-engineering/takram-cocoa-cinder).
+Screenshots of [an example application](samples/triangulation) using [takram-cocoa-cinder](https://github.com/takram-design-engineering/takram-cocoa-cinder).
 
 ![](other/voronoi.png)
 ![](other/conforming_delaynay.png)
@@ -83,14 +83,14 @@ int main() {
 
 ### Classes
 
-- [`takram::triangulation::Point`](src/takram/triangulation/point.h)
-- [`takram::triangulation::Line`](src/takram/triangulation/line.h)
-- [`takram::triangulation::Triangle`](src/takram/triangulation/triangle.h)
-- [`takram::triangulation::LineIterator`](src/takram/triangulation/line_iterator.h)
-- [`takram::triangulation::TriangleIterator`](src/takram/triangulation/triangle_iterator.h)
-- [`takram::TriangulatorBase`](src/takram/triangulation/triangulator_base.h)
-- [`takram::DelaunayTriangulator`](src/takram/triangulation/delaunay_triangulator.h)
-- [`takram::VoronoiTriangulator`](src/takram/triangulation/voronoi_triangulator.h)
+- [`takram::triangulation::Point`](include/takram/triangulation/point.h)
+- [`takram::triangulation::Line`](include/takram/triangulation/line.h)
+- [`takram::triangulation::Triangle`](include/takram/triangulation/triangle.h)
+- [`takram::triangulation::LineIterator`](include/takram/triangulation/line_iterator.h)
+- [`takram::triangulation::TriangleIterator`](include/takram/triangulation/triangle_iterator.h)
+- [`takram::TriangulatorBase`](include/takram/triangulation/triangulator_base.h)
+- [`takram::DelaunayTriangulator`](include/takram/triangulation/delaunay_triangulator.h)
+- [`takram::VoronoiTriangulator`](include/takram/triangulation/voronoi_triangulator.h)
 
 ## Setup Guide
 
