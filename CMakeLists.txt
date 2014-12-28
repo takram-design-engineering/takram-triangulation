@@ -32,8 +32,7 @@ project(takram_triangulation CXX C)
 # Configuration types
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "configs" FORCE)
 if (DEFINED CMAKE_BUILD_TYPE)
-  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
-               ${CMAKE_CONFIGURATION_TYPES})
+  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS ${CMAKE_CONFIGURATION_TYPES})
 endif()
 
 # Compiler flags
@@ -45,16 +44,11 @@ set(CMAKE_CXX_FLAGS "-std=c++1y -stdlib=libc++ -Wall ${TRIANGLE_FLAGS}")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-Os -DNDEBUG")
 message(STATUS "")
-message(STATUS "Configuration: "
-        "${CMAKE_BUILD_TYPE}")
-message(STATUS "C++ flags (Release): "
-        "${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_RELEASE}")
-message(STATUS "C++ flags (Debug): "
-        "${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_DEBUG}")
-message(STATUS "C flags (Release): "
-        "${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_RELEASE}")
-message(STATUS "C flags (Debug): "
-        "${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_DEBUG}")
+message(STATUS "Configuration: ${CMAKE_BUILD_TYPE}")
+message(STATUS "C++ flags (Release): ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_RELEASE}")
+message(STATUS "C++ flags (Debug): ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_DEBUG}")
+message(STATUS "C flags (Release): ${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_RELEASE}")
+message(STATUS "C flags (Debug): ${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_DEBUG}")
 message(STATUS "")
 
 # Include directories
@@ -66,20 +60,12 @@ include_directories("${${PROJECT_NAME}_SOURCE_DIR}/build/glog/include")
 file(GLOB_RECURSE SOURCES "src/*.cc" "src/*.c" "lib/triangle/*.c")
 add_library("${PROJECT_NAME}_static" STATIC ${SOURCES})
 add_library("${PROJECT_NAME}_shared" SHARED ${SOURCES})
-set_target_properties(
-    "${PROJECT_NAME}_static"
-    PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
-set_target_properties(
-    "${PROJECT_NAME}_shared"
-    PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
+set_target_properties("${PROJECT_NAME}_static" PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
+set_target_properties("${PROJECT_NAME}_shared" PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
 
 # Linking
-target_link_libraries(
-    "${PROJECT_NAME}_static"
-    "${${PROJECT_NAME}_SOURCE_DIR}/build/glog/lib/libglog.a")
-target_link_libraries(
-    "${PROJECT_NAME}_shared"
-    "${${PROJECT_NAME}_SOURCE_DIR}/build/glog/lib/libglog.a")
+target_link_libraries("${PROJECT_NAME}_static" "${${PROJECT_NAME}_SOURCE_DIR}/build/glog/lib/libglog.a")
+target_link_libraries("${PROJECT_NAME}_shared" "${${PROJECT_NAME}_SOURCE_DIR}/build/glog/lib/libglog.a")
 
 # Unit test
 file(GLOB_RECURSE TESTS "test/*.cc")
@@ -97,5 +83,4 @@ endif()
 # Install settings
 install(TARGETS "${PROJECT_NAME}_static" DESTINATION "lib")
 install(TARGETS "${PROJECT_NAME}_shared" DESTINATION "lib")
-install(DIRECTORY "include/takram" DESTINATION "include"
-        FILES_MATCHING PATTERN "*.h")
+install(DIRECTORY "include/takram" DESTINATION "include" FILES_MATCHING PATTERN "*.h")
