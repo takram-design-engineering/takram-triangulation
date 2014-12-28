@@ -46,7 +46,9 @@ class Point final {
 
   // Assignment
   Point& operator=(const Point& other);
+  void set(const double *xy);
   void set(double x, double y);
+  void set(double x, double y, std::size_t index);
 
   // Comparison
   bool operator==(const Point& other) const;
@@ -71,19 +73,19 @@ class Point final {
 #pragma mark - Inline Implementations
 
 inline Point::Point()
-    : x(0.0),
-      y(0.0),
-      index(0) {}
+    : x(),
+      y(),
+      index() {}
 
 inline Point::Point(const double *xy)
     : x(xy[0]),
       y(xy[1]),
-      index(0) {}
+      index() {}
 
 inline Point::Point(double x, double y)
     : x(x),
       y(y),
-      index(0) {}
+      index() {}
 
 inline Point::Point(double x, double y, std::size_t index)
     : x(x),
@@ -106,9 +108,20 @@ inline Point& Point::operator=(const Point& other) {
   return *this;
 }
 
+inline void Point::set(const double *xy) {
+  this->x = xy[0];
+  this->y = xy[1];
+}
+
 inline void Point::set(double x, double y) {
   this->x = x;
   this->y = y;
+}
+
+inline void Point::set(double x, double y, std::size_t index) {
+  this->x = x;
+  this->y = y;
+  this->index = index;
 }
 
 #pragma mark Comparison

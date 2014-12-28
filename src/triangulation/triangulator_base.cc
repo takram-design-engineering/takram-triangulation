@@ -38,7 +38,7 @@
 extern "C" {
 
 #define VOID void
-#include "triangle/triangle.h"
+#include "triangle.h"
 #undef VOID
 
 }  // extern "C"

@@ -58,13 +58,28 @@ message(STATUS "C flags (Debug): "
 message(STATUS "")
 
 # Include directories
-include_directories("${${PROJECT_NAME}_SOURCE_DIR}/src")
 include_directories("${${PROJECT_NAME}_SOURCE_DIR}/include")
-include_directories("${${PROJECT_NAME}_SOURCE_DIR}/lib")
+include_directories("${${PROJECT_NAME}_SOURCE_DIR}/lib/triangle")
+include_directories("${${PROJECT_NAME}_SOURCE_DIR}/build/glog/include")
 
 # Library
-file(GLOB_RECURSE SOURCES "src/*.cc" "src/*.c")
-add_library("${PROJECT_NAME}" STATIC ${SOURCES})
+file(GLOB_RECURSE SOURCES "src/*.cc" "src/*.c" "lib/triangle/*.c")
+add_library("${PROJECT_NAME}_static" STATIC ${SOURCES})
+add_library("${PROJECT_NAME}_shared" SHARED ${SOURCES})
+set_target_properties(
+    "${PROJECT_NAME}_static"
+    PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
+set_target_properties(
+    "${PROJECT_NAME}_shared"
+    PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
+
+# Linking
+target_link_libraries(
+    "${PROJECT_NAME}_static"
+    "${${PROJECT_NAME}_SOURCE_DIR}/build/glog/lib/libglog.a")
+target_link_libraries(
+    "${PROJECT_NAME}_shared"
+    "${${PROJECT_NAME}_SOURCE_DIR}/build/glog/lib/libglog.a")
 
 # Unit test
 file(GLOB_RECURSE TESTS "test/*.cc")
@@ -75,11 +90,12 @@ if (TEST_COUNT)
   include_directories("gtest/include")
   add_executable("${PROJECT_NAME}_test" ${TESTS})
   target_link_libraries("${PROJECT_NAME}_test" "gtest" "gtest_main")
-  target_link_libraries("${PROJECT_NAME}_test" "${PROJECT_NAME}")
+  target_link_libraries("${PROJECT_NAME}_test" "${PROJECT_NAME}_shared")
   add_test("${PROJECT_NAME}" "${PROJECT_NAME}_test")
 endif()
 
 # Install settings
-install(TARGETS "${PROJECT_NAME}" DESTINATION "lib")
-install(DIRECTORY "src/" DESTINATION "src" FILES_MATCHING PATTERN "*.h")
-install(DIRECTORY "include/" DESTINATION "include" FILES_MATCHING PATTERN "*.h")
+install(TARGETS "${PROJECT_NAME}_static" DESTINATION "lib")
+install(TARGETS "${PROJECT_NAME}_shared" DESTINATION "lib")
+install(DIRECTORY "include/takram" DESTINATION "include"
+        FILES_MATCHING PATTERN "*.h")

@@ -40,12 +40,12 @@ class Line final {
  public:
   // Constructors
   Line();
-  Line(const Point& a, const Point& b, bool finite);
+  Line(const Point& a, const Point& b, bool finite = true);
   Line(const Line& other);
 
   // Assignment
   Line& operator=(const Line& other);
-  void set(const Point& a, const Point& b, bool finite);
+  void set(const Point& a, const Point& b, bool finite = true);
 
   // Comparison
   bool operator==(const Line& other) const;
@@ -63,7 +63,7 @@ class Line final {
 #pragma mark - Inline Implementations
 
 inline Line::Line()
-    : finite(false) {}
+    : finite(true) {}
 
 inline Line::Line(const Point& a, const Point& b, bool finite)
     : a(a),

@@ -1,5 +1,5 @@
 //
-//  takram/triangulation/voronoi_triangulator.cc
+//  takram/triangulation/delaunay_triangulator.cc
 //
 //  MIT License
 //
@@ -25,8 +25,9 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#include "takram/triangulation/voronoi_triangulator.h"
+#include "takram/triangulation/delaunay_triangulator.h"
 
+#include <cassert>
 #include <cstddef>
 #include <cstring>
 #include <limits>
@@ -37,21 +38,22 @@
 extern "C" {
 
 #define VOID void
-#include "triangle/triangle.h"
+#include "triangle.h"
 #undef VOID
 
 }  // extern "C"
 
 #include "glog/logging.h"
 
-#include "takram/triangulation/line_iterator.h"
+#include "takram/triangulation/triangle.h"
+#include "takram/triangulation/triangle_iterator.h"
 
 namespace takram {
 namespace triangulation {
 
 #pragma mark Performing triangulation
 
-bool VoronoiTriangulator::operator()(const std::vector<double>& points) {
+bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
   const auto size = points.size();
   using Size = decltype(triangulateio::numberofpoints);
   if (size > std::numeric_limits<Size>::max()) {
@@ -65,7 +67,6 @@ bool VoronoiTriangulator::operator()(const std::vector<double>& points) {
   }
   // Prepare data
   result_ = std::make_shared<TriangulatorBase::Result>();
-  TriangulatorBase::Result out;
   struct triangulateio in;
   std::memset(&in, 0, sizeof(in));
   std::vector<double> mutable_points(points);
@@ -73,37 +74,71 @@ bool VoronoiTriangulator::operator()(const std::vector<double>& points) {
   in.numberofpoints = size / 2;
 
   // Perform triangulation
-  return TriangulatorBase::operator()("vzQ", &in, &*out, &**result_);
+  std::string options;
+  std::vector<Size> segments;
+  switch (type_) {
+    case Type::DEFAULT:
+      options = "zQ";
+      break;
+    case Type::CONSTRAINED:
+      options = "pzQ";
+      // Build edges including the one between front and back
+      for (Size i = 0; i < size - 1; ++i) {
+        segments.emplace_back(i);
+        segments.emplace_back(i + 1);
+      }
+      segments.emplace_back(segments.back());
+      segments.emplace_back(segments.front());
+      in.segmentlist = segments.data();
+      in.numberofsegments = size / 2;
+      break;
+    case Type::CONFORMING:
+      options = "zDQ";
+      break;
+    case Type::CONSTRAINED_CONFORMING:
+      options = "pzDQ";
+      // Build edges including the one between front and back
+      for (Size i = 0; i < size - 1; ++i) {
+        segments.emplace_back(i);
+        segments.emplace_back(i + 1);
+      }
+      segments.emplace_back(segments.back());
+      segments.emplace_back(segments.front());
+      in.segmentlist = segments.data();
+      in.numberofsegments = size / 2;
+      break;
+    default:
+      assert(false);
+      break;
+  }
+  return TriangulatorBase::operator()(options, &in, &**result_, nullptr);
 }
 
 #pragma mark Properties
 
-std::size_t VoronoiTriangulator::size() const {
+std::size_t DelaunayTriangulator::size() const {
   if (!result_) {
     return 0;
   }
-  return (*result_)->numberofedges / 2;
+  return (*result_)->numberoftriangles / 3;
 }
 
 #pragma mark Iterators
 
-LineIterator VoronoiTriangulator::begin() const {
+TriangleIterator DelaunayTriangulator::begin() const {
   if (result_) {
-    return LineIterator((*result_)->edgelist,
-                        (*result_)->pointlist,
-                        (*result_)->normlist);
+    return TriangleIterator((*result_)->trianglelist, (*result_)->pointlist);
   }
-  return LineIterator();
+  return TriangleIterator();
 }
 
-LineIterator VoronoiTriangulator::end() const {
+TriangleIterator DelaunayTriangulator::end() const {
   if (result_) {
-    return LineIterator(
-        (*result_)->edgelist + (*result_)->numberofedges * 2,
-        (*result_)->pointlist,
-        (*result_)->normlist);
+    return TriangleIterator(
+        (*result_)->trianglelist + (*result_)->numberoftriangles * 3,
+        (*result_)->pointlist);
   }
-  return LineIterator();
+  return TriangleIterator();
 }
 
 }  // namespace triangulation

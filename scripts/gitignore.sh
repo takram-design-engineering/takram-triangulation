@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#  make_gitignore.sh
+#  gitignore.sh
 #
 #  MIT License
 #
