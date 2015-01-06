@@ -54,14 +54,14 @@ namespace triangulation {
 #pragma mark Performing triangulation
 
 bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
-  const auto size = points.size();
+  const auto size = points.size() / 2;
   using Size = decltype(triangulateio::numberofpoints);
   if (size > std::numeric_limits<Size>::max()) {
     LOG(ERROR) << "The number of points " << size <<
         " exceeds the limit " << std::numeric_limits<Size>::max() << "." <<
         " This is a limitation of the triangle library.";
     return false;
-  } else if (size < 6) {
+  } else if (size < 3) {
     LOG(ERROR) << "The provided parameter must have at least 3 points.";
     return false;
   }
@@ -71,7 +71,7 @@ bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
   std::memset(&in, 0, sizeof(in));
   std::vector<double> mutable_points(points);
   in.pointlist = mutable_points.data();
-  in.numberofpoints = size / 2;
+  in.numberofpoints = size;
 
   // Perform triangulation
   std::string options;
@@ -90,7 +90,7 @@ bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
       segments.emplace_back(segments.back());
       segments.emplace_back(segments.front());
       in.segmentlist = segments.data();
-      in.numberofsegments = size / 2;
+      in.numberofsegments = size;
       break;
     case Type::CONFORMING:
       options = "zDQ";
@@ -105,7 +105,7 @@ bool DelaunayTriangulator::operator()(const std::vector<double>& points) {
       segments.emplace_back(segments.back());
       segments.emplace_back(segments.front());
       in.segmentlist = segments.data();
-      in.numberofsegments = size / 2;
+      in.numberofsegments = size;
       break;
     default:
       assert(false);
