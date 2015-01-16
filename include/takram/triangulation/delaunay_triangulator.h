@@ -53,10 +53,10 @@ class DelaunayTriangulator : public TriangulatorBase {
   // Constructors
   DelaunayTriangulator();
   explicit DelaunayTriangulator(Type type);
-  DelaunayTriangulator(const DelaunayTriangulator& other);
+  DelaunayTriangulator(const DelaunayTriangulator& other) = default;
 
   // Assignment
-  DelaunayTriangulator& operator=(const DelaunayTriangulator& other);
+  DelaunayTriangulator& operator=(const DelaunayTriangulator& other) = default;
 
   // Performing triangulation
   template <typename Vec2>
@@ -88,22 +88,6 @@ inline DelaunayTriangulator::DelaunayTriangulator()
 inline DelaunayTriangulator::DelaunayTriangulator(Type type)
     : TriangulatorBase(),
       type_(type) {}
-
-inline DelaunayTriangulator::DelaunayTriangulator(
-    const DelaunayTriangulator& other)
-    : TriangulatorBase(other),
-      type_(other.type_) {}
-
-#pragma mark Assignment
-
-inline DelaunayTriangulator& DelaunayTriangulator::operator=(
-    const DelaunayTriangulator& other) {
-  TriangulatorBase::operator=(other);
-  if (&other != this) {
-    type_ = other.type_;
-  }
-  return *this;
-}
 
 #pragma mark Functional operators
 

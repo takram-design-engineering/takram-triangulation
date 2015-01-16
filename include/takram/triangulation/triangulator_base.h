@@ -47,11 +47,11 @@ class TriangulatorBase {
  public:
   // Constructors
   TriangulatorBase();
-  TriangulatorBase(const TriangulatorBase& other);
+  TriangulatorBase(const TriangulatorBase& other) = default;
   virtual ~TriangulatorBase() = 0;
 
   // Assignment
-  TriangulatorBase& operator=(const TriangulatorBase& other);
+  TriangulatorBase& operator=(const TriangulatorBase& other) = default;
 
   // Performing triangulation
   template <typename Vec2>
@@ -111,27 +111,7 @@ inline TriangulatorBase::TriangulatorBase()
       max_area_(std::numeric_limits<double>::quiet_NaN()),
       max_steiner_points_(-1) {}
 
-inline TriangulatorBase::TriangulatorBase(const TriangulatorBase& other)
-    : min_angle_(other.min_angle_),
-      max_area_(other.max_area_),
-      max_steiner_points_(other.max_steiner_points_),
-      result_(other.result_) {}
-
 inline TriangulatorBase::~TriangulatorBase() {}
-
-#pragma mark Assignment
-
-inline TriangulatorBase& TriangulatorBase::operator=(
-    const TriangulatorBase& other) {
-  TriangulatorBase::operator=(other);
-  if (&other != this) {
-    min_angle_ = other.min_angle_;
-    max_area_ = other.max_area_;
-    max_steiner_points_ = other.max_steiner_points_;
-    result_ = other.result_;
-  }
-  return *this;
-}
 
 #pragma mark Functional operators
 

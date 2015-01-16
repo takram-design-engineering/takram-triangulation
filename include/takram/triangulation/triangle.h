@@ -41,10 +41,10 @@ class Triangle final {
   // Constructors
   Triangle() = default;
   Triangle(const Point& a, const Point& b, const Point& c);
-  Triangle(const Triangle& other);
+  Triangle(const Triangle& other) = default;
 
   // Assignment
-  Triangle& operator=(const Triangle& other);
+  Triangle& operator=(const Triangle& other) = default;
   void set(const Point& a, const Point& b, const Point& c);
 
   // Comparison
@@ -67,21 +67,7 @@ inline Triangle::Triangle(const Point& a, const Point& b, const Point& c)
       b(b),
       c(c) {}
 
-inline Triangle::Triangle(const Triangle& other)
-    : a(other.a),
-      b(other.b),
-      c(other.c) {}
-
 #pragma mark Assignment
-
-inline Triangle& Triangle::operator=(const Triangle& other) {
-  if (&other != this) {
-    a = other.a;
-    b = other.b;
-    c = other.c;
-  }
-  return *this;
-}
 
 inline void Triangle::set(const Point& a, const Point& b, const Point& c) {
   this->a = a;

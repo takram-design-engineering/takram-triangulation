@@ -44,10 +44,10 @@ class TriangleIterator final : public std::iterator<
   // Constructors
   TriangleIterator();
   TriangleIterator(const int *triangles, const double *points);
-  TriangleIterator(const TriangleIterator& other);
+  TriangleIterator(const TriangleIterator& other) = default;
 
   // Assignment
-  TriangleIterator& operator=(const TriangleIterator& other);
+  TriangleIterator& operator=(const TriangleIterator& other) = default;
 
   // Comparison
   bool operator==(const TriangleIterator& other) const;
@@ -79,25 +79,6 @@ inline TriangleIterator::TriangleIterator(const int *triangles,
     : triangles_(triangles),
       points_(points),
       current_triangle_(nullptr) {}
-
-inline TriangleIterator::TriangleIterator(const TriangleIterator& other)
-    : triangles_(other.triangles_),
-      points_(other.points_),
-      current_triangle_(other.current_triangle_),
-      derived_triangle_(other.derived_triangle_) {}
-
-#pragma mark Assignment
-
-inline TriangleIterator& TriangleIterator::operator=(
-    const TriangleIterator& other) {
-  if (&other != this) {
-    triangles_ = other.triangles_;
-    points_ = other.points_;
-    current_triangle_ = other.current_triangle_;
-    derived_triangle_ = other.derived_triangle_;
-  }
-  return *this;
-}
 
 #pragma mark Comparison
 

@@ -42,10 +42,10 @@ class Point final {
   explicit Point(const double *xy);
   Point(double x, double y);
   Point(double x, double y, std::size_t index);
-  Point(const Point& other);
+  Point(const Point& other) = default;
 
   // Assignment
-  Point& operator=(const Point& other);
+  Point& operator=(const Point& other) = default;
   void set(const double *xy);
   void set(double x, double y);
   void set(double x, double y, std::size_t index);
@@ -92,21 +92,7 @@ inline Point::Point(double x, double y, std::size_t index)
       y(y),
       index(index) {}
 
-inline Point::Point(const Point& other)
-    : x(other.x),
-      y(other.y),
-      index(other.index) {}
-
 #pragma mark Assignment
-
-inline Point& Point::operator=(const Point& other) {
-  if (&other != this) {
-    x = other.x;
-    y = other.y;
-    index = other.index;
-  }
-  return *this;
-}
 
 inline void Point::set(const double *xy) {
   this->x = xy[0];

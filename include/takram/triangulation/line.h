@@ -41,10 +41,10 @@ class Line final {
   // Constructors
   Line();
   Line(const Point& a, const Point& b, bool finite = true);
-  Line(const Line& other);
+  Line(const Line& other) = default;
 
   // Assignment
-  Line& operator=(const Line& other);
+  Line& operator=(const Line& other) = default;
   void set(const Point& a, const Point& b, bool finite = true);
 
   // Comparison
@@ -70,21 +70,7 @@ inline Line::Line(const Point& a, const Point& b, bool finite)
       b(b),
       finite(finite) {}
 
-inline Line::Line(const Line& other)
-    : a(other.a),
-      b(other.b),
-      finite(other.finite) {}
-
 #pragma mark Assignment
-
-inline Line& Line::operator=(const Line& other) {
-  if (&other != this) {
-    a = other.a;
-    b = other.b;
-    finite = other.finite;
-  }
-  return *this;
-}
 
 inline void Line::set(const Point& a, const Point& b, bool finite) {
   this->a = a;

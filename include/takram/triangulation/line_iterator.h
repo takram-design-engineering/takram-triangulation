@@ -46,10 +46,10 @@ class LineIterator final : public std::iterator<
   LineIterator(const int *edges,
                const double *points,
                const double *normals);
-  LineIterator(const LineIterator& other);
+  LineIterator(const LineIterator& other) = default;
 
   // Assignment
-  LineIterator& operator=(const LineIterator& other);
+  LineIterator& operator=(const LineIterator& other) = default;
 
   // Comparison
   bool operator==(const LineIterator& other) const;
@@ -84,26 +84,6 @@ inline LineIterator::LineIterator(const int *edges,
       points_(points),
       normals_(normals),
       current_edge_(nullptr) {}
-
-inline LineIterator::LineIterator(const LineIterator& other)
-    : edges_(other.edges_),
-      points_(other.points_),
-      normals_(other.normals_),
-      current_edge_(other.current_edge_),
-      derived_line_(other.derived_line_) {}
-
-#pragma mark Assignment
-
-inline LineIterator& LineIterator::operator=(const LineIterator& other) {
-  if (&other != this) {
-    edges_ = other.edges_;
-    points_ = other.points_;
-    normals_ = other.normals_;
-    current_edge_ = other.current_edge_;
-    derived_line_ = other.derived_line_;
-  }
-  return *this;
-}
 
 #pragma mark Comparison
 

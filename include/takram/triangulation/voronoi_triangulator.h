@@ -48,7 +48,7 @@ class VoronoiTriangulator : public TriangulatorBase {
   VoronoiTriangulator(const VoronoiTriangulator& other) = default;
 
   // Assignment
-  VoronoiTriangulator& operator=(const VoronoiTriangulator& other);
+  VoronoiTriangulator& operator=(const VoronoiTriangulator& other) = default;
 
   // Performing triangulation
   template <typename Vec2>
@@ -64,14 +64,6 @@ class VoronoiTriangulator : public TriangulatorBase {
 };
 
 #pragma mark - Inline Implementations
-
-#pragma mark Assignment
-
-inline VoronoiTriangulator& VoronoiTriangulator::operator=(
-    const VoronoiTriangulator& other) {
-  TriangulatorBase::operator=(other);
-  return *this;
-}
 
 #pragma mark Functional operators
 
