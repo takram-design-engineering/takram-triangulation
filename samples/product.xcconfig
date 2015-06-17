@@ -34,5 +34,5 @@ ALWAYS_SEARCH_USER_PATHS = NO
 OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
 
 // Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(SRCROOT)/../include" "$(SRCROOT)/../../takram-cocoa-cinder/include" "$(SRCROOT)/../../takram-cocoa-cinder/cinder/include" "$(SRCROOT)/../../takram-cocoa-cinder/cinder/boost"
+HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/../src" "$(PROJECT_DIR)/../../takram-math/src" "$(PROJECT_DIR)/../../takram-cocoa-cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/boost"
 LIBRARY_SEARCH_PATHS = $(inherited)

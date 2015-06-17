@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93C6B51419B22F5500A1CF93"
-               BuildableName = "libtriangulation.a"
+               BuildableName = "libtakram_triangulation.a"
                BlueprintName = "triangulation_static"
                ReferencedContainer = "container:triangulation.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93C6B51419B22F5500A1CF93"
-            BuildableName = "libtriangulation.a"
+            BuildableName = "libtakram_triangulation.a"
             BlueprintName = "triangulation_static"
             ReferencedContainer = "container:triangulation.xcodeproj">
          </BuildableReference>

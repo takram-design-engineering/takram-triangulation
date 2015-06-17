@@ -59,6 +59,10 @@ class DelaunayTriangulator : public Triangulator {
   using Triangulator::operator();
   bool operator()(const std::vector<Real>& coordinates) override;
 
+  // Parameters
+  Type type() const { return type_; }
+  void set_type(Type value) { type_ = value; }
+
   // Attributes
   std::size_t size() const override;
 

@@ -26,6 +26,7 @@
 
 #include "takram/triangulation/edge_iterator.h"
 
+#include <iostream>
 #include <memory>
 
 #include "takram/triangulation/edge.h"

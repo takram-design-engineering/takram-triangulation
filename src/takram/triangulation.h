@@ -29,12 +29,11 @@
 #define TAKRAM_TRIANGULATION_H_
 
 #include "takram/triangulation/delaunay_triangulator.h"
-#include "takram/triangulation/line.h"
-#include "takram/triangulation/line_iterator.h"
+#include "takram/triangulation/edge.h"
+#include "takram/triangulation/edge_iterator.h"
 #include "takram/triangulation/point.h"
-#include "takram/triangulation/triangle.h"
 #include "takram/triangulation/triangle_iterator.h"
-#include "takram/triangulation/triangulator_base.h"
+#include "takram/triangulation/triangulator.h"
 #include "takram/triangulation/voronoi_triangulator.h"
 
 #endif  // TAKRAM_TRIANGULATION_H_

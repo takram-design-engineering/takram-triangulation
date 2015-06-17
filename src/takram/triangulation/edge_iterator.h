@@ -87,7 +87,7 @@ inline bool EdgeIterator::operator!=(const EdgeIterator& other) const {
 #pragma mark Iterator
 
 inline EdgeIterator& EdgeIterator::operator++() {
-  ++current_;
+  current_ += 2;
   return *this;
 }
 

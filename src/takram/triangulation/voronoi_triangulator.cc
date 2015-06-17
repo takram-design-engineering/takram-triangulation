@@ -76,13 +76,17 @@ std::size_t VoronoiTriangulator::size() const {
 #pragma mark Iterators
 
 EdgeIterator VoronoiTriangulator::begin() const {
-  assert(result_);
+  if (!result_) {
+    return EdgeIterator();
+  }
   return EdgeIterator(result_);
 }
 
 EdgeIterator VoronoiTriangulator::end() const {
-  assert(result_);
-  const auto end = (*result_)->edgelist + (*result_)->numberofedges;
+  if (!result_) {
+    return EdgeIterator();
+  }
+  const auto end = (*result_)->edgelist + (*result_)->numberofedges * 2;
   return EdgeIterator(result_, end);
 }
 

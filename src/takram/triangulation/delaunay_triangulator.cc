@@ -112,12 +112,16 @@ std::size_t DelaunayTriangulator::size() const {
 #pragma mark Iterators
 
 TriangleIterator DelaunayTriangulator::begin() const {
-  assert(result_);
+  if (!result_) {
+    return TriangleIterator();
+  }
   return TriangleIterator(result_);
 }
 
 TriangleIterator DelaunayTriangulator::end() const {
-  assert(result_);
+  if (!result_) {
+    return TriangleIterator();
+  }
   const auto end = (*result_)->trianglelist +
       (*result_)->numberoftriangles * (*result_)->numberofcorners;
   return TriangleIterator(result_, end);
