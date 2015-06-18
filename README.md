@@ -3,14 +3,16 @@ Triangulation
 
 A C++ library to generate Delaunay and Voronoi triangulations
 
-## Example
-
-Screenshots of [an example application](samples/triangulation) using [takram-cocoa-cinder](https://github.com/takram-design-engineering/takram-cocoa-cinder).
-
 ![](other/voronoi.png)
 ![](other/conforming_delaynay.png)
 
-## Basic Usage
+## Classes
+
+- [`takram::triangulation::Triangulator`](src/takram/triangulation/triangulator.h)
+- [`takram::triangulation::DelaunayTriangulator`](src/takram/triangulation/delaunay_triangulator.h)
+- [`takram::triangulation::VoronoiTriangulator`](src/takram/triangulation/voronoi_triangulator.h)
+
+## Example
 
 The following code outputs Voronoi lines and Delaunay triangles for randomly generated points.
 
@@ -56,7 +58,7 @@ int main() {
 }
 ```
 
-### Parameters
+## Parameters
 
 - *type* (Delaunay triangulation only)
     - `takram::DelaunayTriangulator::Type::DEFAULT`
@@ -81,36 +83,13 @@ int main() {
     - Specifies the maximum number of added [Steiner points](http://www.cs.cmu.edu/~quake/triangle.defs.html#steiner).
     - Equivalent to the [-S](http://www.cs.cmu.edu/~quake/triangle.S.html) command line switch of Triangle library.
 
-### Classes
-
-- [`takram::triangulation::Point`](include/takram/triangulation/point.h)
-- [`takram::triangulation::Line`](include/takram/triangulation/line.h)
-- [`takram::triangulation::Triangle`](include/takram/triangulation/triangle.h)
-- [`takram::triangulation::LineIterator`](include/takram/triangulation/line_iterator.h)
-- [`takram::triangulation::TriangleIterator`](include/takram/triangulation/triangle_iterator.h)
-- [`takram::TriangulatorBase`](include/takram/triangulation/triangulator_base.h)
-- [`takram::DelaunayTriangulator`](include/takram/triangulation/delaunay_triangulator.h)
-- [`takram::VoronoiTriangulator`](include/takram/triangulation/voronoi_triangulator.h)
-
 ## Setup Guide
 
 Run "setup.sh" inside "scripts" directory to initialize submodules and build dependant libraries.
 
 ### Submodules
 
-- [cpplint](https://github.com/sgss/mirror-cpplint)
-- [gflags](https://code.google.com/p/gflags/)
-- [glog](https://github.com/sgss/mirror-glog)
-- [gtest](https://github.com/sgss/mirror-googletest)
-
-## Style Guide
-
-This project tries to conform to [Google's C++ Style Guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml) except:
-
-- Use of lambda expressions
-- Use of exceptions in exceptional cases
-- Use of streams when strongly needed for convenience
-- Naming convention of non-inline functions
+- [Google Testing Framework](https://chromium.googlesource.com/external/googletest)
 
 ## License
 
