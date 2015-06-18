@@ -52,7 +52,7 @@ class Edge final {
 
 #pragma mark -
 
-inline Edge::Edge() : line(), finite(false) {}
+inline Edge::Edge() : finite() {}
 
 }  // namespace triangulation
 }  // namespace takram

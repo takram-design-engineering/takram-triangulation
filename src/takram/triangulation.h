@@ -28,6 +28,8 @@
 #ifndef TAKRAM_TRIANGULATION_H_
 #define TAKRAM_TRIANGULATION_H_
 
+#include "takram/triangulation/types.h"
+#include "takram/triangulation/result.h"
 #include "takram/triangulation/delaunay_triangulator.h"
 #include "takram/triangulation/edge.h"
 #include "takram/triangulation/edge_iterator.h"

@@ -47,10 +47,10 @@ bool DelaunayTriangulator::operator()(const std::vector<Real>& points) {
   const auto size = points.size() / 2;
   using Size = decltype(triangulateio::numberofpoints);
   if (size > std::numeric_limits<Size>::max()) {
-    // The number of points exceeds the limit of the triangle library.
+    // Number of points exceeds the limit of triangle library
     return false;
   } else if (size < 3) {
-    // The provided parameter must have at least 3 points.
+    // Provided point must have at least 3 points
     return false;
   }
   // Prepare data
@@ -105,7 +105,9 @@ bool DelaunayTriangulator::operator()(const std::vector<Real>& points) {
 #pragma mark Attributes
 
 std::size_t DelaunayTriangulator::size() const {
-  assert(result_);
+  if (!result_) {
+    return 0;
+  }
   return (*result_)->numberoftriangles;
 }
 

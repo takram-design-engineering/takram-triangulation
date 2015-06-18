@@ -40,14 +40,14 @@ EdgeIterator::EdgeIterator(const std::shared_ptr<Result>& result)
     : result_(result),
       begin_((*result)->edgelist),
       current_(begin_),
-      derived_(nullptr)  {}
+      derived_()  {}
 
 EdgeIterator::EdgeIterator(const std::shared_ptr<Result>& result,
                            const int *current)
     : result_(result),
       begin_((*result)->edgelist),
       current_(current),
-      derived_(nullptr)  {}
+      derived_()  {}
 
 #pragma mark Iterator
 

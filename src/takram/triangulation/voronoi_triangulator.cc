@@ -44,13 +44,13 @@ namespace triangulation {
 #pragma mark Triangulation
 
 bool VoronoiTriangulator::operator()(const std::vector<Real>& points) {
-  const auto size = points.size();
+  const auto size = points.size() / 2;
   using Size = decltype(triangulateio::numberofpoints);
   if (size > std::numeric_limits<Size>::max()) {
-    // The number of points exceeds the limit of the triangle library.
+    // Number of points exceeds the limit of triangle library
     return false;
   } else if (size < 3) {
-    // The provided parameter must have at least 3 points.
+    // Provided point must have at least 3 points
     return false;
   }
   // Prepare data
@@ -60,7 +60,7 @@ bool VoronoiTriangulator::operator()(const std::vector<Real>& points) {
   std::memset(&in, 0, sizeof(in));
   std::vector<Real> mutable_points(points);
   in.pointlist = mutable_points.data();
-  in.numberofpoints = size / 2;
+  in.numberofpoints = size;
 
   // Triangulation
   return Triangulator::operator()("vzQ", &in, &*out, &**result_);
@@ -69,7 +69,9 @@ bool VoronoiTriangulator::operator()(const std::vector<Real>& points) {
 #pragma mark Attributes
 
 std::size_t VoronoiTriangulator::size() const {
-  assert(result_);
+  if (!result_) {
+    return 0;
+  }
   return (*result_)->numberofedges;
 }
 
