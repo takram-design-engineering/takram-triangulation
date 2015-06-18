@@ -1,10 +1,9 @@
 //
-//  product.xcconfig
+//  takram/triangulation.h
 //
 //  MIT License
 //
-//  Copyright (C) 2014 Shota Matsuda
-//  Copyright (C) 2014 takram design engineering
+//  Copyright (C) 2014-2015 Shota Matsuda
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -25,14 +24,18 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Configuration for Xcode 6.1
+#pragma once
+#ifndef TAKRAM_TRIANGULATION_H_
+#define TAKRAM_TRIANGULATION_H_
 
-// Search Paths
-ALWAYS_SEARCH_USER_PATHS = NO
+#include "takram/triangulation/types.h"
+#include "takram/triangulation/result.h"
+#include "takram/triangulation/delaunay_triangulator.h"
+#include "takram/triangulation/edge.h"
+#include "takram/triangulation/edge_iterator.h"
+#include "takram/triangulation/point.h"
+#include "takram/triangulation/triangle_iterator.h"
+#include "takram/triangulation/triangulator.h"
+#include "takram/triangulation/voronoi_triangulator.h"
 
-// Linking
-OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
-
-// Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/../src" "$(PROJECT_DIR)/../../takram-math/src" "$(PROJECT_DIR)/../../takram-cocoa-cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/boost"
-LIBRARY_SEARCH_PATHS = $(inherited)
+#endif  // TAKRAM_TRIANGULATION_H_

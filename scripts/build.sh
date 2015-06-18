@@ -4,8 +4,7 @@
 #
 #  MIT License
 #
-#  Copyright (C) 2013-2014 Shota Matsuda
-#  Copyright (C) 2014 takram design engineering
+#  Copyright (C) 2013-2015 Shota Matsuda
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a
 #  copy of this software and associated documentation files (the "Software"),
@@ -44,9 +43,9 @@ if [[ ! -f "${CLANG_CXX}" ]]; then
   exit 1
 fi
 
-readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
-readonly TARGET_DIR="${SRCROOT}/${TARGET_PATH}"
-readonly TARGET_BUILD_DIR="${SRCROOT}/${TARGET_BUILD_PATH}"
+readonly PROJECT_DIR="$(cd "$(dirname "$0")/../"; pwd)"
+readonly TARGET_DIR="${PROJECT_DIR}/${TARGET_PATH}"
+readonly TARGET_BUILD_DIR="${PROJECT_DIR}/${TARGET_BUILD_PATH}"
 
 if [[ "${TYPE}" == "cmake" ]]; then
   if [[ ! -f "${CMAKE}" ]]; then

@@ -7,36 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9301D5F81B31831100618CDF /* libtriangulation.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9301D5EA1B317D2900618CDF /* libtriangulation.dylib */; };
+		9301D5F91B31831800618CDF /* libtriangulation.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9301D5EA1B317D2900618CDF /* libtriangulation.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		930958FD1A505B8100D09023 /* app.cc in Sources */ = {isa = PBXBuildFile; fileRef = 930958FA1A505B8100D09023 /* app.cc */; };
 		930959091A505C5800D09023 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = 930959081A505C5800D09023 /* main.cc */; };
 		9309590A1A505C9900D09023 /* takram_cocoa_cinder.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 930955CC1A4FDBF000D09023 /* takram_cocoa_cinder.bundle */; };
 		9309591B1A505E4800D09023 /* libtakram_cocoa_cinder.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 930958F61A505B4700D09023 /* libtakram_cocoa_cinder.dylib */; };
-		9309591C1A505E4800D09023 /* libtakram_triangulation.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 930955BF1A4FDBE300D09023 /* libtakram_triangulation.dylib */; };
-		9309595E1A50A2EB00D09023 /* libtakram_triangulation.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 930955BF1A4FDBE300D09023 /* libtakram_triangulation.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9309595F1A50A2EF00D09023 /* libtakram_cocoa_cinder.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 930958F61A505B4700D09023 /* libtakram_cocoa_cinder.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		930955BC1A4FDBE300D09023 /* PBXContainerItemProxy */ = {
+		9301D5E91B317D2900618CDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 93F8F3581A2846AB007DDBE4 /* takram_triangulation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 93C6B51519B22F5500A1CF93;
-			remoteInfo = takram_triangulation_static;
-		};
-		930955BE1A4FDBE300D09023 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93F8F3581A2846AB007DDBE4 /* takram_triangulation.xcodeproj */;
+			containerPortal = 93F8F3581A2846AB007DDBE4 /* triangulation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9309550E1A4FB1FC00D09023;
-			remoteInfo = takram_triangulation_shared;
+			remoteInfo = triangulation_shared;
 		};
-		930955C01A4FDBE300D09023 /* PBXContainerItemProxy */ = {
+		9301D5EB1B317D2900618CDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 93F8F3581A2846AB007DDBE4 /* takram_triangulation.xcodeproj */;
+			containerPortal = 93F8F3581A2846AB007DDBE4 /* triangulation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 93C6B51519B22F5500A1CF93;
+			remoteInfo = triangulation_static;
+		};
+		9301D5ED1B317D2900618CDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93F8F3581A2846AB007DDBE4 /* triangulation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 93F1B9F6180282B0002A5A5C;
-			remoteInfo = takram_triangulation_test;
+			remoteInfo = triangulation_test;
+		};
+		9301D5F11B31830C00618CDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93F8F3581A2846AB007DDBE4 /* triangulation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9309550D1A4FB1FC00D09023;
+			remoteInfo = triangulation_shared;
 		};
 		930955C71A4FDBF000D09023 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -80,13 +87,6 @@
 			remoteGlobalIDString = 930955E81A504DE600D09023;
 			remoteInfo = takram_cocoa_cinder_shared;
 		};
-		930959191A505E4200D09023 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93F8F3581A2846AB007DDBE4 /* takram_triangulation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9309550D1A4FB1FC00D09023;
-			remoteInfo = takram_triangulation_shared;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -96,8 +96,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9301D5F91B31831800618CDF /* libtriangulation.dylib in CopyFiles */,
 				9309595F1A50A2EF00D09023 /* libtakram_cocoa_cinder.dylib in CopyFiles */,
-				9309595E1A50A2EB00D09023 /* libtakram_triangulation.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,12 +109,12 @@
 		930958FC1A505B8100D09023 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930959081A505C5800D09023 /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cc; path = triangulation/main.cc; sourceTree = "<group>"; };
 		930959221A505E7A00D09023 /* product.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product.xcconfig; sourceTree = "<group>"; };
-		930959461A5064DA00D09023 /* project_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project_debug.xcconfig; path = ../xcode/configuration/project_debug.xcconfig; sourceTree = "<group>"; };
-		930959471A5064DA00D09023 /* project_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project_release.xcconfig; path = ../xcode/configuration/project_release.xcconfig; sourceTree = "<group>"; };
-		930959481A5064DA00D09023 /* project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project.xcconfig; path = ../xcode/configuration/project.xcconfig; sourceTree = "<group>"; };
+		930959461A5064DA00D09023 /* project_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project_debug.xcconfig; path = ../config/project_debug.xcconfig; sourceTree = "<group>"; };
+		930959471A5064DA00D09023 /* project_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project_release.xcconfig; path = ../config/project_release.xcconfig; sourceTree = "<group>"; };
+		930959481A5064DA00D09023 /* project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = project.xcconfig; path = ../config/project.xcconfig; sourceTree = "<group>"; };
 		937BFCBD1A22666400DDAAE1 /* takram_cocoa_cinder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = takram_cocoa_cinder.xcodeproj; path = "../../takram-cocoa-cinder/takram_cocoa_cinder.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		937BFCCB1A2266D100DDAAE1 /* Triangulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triangulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		93F8F3581A2846AB007DDBE4 /* takram_triangulation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = takram_triangulation.xcodeproj; path = ../takram_triangulation.xcodeproj; sourceTree = SOURCE_ROOT; };
+		93F8F3581A2846AB007DDBE4 /* triangulation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = triangulation.xcodeproj; path = ../triangulation.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9309591C1A505E4800D09023 /* libtakram_triangulation.dylib in Frameworks */,
+				9301D5F81B31831100618CDF /* libtriangulation.dylib in Frameworks */,
 				9309591B1A505E4800D09023 /* libtakram_cocoa_cinder.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,12 +130,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		930955B71A4FDBE300D09023 /* Products */ = {
+		9301D5E41B317D2900618CDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				930955BD1A4FDBE300D09023 /* libtakram_triangulation.a */,
-				930955BF1A4FDBE300D09023 /* libtakram_triangulation.dylib */,
-				930955C11A4FDBE300D09023 /* takram_triangulation_test */,
+				9301D5EA1B317D2900618CDF /* libtriangulation.dylib */,
+				9301D5EC1B317D2900618CDF /* libtriangulation.a */,
+				9301D5EE1B317D2900618CDF /* triangulation_test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 				930959221A505E7A00D09023 /* product.xcconfig */,
 				930958FC1A505B8100D09023 /* Info.plist */,
 				93F8AD7017C8B39800310877 /* products */,
-				93F8F3581A2846AB007DDBE4 /* takram_triangulation.xcodeproj */,
+				93F8F3581A2846AB007DDBE4 /* triangulation.xcodeproj */,
 				937BFCBD1A22666400DDAAE1 /* takram_cocoa_cinder.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9309591A1A505E4200D09023 /* PBXTargetDependency */,
+				9301D5F21B31830C00618CDF /* PBXTargetDependency */,
 				930959181A505E4200D09023 /* PBXTargetDependency */,
 				930959071A505C2A00D09023 /* PBXTargetDependency */,
 			);
@@ -231,8 +231,8 @@
 					ProjectRef = 937BFCBD1A22666400DDAAE1 /* takram_cocoa_cinder.xcodeproj */;
 				},
 				{
-					ProductGroup = 930955B71A4FDBE300D09023 /* Products */;
-					ProjectRef = 93F8F3581A2846AB007DDBE4 /* takram_triangulation.xcodeproj */;
+					ProductGroup = 9301D5E41B317D2900618CDF /* Products */;
+					ProjectRef = 93F8F3581A2846AB007DDBE4 /* triangulation.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -243,25 +243,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		930955BD1A4FDBE300D09023 /* libtakram_triangulation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libtakram_triangulation.a;
-			remoteRef = 930955BC1A4FDBE300D09023 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		930955BF1A4FDBE300D09023 /* libtakram_triangulation.dylib */ = {
+		9301D5EA1B317D2900618CDF /* libtriangulation.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = libtakram_triangulation.dylib;
-			remoteRef = 930955BE1A4FDBE300D09023 /* PBXContainerItemProxy */;
+			path = libtriangulation.dylib;
+			remoteRef = 9301D5E91B317D2900618CDF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		930955C11A4FDBE300D09023 /* takram_triangulation_test */ = {
+		9301D5EC1B317D2900618CDF /* libtriangulation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtriangulation.a;
+			remoteRef = 9301D5EB1B317D2900618CDF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9301D5EE1B317D2900618CDF /* triangulation_test */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = takram_triangulation_test;
-			remoteRef = 930955C01A4FDBE300D09023 /* PBXContainerItemProxy */;
+			path = triangulation_test;
+			remoteRef = 9301D5ED1B317D2900618CDF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		930955C81A4FDBF000D09023 /* libtakram_cocoa_cinder.a */ = {
@@ -318,6 +318,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9301D5F21B31830C00618CDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = triangulation_shared;
+			targetProxy = 9301D5F11B31830C00618CDF /* PBXContainerItemProxy */;
+		};
 		930959071A505C2A00D09023 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = takram_cocoa_cinder_bundle;
@@ -327,11 +332,6 @@
 			isa = PBXTargetDependency;
 			name = takram_cocoa_cinder_shared;
 			targetProxy = 930959171A505E4200D09023 /* PBXContainerItemProxy */;
-		};
-		9309591A1A505E4200D09023 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = takram_triangulation_shared;
-			targetProxy = 930959191A505E4200D09023 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -71,7 +71,7 @@ App::App()
 
 void App::update() {
   if (needs_triangulation_ && points_.size() > 2) {
-    takram::TriangulatorBase *triangulator;
+    takram::Triangulator *triangulator;
     if (type_->has(Type::VORONOI)) {
       triangulator = &voronoi_;
     } else {

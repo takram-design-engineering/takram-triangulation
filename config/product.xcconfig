@@ -3,8 +3,7 @@
 //
 //  MIT License
 //
-//  Copyright (C) 2014 Shota Matsuda
-//  Copyright (C) 2014 takram design engineering
+//  Copyright (C) 2014-2015 Shota Matsuda
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -25,14 +24,12 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Configuration for Xcode 6.1
+// Paths
+TAKRAM_MATH_PATH = "../takram-math"
+
+// Header Search Paths
+TAKRAM_MATH_HEADER_SEARCH_PATHS = $(TAKRAM_MATH_PATH)"/src" $(TAKRAM_MATH_PATH)"/lib"
+TAKRAM_HEADER_SEARCH_PATHS = $(TAKRAM_MATH_HEADER_SEARCH_PATHS)
 
 // Search Paths
 ALWAYS_SEARCH_USER_PATHS = NO
-
-// Linking
-OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
-
-// Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/../src" "$(PROJECT_DIR)/../../takram-math/src" "$(PROJECT_DIR)/../../takram-cocoa-cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/boost"
-LIBRARY_SEARCH_PATHS = $(inherited)

@@ -1,10 +1,9 @@
 //
-//  product.xcconfig
+//  takram/triangulation/voronoi_triangulator.h
 //
 //  MIT License
 //
-//  Copyright (C) 2014 Shota Matsuda
-//  Copyright (C) 2014 takram design engineering
+//  Copyright (C) 2014-2015 Shota Matsuda
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -25,14 +24,44 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Configuration for Xcode 6.1
+#pragma once
+#ifndef TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_
+#define TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_
 
-// Search Paths
-ALWAYS_SEARCH_USER_PATHS = NO
+#include <cstddef>
+#include <vector>
 
-// Linking
-OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
+#include "takram/triangulation/edge_iterator.h"
+#include "takram/triangulation/triangulator.h"
+#include "takram/triangulation/types.h"
 
-// Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/../src" "$(PROJECT_DIR)/../../takram-math/src" "$(PROJECT_DIR)/../../takram-cocoa-cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/boost"
-LIBRARY_SEARCH_PATHS = $(inherited)
+namespace takram {
+namespace triangulation {
+
+class VoronoiTriangulator : public Triangulator {
+ public:
+  VoronoiTriangulator() = default;
+
+  // Copy semantics
+  VoronoiTriangulator(const VoronoiTriangulator& other) = default;
+  VoronoiTriangulator& operator=(const VoronoiTriangulator& other) = default;
+
+  // Triangulation
+  using Triangulator::operator();
+  bool operator()(const std::vector<Real>& coordinates) override;
+
+  // Attributes
+  std::size_t size() const override;
+
+  // Iterator
+  EdgeIterator begin() const;
+  EdgeIterator end() const;
+};
+
+}  // namespace triangulation
+  
+using triangulation::VoronoiTriangulator;
+  
+}  // namespace takram
+
+#endif  // TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_

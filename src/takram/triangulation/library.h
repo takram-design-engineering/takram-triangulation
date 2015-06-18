@@ -1,10 +1,9 @@
 //
-//  product.xcconfig
+//  takram/triangulation/library.h
 //
 //  MIT License
 //
-//  Copyright (C) 2014 Shota Matsuda
-//  Copyright (C) 2014 takram design engineering
+//  Copyright (C) 2014-2015 Shota Matsuda
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -25,14 +24,17 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Configuration for Xcode 6.1
+#pragma once
+#ifndef TAKRAM_TRIANGULATION_LIBRARY_H_
+#define TAKRAM_TRIANGULATION_LIBRARY_H_
 
-// Search Paths
-ALWAYS_SEARCH_USER_PATHS = NO
+extern "C" {
 
-// Linking
-OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
+#define VOID void
+#define REAL double
+#define ANSI_DECLARATORS
+#include "triangle/triangle.h"
 
-// Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/../src" "$(PROJECT_DIR)/../../takram-math/src" "$(PROJECT_DIR)/../../takram-cocoa-cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/boost"
-LIBRARY_SEARCH_PATHS = $(inherited)
+}  // extern "C"
+
+#endif  // TAKRAM_TRIANGULATION_LIBRARY_H_

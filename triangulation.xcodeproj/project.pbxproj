@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9301D5BE1B31781E00618CDF /* delaunay_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5AE1B31781E00618CDF /* delaunay_triangulator.cc */; };
+		9301D5BF1B31781E00618CDF /* delaunay_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5AE1B31781E00618CDF /* delaunay_triangulator.cc */; };
+		9301D5C01B31781E00618CDF /* delaunay_triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5AF1B31781E00618CDF /* delaunay_triangulator.h */; };
+		9301D5C11B31781E00618CDF /* delaunay_triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5AF1B31781E00618CDF /* delaunay_triangulator.h */; };
+		9301D5C21B31781E00618CDF /* edge_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B01B31781E00618CDF /* edge_iterator.cc */; };
+		9301D5C31B31781E00618CDF /* edge_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B01B31781E00618CDF /* edge_iterator.cc */; };
+		9301D5C41B31781E00618CDF /* edge_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B11B31781E00618CDF /* edge_iterator.h */; };
+		9301D5C51B31781E00618CDF /* edge_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B11B31781E00618CDF /* edge_iterator.h */; };
+		9301D5C61B31781E00618CDF /* edge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B21B31781E00618CDF /* edge.h */; };
+		9301D5C71B31781E00618CDF /* edge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B21B31781E00618CDF /* edge.h */; };
+		9301D5C81B31781E00618CDF /* library.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B31B31781E00618CDF /* library.h */; };
+		9301D5C91B31781E00618CDF /* library.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B31B31781E00618CDF /* library.h */; };
+		9301D5CA1B31781E00618CDF /* point.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B41B31781E00618CDF /* point.h */; };
+		9301D5CB1B31781E00618CDF /* point.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B41B31781E00618CDF /* point.h */; };
+		9301D5CC1B31781E00618CDF /* result.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B51B31781E00618CDF /* result.cc */; };
+		9301D5CD1B31781E00618CDF /* result.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B51B31781E00618CDF /* result.cc */; };
+		9301D5CE1B31781E00618CDF /* result.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B61B31781E00618CDF /* result.h */; };
+		9301D5CF1B31781E00618CDF /* result.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B61B31781E00618CDF /* result.h */; };
+		9301D5D01B31781E00618CDF /* triangle_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B71B31781E00618CDF /* triangle_iterator.cc */; };
+		9301D5D11B31781E00618CDF /* triangle_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B71B31781E00618CDF /* triangle_iterator.cc */; };
+		9301D5D21B31781E00618CDF /* triangle_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B81B31781E00618CDF /* triangle_iterator.h */; };
+		9301D5D31B31781E00618CDF /* triangle_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B81B31781E00618CDF /* triangle_iterator.h */; };
+		9301D5D41B31781E00618CDF /* triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B91B31781E00618CDF /* triangulator.cc */; };
+		9301D5D51B31781E00618CDF /* triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B91B31781E00618CDF /* triangulator.cc */; };
+		9301D5D61B31781E00618CDF /* triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BA1B31781E00618CDF /* triangulator.h */; };
+		9301D5D71B31781E00618CDF /* triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BA1B31781E00618CDF /* triangulator.h */; };
+		9301D5D81B31781E00618CDF /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BB1B31781E00618CDF /* types.h */; };
+		9301D5D91B31781E00618CDF /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BB1B31781E00618CDF /* types.h */; };
+		9301D5DA1B31781E00618CDF /* voronoi_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5BC1B31781E00618CDF /* voronoi_triangulator.cc */; };
+		9301D5DB1B31781E00618CDF /* voronoi_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5BC1B31781E00618CDF /* voronoi_triangulator.cc */; };
+		9301D5DC1B31781E00618CDF /* voronoi_triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BD1B31781E00618CDF /* voronoi_triangulator.h */; };
+		9301D5DD1B31781E00618CDF /* voronoi_triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BD1B31781E00618CDF /* voronoi_triangulator.h */; };
+		930955271A4FB35A00D09023 /* triangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F8F36D1A284949007DDBE4 /* triangle.h */; };
+		930955281A4FB35A00D09023 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; settings = {COMPILER_FLAGS = "-w -D TRILIBRARY -D ANSI_DECLARATORS"; }; };
+		930955291A4FB36700D09023 /* triangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F8F36D1A284949007DDBE4 /* triangle.h */; };
+		9309552A1A4FB36D00D09023 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; settings = {COMPILER_FLAGS = "-w -D TRILIBRARY -D ANSI_DECLARATORS"; }; };
+		930955321A4FB46600D09023 /* libtakram_triangulation.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9309550E1A4FB1FC00D09023 /* libtakram_triangulation.dylib */; };
+		93D7E3BA1B2BCBEB006EA047 /* triangulation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D7E39D1B2BCBEB006EA047 /* triangulation.h */; };
+		93D7E3BB1B2BCBEB006EA047 /* triangulation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D7E39D1B2BCBEB006EA047 /* triangulation.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		930955301A4FB46000D09023 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93F8AD6717C8B39800310877 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9309550D1A4FB1FC00D09023;
+			remoteInfo = takram_triangulation_shared;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9301D5AE1B31781E00618CDF /* delaunay_triangulator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = delaunay_triangulator.cc; sourceTree = "<group>"; };
+		9301D5AF1B31781E00618CDF /* delaunay_triangulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = delaunay_triangulator.h; sourceTree = "<group>"; };
+		9301D5B01B31781E00618CDF /* edge_iterator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = edge_iterator.cc; sourceTree = "<group>"; };
+		9301D5B11B31781E00618CDF /* edge_iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edge_iterator.h; sourceTree = "<group>"; };
+		9301D5B21B31781E00618CDF /* edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edge.h; sourceTree = "<group>"; };
+		9301D5B31B31781E00618CDF /* library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = library.h; sourceTree = "<group>"; };
+		9301D5B41B31781E00618CDF /* point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = "<group>"; };
+		9301D5B51B31781E00618CDF /* result.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = result.cc; sourceTree = "<group>"; };
+		9301D5B61B31781E00618CDF /* result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = result.h; sourceTree = "<group>"; };
+		9301D5B71B31781E00618CDF /* triangle_iterator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangle_iterator.cc; sourceTree = "<group>"; };
+		9301D5B81B31781E00618CDF /* triangle_iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangle_iterator.h; sourceTree = "<group>"; };
+		9301D5B91B31781E00618CDF /* triangulator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangulator.cc; sourceTree = "<group>"; };
+		9301D5BA1B31781E00618CDF /* triangulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangulator.h; sourceTree = "<group>"; };
+		9301D5BB1B31781E00618CDF /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		9301D5BC1B31781E00618CDF /* voronoi_triangulator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = voronoi_triangulator.cc; sourceTree = "<group>"; };
+		9301D5BD1B31781E00618CDF /* voronoi_triangulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = voronoi_triangulator.h; sourceTree = "<group>"; };
+		930955031A4FB1E200D09023 /* product.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product.xcconfig; sourceTree = "<group>"; };
+		930955041A4FB1E200D09023 /* product_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product_release.xcconfig; sourceTree = "<group>"; };
+		930955051A4FB1E200D09023 /* product_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product_debug.xcconfig; sourceTree = "<group>"; };
+		930955061A4FB1E200D09023 /* product_test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = product_test.xcconfig; sourceTree = "<group>"; };
+		9309550E1A4FB1FC00D09023 /* libtakram_triangulation.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libtakram_triangulation.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		930959301A5062D400D09023 /* project_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project_debug.xcconfig; sourceTree = "<group>"; };
+		930959311A5062D400D09023 /* project_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project_release.xcconfig; sourceTree = "<group>"; };
+		930959321A5062D400D09023 /* project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project.xcconfig; sourceTree = "<group>"; };
+		93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtakram_triangulation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		93D7E39D1B2BCBEB006EA047 /* triangulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangulation.h; sourceTree = "<group>"; };
+		93F1B9F6180282B0002A5A5C /* triangulation_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = triangulation_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F8F36C1A284949007DDBE4 /* triangle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = triangle.c; sourceTree = "<group>"; };
+		93F8F36D1A284949007DDBE4 /* triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangle.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9309550B1A4FB1FC00D09023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93C6B51219B22F5500A1CF93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F1B9F3180282B0002A5A5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				930955321A4FB46600D09023 /* libtakram_triangulation.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		930955021A4FB1E200D09023 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				930959321A5062D400D09023 /* project.xcconfig */,
+				930959301A5062D400D09023 /* project_debug.xcconfig */,
+				930959311A5062D400D09023 /* project_release.xcconfig */,
+				930955031A4FB1E200D09023 /* product.xcconfig */,
+				930955051A4FB1E200D09023 /* product_debug.xcconfig */,
+				930955041A4FB1E200D09023 /* product_release.xcconfig */,
+				930955061A4FB1E200D09023 /* product_test.xcconfig */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		93D7E38D1B2BCBEB006EA047 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				93D7E39D1B2BCBEB006EA047 /* triangulation.h */,
+				93D7E38E1B2BCBEB006EA047 /* triangulation */,
+			);
+			name = src;
+			path = src/takram;
+			sourceTree = "<group>";
+		};
+		93D7E38E1B2BCBEB006EA047 /* triangulation */ = {
+			isa = PBXGroup;
+			children = (
+				9301D5B31B31781E00618CDF /* library.h */,
+				9301D5BB1B31781E00618CDF /* types.h */,
+				9301D5B61B31781E00618CDF /* result.h */,
+				9301D5B51B31781E00618CDF /* result.cc */,
+				9301D5B41B31781E00618CDF /* point.h */,
+				9301D5B21B31781E00618CDF /* edge.h */,
+				9301D5B11B31781E00618CDF /* edge_iterator.h */,
+				9301D5B01B31781E00618CDF /* edge_iterator.cc */,
+				9301D5B81B31781E00618CDF /* triangle_iterator.h */,
+				9301D5B71B31781E00618CDF /* triangle_iterator.cc */,
+				9301D5BA1B31781E00618CDF /* triangulator.h */,
+				9301D5B91B31781E00618CDF /* triangulator.cc */,
+				9301D5AF1B31781E00618CDF /* delaunay_triangulator.h */,
+				9301D5AE1B31781E00618CDF /* delaunay_triangulator.cc */,
+				9301D5BD1B31781E00618CDF /* voronoi_triangulator.h */,
+				9301D5BC1B31781E00618CDF /* voronoi_triangulator.cc */,
+			);
+			path = triangulation;
+			sourceTree = "<group>";
+		};
+		93F1BA03180283B9002A5A5C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				93F8F3671A284949007DDBE4 /* triangle */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		93F8AD6617C8B39800310877 = {
+			isa = PBXGroup;
+			children = (
+				93D7E38D1B2BCBEB006EA047 /* src */,
+				93F1BA03180283B9002A5A5C /* lib */,
+				930955021A4FB1E200D09023 /* config */,
+				93F8AD7017C8B39800310877 /* products */,
+			);
+			sourceTree = "<group>";
+		};
+		93F8AD7017C8B39800310877 /* products */ = {
+			isa = PBXGroup;
+			children = (
+				9309550E1A4FB1FC00D09023 /* libtakram_triangulation.dylib */,
+				93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */,
+				93F1B9F6180282B0002A5A5C /* triangulation_test */,
+			);
+			name = products;
+			sourceTree = "<group>";
+		};
+		93F8F3671A284949007DDBE4 /* triangle */ = {
+			isa = PBXGroup;
+			children = (
+				93F8F36D1A284949007DDBE4 /* triangle.h */,
+				93F8F36C1A284949007DDBE4 /* triangle.c */,
+			);
+			name = triangle;
+			path = lib/triangle;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9309550C1A4FB1FC00D09023 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9301D5C81B31781E00618CDF /* library.h in Headers */,
+				9301D5C61B31781E00618CDF /* edge.h in Headers */,
+				9301D5D61B31781E00618CDF /* triangulator.h in Headers */,
+				930955271A4FB35A00D09023 /* triangle.h in Headers */,
+				9301D5C01B31781E00618CDF /* delaunay_triangulator.h in Headers */,
+				9301D5D81B31781E00618CDF /* types.h in Headers */,
+				9301D5CA1B31781E00618CDF /* point.h in Headers */,
+				9301D5CE1B31781E00618CDF /* result.h in Headers */,
+				93D7E3BA1B2BCBEB006EA047 /* triangulation.h in Headers */,
+				9301D5C41B31781E00618CDF /* edge_iterator.h in Headers */,
+				9301D5D21B31781E00618CDF /* triangle_iterator.h in Headers */,
+				9301D5DC1B31781E00618CDF /* voronoi_triangulator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93C6B51319B22F5500A1CF93 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9301D5C91B31781E00618CDF /* library.h in Headers */,
+				9301D5C71B31781E00618CDF /* edge.h in Headers */,
+				9301D5D71B31781E00618CDF /* triangulator.h in Headers */,
+				930955291A4FB36700D09023 /* triangle.h in Headers */,
+				9301D5C11B31781E00618CDF /* delaunay_triangulator.h in Headers */,
+				9301D5D91B31781E00618CDF /* types.h in Headers */,
+				9301D5CB1B31781E00618CDF /* point.h in Headers */,
+				9301D5CF1B31781E00618CDF /* result.h in Headers */,
+				93D7E3BB1B2BCBEB006EA047 /* triangulation.h in Headers */,
+				9301D5C51B31781E00618CDF /* edge_iterator.h in Headers */,
+				9301D5D31B31781E00618CDF /* triangle_iterator.h in Headers */,
+				9301D5DD1B31781E00618CDF /* voronoi_triangulator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9309550D1A4FB1FC00D09023 /* triangulation_shared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 930955161A4FB1FC00D09023 /* Build configuration list for PBXNativeTarget "triangulation_shared" */;
+			buildPhases = (
+				9309550A1A4FB1FC00D09023 /* Sources */,
+				9309550B1A4FB1FC00D09023 /* Frameworks */,
+				9309550C1A4FB1FC00D09023 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = triangulation_shared;
+			productName = takram_triangulation;
+			productReference = 9309550E1A4FB1FC00D09023 /* libtakram_triangulation.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		93C6B51419B22F5500A1CF93 /* triangulation_static */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93C6B51619B22F5500A1CF93 /* Build configuration list for PBXNativeTarget "triangulation_static" */;
+			buildPhases = (
+				93C6B51119B22F5500A1CF93 /* Sources */,
+				93C6B51219B22F5500A1CF93 /* Frameworks */,
+				93C6B51319B22F5500A1CF93 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = triangulation_static;
+			productName = sgss_opaque;
+			productReference = 93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		93F1B9F5180282B0002A5A5C /* triangulation_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F1B9FE180282B1002A5A5C /* Build configuration list for PBXNativeTarget "triangulation_test" */;
+			buildPhases = (
+				93F1B9F2180282B0002A5A5C /* Sources */,
+				93F1B9F3180282B0002A5A5C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				930955311A4FB46000D09023 /* PBXTargetDependency */,
+			);
+			name = triangulation_test;
+			productName = sgss_opaque_test;
+			productReference = 93F1B9F6180282B0002A5A5C /* triangulation_test */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93F8AD6717C8B39800310877 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = sgss;
+				TargetAttributes = {
+					9309550D1A4FB1FC00D09023 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 93F8AD6A17C8B39800310877 /* Build configuration list for PBXProject "triangulation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 93F8AD6617C8B39800310877;
+			productRefGroup = 93F8AD7017C8B39800310877 /* products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9309550D1A4FB1FC00D09023 /* triangulation_shared */,
+				93C6B51419B22F5500A1CF93 /* triangulation_static */,
+				93F1B9F5180282B0002A5A5C /* triangulation_test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9309550A1A4FB1FC00D09023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9301D5CC1B31781E00618CDF /* result.cc in Sources */,
+				9301D5D01B31781E00618CDF /* triangle_iterator.cc in Sources */,
+				9301D5C21B31781E00618CDF /* edge_iterator.cc in Sources */,
+				9301D5D41B31781E00618CDF /* triangulator.cc in Sources */,
+				9301D5DA1B31781E00618CDF /* voronoi_triangulator.cc in Sources */,
+				9301D5BE1B31781E00618CDF /* delaunay_triangulator.cc in Sources */,
+				930955281A4FB35A00D09023 /* triangle.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93C6B51119B22F5500A1CF93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9301D5CD1B31781E00618CDF /* result.cc in Sources */,
+				9301D5D11B31781E00618CDF /* triangle_iterator.cc in Sources */,
+				9301D5C31B31781E00618CDF /* edge_iterator.cc in Sources */,
+				9301D5D51B31781E00618CDF /* triangulator.cc in Sources */,
+				9301D5DB1B31781E00618CDF /* voronoi_triangulator.cc in Sources */,
+				9301D5BF1B31781E00618CDF /* delaunay_triangulator.cc in Sources */,
+				9309552A1A4FB36D00D09023 /* triangle.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F1B9F2180282B0002A5A5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		930955311A4FB46000D09023 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9309550D1A4FB1FC00D09023 /* triangulation_shared */;
+			targetProxy = 930955301A4FB46000D09023 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		930955171A4FB1FC00D09023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930955051A4FB1E200D09023 /* product_debug.xcconfig */;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				INSTALL_PATH = "@rpath";
+				PRODUCT_NAME = takram_triangulation;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		930955181A4FB1FC00D09023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930955041A4FB1E200D09023 /* product_release.xcconfig */;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				INSTALL_PATH = "@rpath";
+				PRODUCT_NAME = takram_triangulation;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		93C6B51719B22F5500A1CF93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930955051A4FB1E200D09023 /* product_debug.xcconfig */;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = takram_triangulation;
+			};
+			name = Debug;
+		};
+		93C6B51819B22F5500A1CF93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930955041A4FB1E200D09023 /* product_release.xcconfig */;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = takram_triangulation;
+			};
+			name = Release;
+		};
+		93F1B9FC180282B1002A5A5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930955061A4FB1E200D09023 /* product_test.xcconfig */;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/lib";
+				PRODUCT_NAME = triangulation_test;
+			};
+			name = Debug;
+		};
+		93F1B9FD180282B1002A5A5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930955061A4FB1E200D09023 /* product_test.xcconfig */;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/lib";
+				PRODUCT_NAME = triangulation_test;
+			};
+			name = Release;
+		};
+		93F8AD7617C8B39800310877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930959301A5062D400D09023 /* project_debug.xcconfig */;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		93F8AD7717C8B39800310877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930959311A5062D400D09023 /* project_release.xcconfig */;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		930955161A4FB1FC00D09023 /* Build configuration list for PBXNativeTarget "triangulation_shared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				930955171A4FB1FC00D09023 /* Debug */,
+				930955181A4FB1FC00D09023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93C6B51619B22F5500A1CF93 /* Build configuration list for PBXNativeTarget "triangulation_static" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93C6B51719B22F5500A1CF93 /* Debug */,
+				93C6B51819B22F5500A1CF93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F1B9FE180282B1002A5A5C /* Build configuration list for PBXNativeTarget "triangulation_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F1B9FC180282B1002A5A5C /* Debug */,
+				93F1B9FD180282B1002A5A5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F8AD6A17C8B39800310877 /* Build configuration list for PBXProject "triangulation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F8AD7617C8B39800310877 /* Debug */,
+				93F8AD7717C8B39800310877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93F8AD6717C8B39800310877 /* Project object */;
+}

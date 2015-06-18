@@ -1,10 +1,9 @@
 //
-//  product.xcconfig
+//  takram/triangulation/result.h
 //
 //  MIT License
 //
-//  Copyright (C) 2014 Shota Matsuda
-//  Copyright (C) 2014 takram design engineering
+//  Copyright (C) 2014-2015 Shota Matsuda
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -25,14 +24,39 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Configuration for Xcode 6.1
+#pragma once
+#ifndef TAKRAM_TRIANGULATION_RESULT_H_
+#define TAKRAM_TRIANGULATION_RESULT_H_
 
-// Search Paths
-ALWAYS_SEARCH_USER_PATHS = NO
+#include <memory>
 
-// Linking
-OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
+struct triangulateio;
 
-// Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/../src" "$(PROJECT_DIR)/../../takram-math/src" "$(PROJECT_DIR)/../../takram-cocoa-cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/boost"
-LIBRARY_SEARCH_PATHS = $(inherited)
+namespace takram {
+namespace triangulation {
+
+class Result final {
+ public:
+  Result();
+  ~Result();
+
+  // Disallow copy semantics
+  Result(const Result& other) = delete;
+  Result& operator=(const Result& other) = delete;
+
+  // Move semantics
+  Result(Result&& other) = default;
+
+  // Operators
+  struct triangulateio& operator*() { return *get(); }
+  struct triangulateio * operator->() { return get(); }
+  struct triangulateio * get() { return data_.get(); }
+
+ private:
+  std::unique_ptr<struct triangulateio> data_;
+};
+
+}  // namespace triangulation
+}  // namespace takram
+
+#endif  // TAKRAM_TRIANGULATION_RESULT_H_

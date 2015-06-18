@@ -1,10 +1,9 @@
 //
-//  product.xcconfig
+//  takram/triangulation/result.cc
 //
 //  MIT License
 //
-//  Copyright (C) 2014 Shota Matsuda
-//  Copyright (C) 2014 takram design engineering
+//  Copyright (C) 2014-2015 Shota Matsuda
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -25,14 +24,37 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Configuration for Xcode 6.1
+#include "takram/triangulation/result.h"
 
-// Search Paths
-ALWAYS_SEARCH_USER_PATHS = NO
+#include <cstdlib>
+#include <cstring>
+#include <memory>
 
-// Linking
-OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
+#include "takram/triangulation/library.h"
 
-// Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/../src" "$(PROJECT_DIR)/../../takram-math/src" "$(PROJECT_DIR)/../../takram-cocoa-cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/boost"
-LIBRARY_SEARCH_PATHS = $(inherited)
+namespace takram {
+namespace triangulation {
+
+Result::Result() : data_(std::make_unique<struct triangulateio>()) {
+  std::memset(data_.get(), 0, sizeof(*data_));
+}
+
+Result::~Result() {
+  std::free(data_->pointlist);
+  std::free(data_->pointmarkerlist);
+  std::free(data_->pointattributelist);
+  std::free(data_->trianglelist);
+  std::free(data_->triangleattributelist);
+  std::free(data_->trianglearealist);
+  std::free(data_->neighborlist);
+  std::free(data_->segmentlist);
+  std::free(data_->segmentmarkerlist);
+  std::free(data_->holelist);
+  std::free(data_->regionlist);
+  std::free(data_->edgelist);
+  std::free(data_->edgemarkerlist);
+  std::free(data_->normlist);
+}
+
+}  // namespace triangulation
+}  // namespace takram

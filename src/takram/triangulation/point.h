@@ -1,10 +1,9 @@
 //
-//  product.xcconfig
+//  takram/triangulation/point.h
 //
 //  MIT License
 //
-//  Copyright (C) 2014 Shota Matsuda
-//  Copyright (C) 2014 takram design engineering
+//  Copyright (C) 2014-2015 Shota Matsuda
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -25,14 +24,44 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Configuration for Xcode 6.1
+#pragma once
+#ifndef TAKRAM_TRIANGULATION_POINT_H_
+#define TAKRAM_TRIANGULATION_POINT_H_
 
-// Search Paths
-ALWAYS_SEARCH_USER_PATHS = NO
+#include "takram/triangulation/types.h"
 
-// Linking
-OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework Cocoa -framework CoreAudio -framework CoreVideo -framework OpenGL -framework QTKit
+namespace takram {
+namespace triangulation {
 
-// Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/../src" "$(PROJECT_DIR)/../../takram-math/src" "$(PROJECT_DIR)/../../takram-cocoa-cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/include" "$(PROJECT_DIR)/../../takram-cocoa-cinder/cinder/boost"
-LIBRARY_SEARCH_PATHS = $(inherited)
+class Point final {
+ public:
+  Point();
+
+  // Copy semantics
+  Point(const Point& other) = default;
+  Point& operator=(const Point& other) = default;
+
+  // Implicit conversions
+  template <class T>
+  Point(const T& other);
+
+  union {
+    Vector vector;
+    struct { Real x; Real y; };
+  };
+  int index;
+};
+
+#pragma mark -
+
+inline Point::Point() : vector(), index() {}
+
+#pragma mark Implicit conversions
+
+template <class T>
+inline Point::Point(const T& other) : vector(other.x, other.y), index() {}
+
+}  // namespace triangulation
+}  // namespace takram
+
+#endif  // TAKRAM_TRIANGULATION_POINT_H_

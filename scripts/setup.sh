@@ -4,8 +4,7 @@
 #
 #  MIT License
 #
-#  Copyright (C) 2014 Shota Matsuda
-#  Copyright (C) 2014 takram design engineering
+#  Copyright (C) 2014-2015 Shota Matsuda
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a
 #  copy of this software and associated documentation files (the "Software"),
@@ -26,14 +25,9 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
-readonly SRCROOT="$(cd "$(dirname "$0")/../"; pwd)"
+readonly PROJECT_DIR="$(cd "$(dirname "$0")/../"; pwd)"
 
-pushd "${SRCROOT}"
+pushd "${PROJECT_DIR}"
   git submodule update --init
-
-  "scripts/build.sh" cmake "gflags" "build/gflags" \
-      -DGFLAGS_NAMESPACE="google"
-  "scripts/build.sh" configure "glog" "build/glog" \
-      -with-gflags="build/gflags"
-  "scripts/build.sh" cmake "gtest" "build/gtest"
+  "scripts/build.sh" cmake "lib/gtest" "build/gtest"
 popd
