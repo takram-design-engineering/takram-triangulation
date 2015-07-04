@@ -1,5 +1,5 @@
 //
-//  product.xcconfig
+//  dependencies.xcconfig
 //
 //  MIT License
 //
@@ -24,11 +24,4 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#include "dependencies.xcconfig"
-
-// Header Search Paths
-TAKRAM_MATH_HEADER_SEARCH_PATHS = $(TAKRAM_MATH_PATH)"/src" $(TAKRAM_MATH_PATH)"/lib"
-TAKRAM_HEADER_SEARCH_PATHS = $(TAKRAM_MATH_HEADER_SEARCH_PATHS)
-
-// Search Paths
-ALWAYS_SEARCH_USER_PATHS = NO
+TAKRAM_MATH_PATH = "../takram-math"
