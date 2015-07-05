@@ -1,5 +1,5 @@
 //
-//  takram/triangulation/types.h
+//  takram/triangulation.cc
 //
 //  MIT License
 //
@@ -24,23 +24,4 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#pragma once
-#ifndef TAKRAM_TRIANGULATION_TYPES_H_
-#define TAKRAM_TRIANGULATION_TYPES_H_
-
-#include "takram/math/line2.h"
-#include "takram/math/triangle2.h"
-#include "takram/math/vector2.h"
-
-namespace takram {
-namespace triangulation {
-
-using Real = double;
-using Vector = math::Vector2<Real>;
-using Line = math::Line2<Real>;
-using Triangle = math::Triangle2<Real>;
-
-}  // namespace triangulation
-}  // namespace takram
-
-#endif  // TAKRAM_TRIANGULATION_TYPES_H_
+#include "takram/triangulation.h"
