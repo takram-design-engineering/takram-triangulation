@@ -48,6 +48,8 @@
 		93694DC01B48D46A000A5277 /* triangulation.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93694DBE1B48D46A000A5277 /* triangulation.cc */; };
 		93D7E3BA1B2BCBEB006EA047 /* triangulation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D7E39D1B2BCBEB006EA047 /* triangulation.h */; };
 		93D7E3BB1B2BCBEB006EA047 /* triangulation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D7E39D1B2BCBEB006EA047 /* triangulation.h */; };
+		93E21F6C1B48EC54000A374A /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E21F671B48EC47000A374A /* libtakram_math.a */; };
+		93E21F6F1B48EC5C000A374A /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E21F671B48EC47000A374A /* libtakram_math.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9309550D1A4FB1FC00D09023;
 			remoteInfo = takram_triangulation_shared;
+		};
+		93E21F641B48EC47000A374A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9309550E1A4FB1FC00D09023;
+			remoteInfo = math_shared;
+		};
+		93E21F661B48EC47000A374A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 93C6B51519B22F5500A1CF93;
+			remoteInfo = math_static;
+		};
+		93E21F681B48EC47000A374A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 93F1B9F6180282B0002A5A5C;
+			remoteInfo = math_test;
+		};
+		93E21F6A1B48EC50000A374A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 93C6B51419B22F5500A1CF93;
+			remoteInfo = math_static;
+		};
+		93E21F6D1B48EC5A000A374A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 93C6B51419B22F5500A1CF93;
+			remoteInfo = math_static;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -89,7 +126,8 @@
 		93694DBE1B48D46A000A5277 /* triangulation.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangulation.cc; sourceTree = "<group>"; };
 		93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtakram_triangulation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D7E39D1B2BCBEB006EA047 /* triangulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangulation.h; sourceTree = "<group>"; };
-		93F1B9F6180282B0002A5A5C /* triangulation_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = triangulation_test; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E21F5E1B48EC47000A374A /* math.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = math.xcodeproj; path = "../takram-math/math.xcodeproj"; sourceTree = "<group>"; };
+		93F1B9F6180282B0002A5A5C /* takram_triangulation_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = takram_triangulation_test; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F8F36C1A284949007DDBE4 /* triangle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = triangle.c; sourceTree = "<group>"; };
 		93F8F36D1A284949007DDBE4 /* triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E21F6F1B48EC5C000A374A /* libtakram_math.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E21F6C1B48EC54000A374A /* libtakram_math.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +209,16 @@
 			path = triangulation;
 			sourceTree = "<group>";
 		};
+		93E21F5F1B48EC47000A374A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93E21F651B48EC47000A374A /* libtakram_math.dylib */,
+				93E21F671B48EC47000A374A /* libtakram_math.a */,
+				93E21F691B48EC47000A374A /* takram_math_test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		93F1BA03180283B9002A5A5C /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +234,7 @@
 				93F1BA03180283B9002A5A5C /* lib */,
 				930955021A4FB1E200D09023 /* config */,
 				93F8AD7017C8B39800310877 /* products */,
+				93E21F5E1B48EC47000A374A /* math.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,7 +243,7 @@
 			children = (
 				9309550E1A4FB1FC00D09023 /* libtakram_triangulation.dylib */,
 				93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */,
-				93F1B9F6180282B0002A5A5C /* triangulation_test */,
+				93F1B9F6180282B0002A5A5C /* takram_triangulation_test */,
 			);
 			name = products;
 			sourceTree = "<group>";
@@ -262,6 +313,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				93E21F6E1B48EC5A000A374A /* PBXTargetDependency */,
 			);
 			name = triangulation_shared;
 			productName = takram_triangulation;
@@ -279,6 +331,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				93E21F6B1B48EC50000A374A /* PBXTargetDependency */,
 			);
 			name = triangulation_static;
 			productName = sgss_opaque;
@@ -299,7 +352,7 @@
 			);
 			name = triangulation_test;
 			productName = sgss_opaque_test;
-			productReference = 93F1B9F6180282B0002A5A5C /* triangulation_test */;
+			productReference = 93F1B9F6180282B0002A5A5C /* takram_triangulation_test */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -326,6 +379,12 @@
 			mainGroup = 93F8AD6617C8B39800310877;
 			productRefGroup = 93F8AD7017C8B39800310877 /* products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 93E21F5F1B48EC47000A374A /* Products */;
+					ProjectRef = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9309550D1A4FB1FC00D09023 /* triangulation_shared */,
@@ -334,6 +393,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		93E21F651B48EC47000A374A /* libtakram_math.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libtakram_math.dylib;
+			remoteRef = 93E21F641B48EC47000A374A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93E21F671B48EC47000A374A /* libtakram_math.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtakram_math.a;
+			remoteRef = 93E21F661B48EC47000A374A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93E21F691B48EC47000A374A /* takram_math_test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = takram_math_test;
+			remoteRef = 93E21F681B48EC47000A374A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9309550A1A4FB1FC00D09023 /* Sources */ = {
@@ -381,6 +464,16 @@
 			target = 9309550D1A4FB1FC00D09023 /* triangulation_shared */;
 			targetProxy = 930955301A4FB46000D09023 /* PBXContainerItemProxy */;
 		};
+		93E21F6B1B48EC50000A374A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = math_static;
+			targetProxy = 93E21F6A1B48EC50000A374A /* PBXContainerItemProxy */;
+		};
+		93E21F6E1B48EC5A000A374A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = math_static;
+			targetProxy = 93E21F6D1B48EC5A000A374A /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -392,7 +485,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				INSTALL_PATH = "@rpath";
-				PRODUCT_NAME = takram_triangulation;
+				PRODUCT_NAME = "takram_$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -405,7 +498,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				INSTALL_PATH = "@rpath";
-				PRODUCT_NAME = takram_triangulation;
+				PRODUCT_NAME = "takram_$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -417,7 +510,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = takram_triangulation;
+				PRODUCT_NAME = "takram_$(PROJECT_NAME)";
 			};
 			name = Debug;
 		};
@@ -428,7 +521,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = takram_triangulation;
+				PRODUCT_NAME = "takram_$(PROJECT_NAME)";
 			};
 			name = Release;
 		};
@@ -437,7 +530,7 @@
 			baseConfigurationReference = 930955061A4FB1E200D09023 /* product_test.xcconfig */;
 			buildSettings = {
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/lib";
-				PRODUCT_NAME = triangulation_test;
+				PRODUCT_NAME = "takram_$(PROJECT_NAME)_test";
 			};
 			name = Debug;
 		};
@@ -446,7 +539,7 @@
 			baseConfigurationReference = 930955061A4FB1E200D09023 /* product_test.xcconfig */;
 			buildSettings = {
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/lib";
-				PRODUCT_NAME = triangulation_test;
+				PRODUCT_NAME = "takram_$(PROJECT_NAME)_test";
 			};
 			name = Release;
 		};
@@ -454,7 +547,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 930959301A5062D400D09023 /* project_debug.xcconfig */;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;

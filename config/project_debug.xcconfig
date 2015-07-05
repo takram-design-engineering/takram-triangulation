@@ -28,15 +28,16 @@
 
 // Build Options
 DEBUG_INFORMATION_FORMAT = dwarf
+ENABLE_TESTABILITY = YES
 
 // Deployment
 COPY_PHASE_STRIP = NO
 
-// Apple LLVM 6.0 - Code Generation
+// Apple LLVM - Code Generation
 GCC_OPTIMIZATION_LEVEL = 0
 GCC_FAST_MATH = NO
 
-// Apple LLVM 6.0 - Preprocessing
+// Apple LLVM - Preprocessing
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) DEBUG=1
 
 // User-Defined

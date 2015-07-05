@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "06D9CB52FE5246FC5B273198C72B7012CEFF480B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "06D9CB52FE5246FC5B273198C72B7012CEFF480B" : 0,
+    "54A35B5F7E6CF0D37C23A7F208F4533C7D784BFD" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3863A59A-4FD2-4587-B805-81F61A60DC6D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "06D9CB52FE5246FC5B273198C72B7012CEFF480B" : "takram-triangulation",
+    "54A35B5F7E6CF0D37C23A7F208F4533C7D784BFD" : "takram-math\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "triangulation",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "triangulation.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:takram-design-engineering\/takram-triangulation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "06D9CB52FE5246FC5B273198C72B7012CEFF480B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:takram-design-engineering\/takram-math.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "54A35B5F7E6CF0D37C23A7F208F4533C7D784BFD"
+    }
+  ]
+}
