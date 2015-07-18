@@ -24,4 +24,4 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-TAKRAM_MATH_PATH = "../takram-math"
+TAKRAM_MATH_DIR = ../takram-math
