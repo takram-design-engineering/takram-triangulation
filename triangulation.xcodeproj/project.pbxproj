@@ -9,39 +9,17 @@
 /* Begin PBXBuildFile section */
 		9301D5BE1B31781E00618CDF /* delaunay_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5AE1B31781E00618CDF /* delaunay_triangulator.cc */; };
 		9301D5BF1B31781E00618CDF /* delaunay_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5AE1B31781E00618CDF /* delaunay_triangulator.cc */; };
-		9301D5C01B31781E00618CDF /* delaunay_triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5AF1B31781E00618CDF /* delaunay_triangulator.h */; };
-		9301D5C11B31781E00618CDF /* delaunay_triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5AF1B31781E00618CDF /* delaunay_triangulator.h */; };
 		9301D5C21B31781E00618CDF /* edge_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B01B31781E00618CDF /* edge_iterator.cc */; };
 		9301D5C31B31781E00618CDF /* edge_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B01B31781E00618CDF /* edge_iterator.cc */; };
-		9301D5C41B31781E00618CDF /* edge_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B11B31781E00618CDF /* edge_iterator.h */; };
-		9301D5C51B31781E00618CDF /* edge_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B11B31781E00618CDF /* edge_iterator.h */; };
-		9301D5C61B31781E00618CDF /* edge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B21B31781E00618CDF /* edge.h */; };
-		9301D5C71B31781E00618CDF /* edge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B21B31781E00618CDF /* edge.h */; };
-		9301D5C81B31781E00618CDF /* library.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B31B31781E00618CDF /* library.h */; };
-		9301D5C91B31781E00618CDF /* library.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B31B31781E00618CDF /* library.h */; };
-		9301D5CA1B31781E00618CDF /* point.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B41B31781E00618CDF /* point.h */; };
-		9301D5CB1B31781E00618CDF /* point.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B41B31781E00618CDF /* point.h */; };
 		9301D5CC1B31781E00618CDF /* result.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B51B31781E00618CDF /* result.cc */; };
 		9301D5CD1B31781E00618CDF /* result.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B51B31781E00618CDF /* result.cc */; };
-		9301D5CE1B31781E00618CDF /* result.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B61B31781E00618CDF /* result.h */; };
-		9301D5CF1B31781E00618CDF /* result.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B61B31781E00618CDF /* result.h */; };
 		9301D5D01B31781E00618CDF /* triangle_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B71B31781E00618CDF /* triangle_iterator.cc */; };
 		9301D5D11B31781E00618CDF /* triangle_iterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B71B31781E00618CDF /* triangle_iterator.cc */; };
-		9301D5D21B31781E00618CDF /* triangle_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B81B31781E00618CDF /* triangle_iterator.h */; };
-		9301D5D31B31781E00618CDF /* triangle_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5B81B31781E00618CDF /* triangle_iterator.h */; };
 		9301D5D41B31781E00618CDF /* triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B91B31781E00618CDF /* triangulator.cc */; };
 		9301D5D51B31781E00618CDF /* triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B91B31781E00618CDF /* triangulator.cc */; };
-		9301D5D61B31781E00618CDF /* triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BA1B31781E00618CDF /* triangulator.h */; };
-		9301D5D71B31781E00618CDF /* triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BA1B31781E00618CDF /* triangulator.h */; };
-		9301D5D81B31781E00618CDF /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BB1B31781E00618CDF /* types.h */; };
-		9301D5D91B31781E00618CDF /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BB1B31781E00618CDF /* types.h */; };
 		9301D5DA1B31781E00618CDF /* voronoi_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5BC1B31781E00618CDF /* voronoi_triangulator.cc */; };
 		9301D5DB1B31781E00618CDF /* voronoi_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5BC1B31781E00618CDF /* voronoi_triangulator.cc */; };
-		9301D5DC1B31781E00618CDF /* voronoi_triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BD1B31781E00618CDF /* voronoi_triangulator.h */; };
-		9301D5DD1B31781E00618CDF /* voronoi_triangulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9301D5BD1B31781E00618CDF /* voronoi_triangulator.h */; };
-		930955271A4FB35A00D09023 /* triangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F8F36D1A284949007DDBE4 /* triangle.h */; };
 		930955281A4FB35A00D09023 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; settings = {COMPILER_FLAGS = "-w -D TRILIBRARY -D ANSI_DECLARATORS"; }; };
-		930955291A4FB36700D09023 /* triangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F8F36D1A284949007DDBE4 /* triangle.h */; };
 		9309552A1A4FB36D00D09023 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; settings = {COMPILER_FLAGS = "-w -D TRILIBRARY -D ANSI_DECLARATORS"; }; };
 		930955321A4FB46600D09023 /* libtakram_triangulation.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9309550E1A4FB1FC00D09023 /* libtakram_triangulation.dylib */; };
 		9356395F1B624E69004C47E4 /* triangulation.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93694DBE1B48D46A000A5277 /* triangulation.cc */; };
@@ -54,8 +32,7 @@
 		935639681B624E97004C47E4 /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E21F671B48EC47000A374A /* libtakram_math.a */; };
 		93694DBF1B48D46A000A5277 /* triangulation.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93694DBE1B48D46A000A5277 /* triangulation.cc */; };
 		93694DC01B48D46A000A5277 /* triangulation.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93694DBE1B48D46A000A5277 /* triangulation.cc */; };
-		93D7E3BA1B2BCBEB006EA047 /* triangulation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D7E39D1B2BCBEB006EA047 /* triangulation.h */; };
-		93D7E3BB1B2BCBEB006EA047 /* triangulation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D7E39D1B2BCBEB006EA047 /* triangulation.h */; };
+		9397F5B51B647E7A00DFEDC9 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; settings = {COMPILER_FLAGS = "-w -D TRILIBRARY -D ANSI_DECLARATORS"; }; };
 		93E21F6C1B48EC54000A374A /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E21F671B48EC47000A374A /* libtakram_math.a */; };
 		93E21F6F1B48EC5C000A374A /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E21F671B48EC47000A374A /* libtakram_math.a */; };
 /* End PBXBuildFile section */
@@ -293,47 +270,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		9309550C1A4FB1FC00D09023 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9301D5C81B31781E00618CDF /* library.h in Headers */,
-				9301D5C61B31781E00618CDF /* edge.h in Headers */,
-				9301D5D61B31781E00618CDF /* triangulator.h in Headers */,
-				930955271A4FB35A00D09023 /* triangle.h in Headers */,
-				9301D5C01B31781E00618CDF /* delaunay_triangulator.h in Headers */,
-				9301D5D81B31781E00618CDF /* types.h in Headers */,
-				9301D5CA1B31781E00618CDF /* point.h in Headers */,
-				9301D5CE1B31781E00618CDF /* result.h in Headers */,
-				93D7E3BA1B2BCBEB006EA047 /* triangulation.h in Headers */,
-				9301D5C41B31781E00618CDF /* edge_iterator.h in Headers */,
-				9301D5D21B31781E00618CDF /* triangle_iterator.h in Headers */,
-				9301D5DC1B31781E00618CDF /* voronoi_triangulator.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93C6B51319B22F5500A1CF93 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9301D5C91B31781E00618CDF /* library.h in Headers */,
-				9301D5C71B31781E00618CDF /* edge.h in Headers */,
-				9301D5D71B31781E00618CDF /* triangulator.h in Headers */,
-				930955291A4FB36700D09023 /* triangle.h in Headers */,
-				9301D5C11B31781E00618CDF /* delaunay_triangulator.h in Headers */,
-				9301D5D91B31781E00618CDF /* types.h in Headers */,
-				9301D5CB1B31781E00618CDF /* point.h in Headers */,
-				9301D5CF1B31781E00618CDF /* result.h in Headers */,
-				93D7E3BB1B2BCBEB006EA047 /* triangulation.h in Headers */,
-				9301D5C51B31781E00618CDF /* edge_iterator.h in Headers */,
-				9301D5D31B31781E00618CDF /* triangle_iterator.h in Headers */,
-				9301D5DD1B31781E00618CDF /* voronoi_triangulator.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		9309550D1A4FB1FC00D09023 /* triangulation_shared */ = {
 			isa = PBXNativeTarget;
@@ -341,7 +277,6 @@
 			buildPhases = (
 				9309550A1A4FB1FC00D09023 /* Sources */,
 				9309550B1A4FB1FC00D09023 /* Frameworks */,
-				9309550C1A4FB1FC00D09023 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -376,7 +311,6 @@
 			buildPhases = (
 				93C6B51119B22F5500A1CF93 /* Sources */,
 				93C6B51219B22F5500A1CF93 /* Frameworks */,
-				93C6B51319B22F5500A1CF93 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -500,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				935639611B624E69004C47E4 /* edge_iterator.cc in Sources */,
+				9397F5B51B647E7A00DFEDC9 /* triangle.c in Sources */,
 				935639631B624E69004C47E4 /* triangulator.cc in Sources */,
 				935639641B624E69004C47E4 /* delaunay_triangulator.cc in Sources */,
 				935639601B624E69004C47E4 /* result.cc in Sources */,
@@ -685,6 +620,7 @@
 				935639551B624E2B004C47E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93C6B51619B22F5500A1CF93 /* Build configuration list for PBXNativeTarget "triangulation_static" */ = {
 			isa = XCConfigurationList;
