@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-#  setup.sh
+#  header.sh
 #
 #  MIT License
 #
-#  Copyright (C) 2014-2015 Shota Matsuda
+#  Copyright (C) 2013-2015 Shota Matsuda
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a
 #  copy of this software and associated documentation files (the "Software"),
@@ -25,9 +25,11 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 
-readonly PROJECT_DIR="$(cd "$(dirname "$0")/../"; pwd)"
+readonly PATHS=$@
 
-pushd "${PROJECT_DIR}"
-  git submodule update --init
-  "script/build.sh" cmake "lib/gtest" "build/gtest"
-popd
+for path in ${PATHS}; do
+  cd "${PROJECT_DIR}/${path}"
+  for header in $(find . -name "*.h"); do
+    ditto "${header}" "${BUILT_PRODUCTS_DIR}/include/${header}"
+  done
+done

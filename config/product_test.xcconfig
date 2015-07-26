@@ -30,4 +30,4 @@
 OTHER_LDFLAGS = $(inherited) "$(PROJECT_DIR)/build/gtest/libgtest.a" "$(PROJECT_DIR)/build/gtest/libgtest_main.a"
 
 // Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/src" "$(PROJECT_DIR)/lib" $(TAKRAM_HEADER_SEARCH_PATHS) "$(PROJECT_DIR)/lib/gtest/include"
+HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/src" "$(PROJECT_DIR)/lib" "$(PROJECT_DIR)/lib/gtest/include"

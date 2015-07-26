@@ -29,12 +29,12 @@
 		935639631B624E69004C47E4 /* triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5B91B31781E00618CDF /* triangulator.cc */; };
 		935639641B624E69004C47E4 /* delaunay_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5AE1B31781E00618CDF /* delaunay_triangulator.cc */; };
 		935639651B624E69004C47E4 /* voronoi_triangulator.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9301D5BC1B31781E00618CDF /* voronoi_triangulator.cc */; };
-		935639681B624E97004C47E4 /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E21F671B48EC47000A374A /* libtakram_math.a */; };
 		93694DBF1B48D46A000A5277 /* triangulation.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93694DBE1B48D46A000A5277 /* triangulation.cc */; };
 		93694DC01B48D46A000A5277 /* triangulation.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93694DBE1B48D46A000A5277 /* triangulation.cc */; };
 		9397F5B51B647E7A00DFEDC9 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; settings = {COMPILER_FLAGS = "-w -D TRILIBRARY -D ANSI_DECLARATORS"; }; };
-		93E21F6C1B48EC54000A374A /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E21F671B48EC47000A374A /* libtakram_math.a */; };
-		93E21F6F1B48EC5C000A374A /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E21F671B48EC47000A374A /* libtakram_math.a */; };
+		93B473C61B64862500613FB6 /* libtakram_math.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B473BD1B6485FC00613FB6 /* libtakram_math.dylib */; };
+		93B473C91B64862E00613FB6 /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B473BF1B6485FC00613FB6 /* libtakram_math.a */; };
+		93B473CC1B64863400613FB6 /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B473BF1B6485FC00613FB6 /* libtakram_math.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,54 +45,54 @@
 			remoteGlobalIDString = 9309550D1A4FB1FC00D09023;
 			remoteInfo = takram_triangulation_shared;
 		};
-		9356395B1B624E2B004C47E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 93F858331B564DB200C32E8D;
-			remoteInfo = math_ios;
-		};
-		935639661B624E93004C47E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 93F858161B564DB200C32E8D;
-			remoteInfo = math_ios;
-		};
-		93E21F641B48EC47000A374A /* PBXContainerItemProxy */ = {
+		93B473BC1B6485FC00613FB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9309550E1A4FB1FC00D09023;
 			remoteInfo = math_shared;
 		};
-		93E21F661B48EC47000A374A /* PBXContainerItemProxy */ = {
+		93B473BE1B6485FC00613FB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 93C6B51519B22F5500A1CF93;
 			remoteInfo = math_static;
 		};
-		93E21F681B48EC47000A374A /* PBXContainerItemProxy */ = {
+		93B473C01B6485FC00613FB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 93F858331B564DB200C32E8D;
+			remoteInfo = math_ios;
+		};
+		93B473C21B6485FC00613FB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 93F1B9F6180282B0002A5A5C;
 			remoteInfo = math_test;
 		};
-		93E21F6A1B48EC50000A374A /* PBXContainerItemProxy */ = {
+		93B473C41B64861D00613FB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9309550D1A4FB1FC00D09023;
+			remoteInfo = math_shared;
+		};
+		93B473C71B64862A00613FB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 93C6B51419B22F5500A1CF93;
 			remoteInfo = math_static;
 		};
-		93E21F6D1B48EC5A000A374A /* PBXContainerItemProxy */ = {
+		93B473CA1B64863100613FB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 93C6B51419B22F5500A1CF93;
-			remoteInfo = math_static;
+			remoteGlobalIDString = 93F858161B564DB200C32E8D;
+			remoteInfo = math_ios;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -121,7 +121,6 @@
 		930959301A5062D400D09023 /* project_debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project_debug.xcconfig; sourceTree = "<group>"; };
 		930959311A5062D400D09023 /* project_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project_release.xcconfig; sourceTree = "<group>"; };
 		930959321A5062D400D09023 /* project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project.xcconfig; sourceTree = "<group>"; };
-		935064D91B47A5960091E123 /* dependencies.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dependencies.xcconfig; sourceTree = "<group>"; };
 		935639431B624E2B004C47E4 /* libtakram_triangulation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtakram_triangulation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93694DBE1B48D46A000A5277 /* triangulation.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangulation.cc; sourceTree = "<group>"; };
 		93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtakram_triangulation.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93E21F6F1B48EC5C000A374A /* libtakram_math.a in Frameworks */,
+				93B473C61B64862500613FB6 /* libtakram_math.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				935639681B624E97004C47E4 /* libtakram_math.a in Frameworks */,
+				93B473CC1B64863400613FB6 /* libtakram_math.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93E21F6C1B48EC54000A374A /* libtakram_math.a in Frameworks */,
+				93B473C91B64862E00613FB6 /* libtakram_math.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +170,6 @@
 		930955021A4FB1E200D09023 /* config */ = {
 			isa = PBXGroup;
 			children = (
-				935064D91B47A5960091E123 /* dependencies.xcconfig */,
 				930959321A5062D400D09023 /* project.xcconfig */,
 				930959301A5062D400D09023 /* project_debug.xcconfig */,
 				930959311A5062D400D09023 /* project_release.xcconfig */,
@@ -181,6 +179,17 @@
 				930955061A4FB1E200D09023 /* product_test.xcconfig */,
 			);
 			path = config;
+			sourceTree = "<group>";
+		};
+		93B473B61B6485FC00613FB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93B473BD1B6485FC00613FB6 /* libtakram_math.dylib */,
+				93B473BF1B6485FC00613FB6 /* libtakram_math.a */,
+				93B473C11B6485FC00613FB6 /* libtakram_math.a */,
+				93B473C31B6485FC00613FB6 /* takram_math_test */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		93D7E38D1B2BCBEB006EA047 /* src */ = {
@@ -215,17 +224,6 @@
 				9301D5BC1B31781E00618CDF /* voronoi_triangulator.cc */,
 			);
 			path = triangulation;
-			sourceTree = "<group>";
-		};
-		93E21F5F1B48EC47000A374A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				93E21F651B48EC47000A374A /* libtakram_math.dylib */,
-				93E21F671B48EC47000A374A /* libtakram_math.a */,
-				9356395C1B624E2B004C47E4 /* libtakram_math.a */,
-				93E21F691B48EC47000A374A /* takram_math_test */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		93F1BA03180283B9002A5A5C /* lib */ = {
@@ -277,11 +275,12 @@
 			buildPhases = (
 				9309550A1A4FB1FC00D09023 /* Sources */,
 				9309550B1A4FB1FC00D09023 /* Frameworks */,
+				9397F5E01B6482C700DFEDC9 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				93E21F6E1B48EC5A000A374A /* PBXTargetDependency */,
+				93B473C51B64861D00613FB6 /* PBXTargetDependency */,
 			);
 			name = triangulation_shared;
 			productName = takram_triangulation;
@@ -294,11 +293,12 @@
 			buildPhases = (
 				9356393F1B624E2B004C47E4 /* Sources */,
 				935639401B624E2B004C47E4 /* Frameworks */,
+				93B473CF1B64873800613FB6 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				935639671B624E93004C47E4 /* PBXTargetDependency */,
+				93B473CB1B64863100613FB6 /* PBXTargetDependency */,
 			);
 			name = triangulation_ios;
 			productName = triangulation_ios;
@@ -311,11 +311,12 @@
 			buildPhases = (
 				93C6B51119B22F5500A1CF93 /* Sources */,
 				93C6B51219B22F5500A1CF93 /* Frameworks */,
+				93B473CE1B64873300613FB6 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				93E21F6B1B48EC50000A374A /* PBXTargetDependency */,
+				93B473C81B64862A00613FB6 /* PBXTargetDependency */,
 			);
 			name = triangulation_static;
 			productName = sgss_opaque;
@@ -368,7 +369,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 93E21F5F1B48EC47000A374A /* Products */;
+					ProductGroup = 93B473B61B6485FC00613FB6 /* Products */;
 					ProjectRef = 93E21F5E1B48EC47000A374A /* math.xcodeproj */;
 				},
 			);
@@ -383,35 +384,77 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9356395C1B624E2B004C47E4 /* libtakram_math.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libtakram_math.a;
-			remoteRef = 9356395B1B624E2B004C47E4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		93E21F651B48EC47000A374A /* libtakram_math.dylib */ = {
+		93B473BD1B6485FC00613FB6 /* libtakram_math.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libtakram_math.dylib;
-			remoteRef = 93E21F641B48EC47000A374A /* PBXContainerItemProxy */;
+			remoteRef = 93B473BC1B6485FC00613FB6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		93E21F671B48EC47000A374A /* libtakram_math.a */ = {
+		93B473BF1B6485FC00613FB6 /* libtakram_math.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libtakram_math.a;
-			remoteRef = 93E21F661B48EC47000A374A /* PBXContainerItemProxy */;
+			remoteRef = 93B473BE1B6485FC00613FB6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		93E21F691B48EC47000A374A /* takram_math_test */ = {
+		93B473C11B6485FC00613FB6 /* libtakram_math.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libtakram_math.a;
+			remoteRef = 93B473C01B6485FC00613FB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B473C31B6485FC00613FB6 /* takram_math_test */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = takram_math_test;
-			remoteRef = 93E21F681B48EC47000A374A /* PBXContainerItemProxy */;
+			remoteRef = 93B473C21B6485FC00613FB6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9397F5E01B6482C700DFEDC9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/script/header.sh\" \"src\"";
+		};
+		93B473CE1B64873300613FB6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/script/header.sh\" \"src\"";
+		};
+		93B473CF1B64873800613FB6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/script/header.sh\" \"src\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9309550A1A4FB1FC00D09023 /* Sources */ = {
@@ -474,20 +517,20 @@
 			target = 9309550D1A4FB1FC00D09023 /* triangulation_shared */;
 			targetProxy = 930955301A4FB46000D09023 /* PBXContainerItemProxy */;
 		};
-		935639671B624E93004C47E4 /* PBXTargetDependency */ = {
+		93B473C51B64861D00613FB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = math_shared;
+			targetProxy = 93B473C41B64861D00613FB6 /* PBXContainerItemProxy */;
+		};
+		93B473C81B64862A00613FB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = math_static;
+			targetProxy = 93B473C71B64862A00613FB6 /* PBXContainerItemProxy */;
+		};
+		93B473CB1B64863100613FB6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = math_ios;
-			targetProxy = 935639661B624E93004C47E4 /* PBXContainerItemProxy */;
-		};
-		93E21F6B1B48EC50000A374A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = math_static;
-			targetProxy = 93E21F6A1B48EC50000A374A /* PBXContainerItemProxy */;
-		};
-		93E21F6E1B48EC5A000A374A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = math_static;
-			targetProxy = 93E21F6D1B48EC5A000A374A /* PBXContainerItemProxy */;
+			targetProxy = 93B473CA1B64863100613FB6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

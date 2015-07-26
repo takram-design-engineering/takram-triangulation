@@ -30,4 +30,4 @@
 OTHER_LDFLAGS = $(inherited)
 
 // Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/src" "$(PROJECT_DIR)/lib" $(TAKRAM_HEADER_SEARCH_PATHS)
+HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/src" "$(PROJECT_DIR)/lib"
