@@ -1,5 +1,5 @@
 //
-//  product_test.xcconfig
+//  test.xcconfig
 //
 //  MIT License
 //
@@ -24,10 +24,8 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#include "product.xcconfig"
-
 // Linking
 OTHER_LDFLAGS = $(inherited) "$(PROJECT_DIR)/build/gtest/libgtest.a" "$(PROJECT_DIR)/build/gtest/libgtest_main.a"
 
 // Search Paths
-HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/src" "$(PROJECT_DIR)/lib" "$(PROJECT_DIR)/lib/gtest/include"
+HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/lib/gtest/include"
