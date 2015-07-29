@@ -59,9 +59,9 @@ class VoronoiTriangulator : public Triangulator {
 };
 
 }  // namespace triangulation
-  
+
 using triangulation::VoronoiTriangulator;
-  
+
 }  // namespace takram
 
 #endif  // TAKRAM_TRIANGULATION_VORONOI_TRIANGULATOR_H_
