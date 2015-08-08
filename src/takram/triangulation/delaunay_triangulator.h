@@ -81,9 +81,9 @@ inline DelaunayTriangulator::DelaunayTriangulator() : type_(Type::DEFAULT) {}
 inline DelaunayTriangulator::DelaunayTriangulator(Type type) : type_(type) {}
 
 }  // namespace triangulation
-  
+
 using triangulation::DelaunayTriangulator;
-  
+
 }  // namespace takram
 
 #endif  // TAKRAM_TRIANGULATION_DELAUNAY_TRIANGULATOR_H_
