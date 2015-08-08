@@ -42,11 +42,11 @@ namespace {
 
 using PointRef = std::reference_wrapper<const Point>;
 
-inline bool IdentifyVector(const PointRef& a, const PointRef& b) {
+inline bool Identify(const PointRef& a, const PointRef& b) {
   return a.get().vector == b.get().vector;
 }
 
-inline bool CompareVector(const PointRef& a, const PointRef& b) {
+inline bool Compare(const PointRef& a, const PointRef& b) {
   return a.get().vector < b.get().vector;
 }
 
@@ -61,8 +61,8 @@ inline bool CompareIndex(const PointRef& a, const PointRef& b) {
 bool Triangulator::operator()(const std::vector<Point>& points) {
   // Sort and unique will remove lots of points we don't need
   std::vector<PointRef> refs(points.begin(), points.end());
-  std::sort(refs.begin(), refs.end(), CompareVector);
-  refs.erase(std::unique(refs.begin(), refs.end(), IdentifyVector), refs.end());
+  std::sort(refs.begin(), refs.end(), Compare);
+  refs.erase(std::unique(refs.begin(), refs.end(), Identify), refs.end());
 
   // Sort again, now on their indexes
   std::sort(refs.begin(), refs.end(), CompareIndex);

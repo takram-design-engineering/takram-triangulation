@@ -36,7 +36,7 @@ namespace takram {
 namespace triangulation {
 
 using Real = double;
-using Vector = math::Vector2<Real>;
+using Vec = math::Vec2<Real>;
 using Line = math::Line2<Real>;
 using Triangle = math::Triangle2<Real>;
 

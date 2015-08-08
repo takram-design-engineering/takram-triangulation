@@ -46,7 +46,7 @@ class Point final {
   Point(const T& other);
 
   union {
-    Vector vector;
+    Vec vector;
     struct { Real x; Real y; };
   };
   int index;

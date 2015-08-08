@@ -60,11 +60,11 @@ const Edge& EdgeIterator::operator*() const {
     if (b < 0) {
       // Infinite
       edge_.finite = false;
-      edge_.line.set(Vector(points + a), Vector(normals + (current_ - begin_)));
+      edge_.line.set(Vec(points + a), Vec(normals + (current_ - begin_)));
     } else {
       // Finite
       edge_.finite = true;
-      edge_.line.set(Vector(points + a), Vector(points + b));
+      edge_.line.set(Vec(points + a), Vec(points + b));
     }
     derived_ = current_;
   }

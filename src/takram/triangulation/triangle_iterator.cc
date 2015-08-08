@@ -55,7 +55,7 @@ const Triangle& TriangleIterator::operator*() const {
     const auto b = *(current_ + 1) * 2;
     const auto c = *(current_ + 2) * 2;
     const auto points = (*result_)->pointlist;
-    triangle_.set(Vector(points + a), Vector(points + b), Vector(points + c));
+    triangle_.set(Vec(points + a), Vec(points + b), Vec(points + c));
     derived_ = current_;
   }
   return triangle_;

@@ -44,7 +44,7 @@ class Edge final {
  public:
   union {
     Line line;
-    struct { Vector a; Vector b; };
+    struct { Vec a; Vec b; };
     struct { Real x1; Real y1; Real x2; Real y2; };
   };
   bool finite;
