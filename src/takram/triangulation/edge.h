@@ -38,8 +38,8 @@ class Edge final {
   Edge();
 
   // Copy semantics
-  Edge(const Edge& other) = default;
-  Edge& operator=(const Edge& other) = default;
+  Edge(const Edge&) = default;
+  Edge& operator=(const Edge&) = default;
 
  public:
   union {

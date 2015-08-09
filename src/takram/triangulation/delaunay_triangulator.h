@@ -52,8 +52,8 @@ class DelaunayTriangulator : public Triangulator {
   explicit DelaunayTriangulator(Type type);
 
   // Copy semantics
-  DelaunayTriangulator(const DelaunayTriangulator& other) = default;
-  DelaunayTriangulator& operator=(const DelaunayTriangulator& other) = default;
+  DelaunayTriangulator(const DelaunayTriangulator&) = default;
+  DelaunayTriangulator& operator=(const DelaunayTriangulator&) = default;
 
   // Triangulation
   using Triangulator::operator();

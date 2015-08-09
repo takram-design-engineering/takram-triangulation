@@ -38,8 +38,8 @@ class Point final {
   Point();
 
   // Copy semantics
-  Point(const Point& other) = default;
-  Point& operator=(const Point& other) = default;
+  Point(const Point&) = default;
+  Point& operator=(const Point&) = default;
 
   // Implicit conversions
   template <class T>

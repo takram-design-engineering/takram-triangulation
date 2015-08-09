@@ -47,8 +47,8 @@ class EdgeIterator final
   EdgeIterator(const std::shared_ptr<Result>& result, const int *current);
 
   // Copy semantics
-  EdgeIterator(const EdgeIterator& other) = default;
-  EdgeIterator& operator=(const EdgeIterator& other) = default;
+  EdgeIterator(const EdgeIterator&) = default;
+  EdgeIterator& operator=(const EdgeIterator&) = default;
 
   // Comparison
   bool operator==(const EdgeIterator& other) const;

@@ -51,8 +51,8 @@ class Triangulator {
   virtual ~Triangulator() = 0;
 
   // Copy semantics
-  Triangulator(const Triangulator& other) = default;
-  Triangulator& operator=(const Triangulator& other) = default;
+  Triangulator(const Triangulator&) = default;
+  Triangulator& operator=(const Triangulator&) = default;
 
   // Triangulation
   template <class Container>

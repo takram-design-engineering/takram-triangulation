@@ -43,8 +43,8 @@ class VoronoiTriangulator : public Triangulator {
   VoronoiTriangulator() = default;
 
   // Copy semantics
-  VoronoiTriangulator(const VoronoiTriangulator& other) = default;
-  VoronoiTriangulator& operator=(const VoronoiTriangulator& other) = default;
+  VoronoiTriangulator(const VoronoiTriangulator&) = default;
+  VoronoiTriangulator& operator=(const VoronoiTriangulator&) = default;
 
   // Triangulation
   using Triangulator::operator();

@@ -41,11 +41,11 @@ class Result final {
   ~Result();
 
   // Disallow copy semantics
-  Result(const Result& other) = delete;
-  Result& operator=(const Result& other) = delete;
+  Result(const Result&) = delete;
+  Result& operator=(const Result&) = delete;
 
   // Move semantics
-  Result(Result&& other) = default;
+  Result(Result&&) = default;
 
   // Operators
   struct triangulateio& operator*() { return *get(); }

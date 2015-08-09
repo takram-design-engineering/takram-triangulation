@@ -41,12 +41,12 @@ class TriangleIterator final
     : public std::iterator<std::forward_iterator_tag, const Triangle> {
  public:
   TriangleIterator();
-  TriangleIterator(const std::shared_ptr<Result>& result);
+  explicit TriangleIterator(const std::shared_ptr<Result>& result);
   TriangleIterator(const std::shared_ptr<Result>& result, const int *current);
 
   // Copy semantics
-  TriangleIterator(const TriangleIterator& other) = default;
-  TriangleIterator& operator=(const TriangleIterator& other) = default;
+  TriangleIterator(const TriangleIterator&) = default;
+  TriangleIterator& operator=(const TriangleIterator&) = default;
 
   // Comparison
   bool operator==(const TriangleIterator& other) const;
