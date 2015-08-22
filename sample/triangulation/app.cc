@@ -1,7 +1,7 @@
 //
 //  app.cc
 //
-//  MIT License
+//  The MIT License
 //
 //  Copyright (C) 2014 Shota Matsuda
 //  Copyright (C) 2014 takram design engineering

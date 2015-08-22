@@ -93,7 +93,7 @@ Run "setup.sh" inside "script" directory to initialize submodules and build depe
 
 ## License
 
-MIT License
+The MIT License
 
 Copyright (C) 2014-2015 takram design engineering
 

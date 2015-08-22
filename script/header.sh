@@ -2,7 +2,7 @@
 #
 #  header.sh
 #
-#  MIT License
+#  The MIT License
 #
 #  Copyright (C) 2013-2015 Shota Matsuda
 #
