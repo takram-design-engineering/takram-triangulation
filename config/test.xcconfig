@@ -25,7 +25,7 @@
 //
 
 // Linking
-OTHER_LDFLAGS = $(inherited) "$(PROJECT_DIR)/build/gtest/libgtest.a" "$(PROJECT_DIR)/build/gtest/libgtest_main.a"
+OTHER_LDFLAGS = $(inherited) "$(PROJECT_DIR)/build/googletest/googletest/libgtest.a" "$(PROJECT_DIR)/build/googletest/googletest/libgtest_main.a"
 
 // Search Paths
-USER_HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/lib/gtest/include"
+USER_HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/lib/googletest/googletest/include"

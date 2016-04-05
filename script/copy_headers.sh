@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#  header.sh
+#  copy_headers.sh
 #
 #  The MIT License
 #

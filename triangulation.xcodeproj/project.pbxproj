@@ -342,7 +342,7 @@
 		93F8AD6717C8B39800310877 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = sgss;
 				TargetAttributes = {
 					9309550D1A4FB1FC00D09023 = {
@@ -422,7 +422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/script/header.sh\" \"src\"";
+			shellScript = "\"${PROJECT_DIR}/script/copy_headers.sh\" \"src\"";
 		};
 		93B473CE1B64873300613FB6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -435,7 +435,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/script/header.sh\" \"src\"";
+			shellScript = "\"${PROJECT_DIR}/script/copy_headers.sh\" \"src\"";
 		};
 		93B473CF1B64873800613FB6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -448,7 +448,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/script/header.sh\" \"src\"";
+			shellScript = "\"${PROJECT_DIR}/script/copy_headers.sh\" \"src\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -625,7 +625,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 930959301A5062D400D09023 /* project_debug.xcconfig */;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = "";
+				ENABLE_TESTABILITY = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -635,7 +635,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 930959311A5062D400D09023 /* project_release.xcconfig */;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
