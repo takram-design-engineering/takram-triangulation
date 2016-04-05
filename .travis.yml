@@ -1,0 +1,19 @@
+language: objective-c
+compiler:
+- clang
+git:
+  submodules: false
+before_install:
+- sed -i '' 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+- git submodule update --init --recursive
+before_script:
+- git clone git://github.com/takram-design-engineering/takram-math.git ../takram-math
+- mkdir build
+- cd build
+- cmake ..
+script:
+- make
+- make test
+notifications:
+  slack:
+    secure: kD+DBYbJpPXW7X/kjWV4l/l0Esgz9+n8u/M9QTURWKHVMwqNAHW2PAyt2hSL/lqOaSi+xW7L60yOS0IJZYnfpqaX5DU+ONTQMK3XuK5CFXn641NpDx/QUecHzxCQFnQsmKMEC7DFpc7vUVRQIgba9cpYNHkCROFV+5tedk39dzF4CAb7q0ZAyfjPblCkBUqpgFWX7kC+hhm/AquICeLzYB/ekAd3GNhtf6k9xXpRXci+Bxeaf3n5rsHZte4uXsyedhyS5ppsuyAxjLkH5mfSjTuGVO4upQj8MEU8pUPdltKSlziVD5w/ioAPfktFg21lJELR74/1NCg1Kg55yNvKVwbGPOk/P91GwwLR58sX7IJ7r/2J/GBAzHSERqleOHHYV1/+odthz4z2EWx7k/AIq+Nb3TGYiAy3E3PTwGjMJ5uDyvPmo6N1SNAODaGMd+d9Z3h+lXlhHLKASA3eWQ9Rbl6QsnkTFMSnZQ0vheJk79x0JCPQSp0h28nxVlTMhwBzgylpQZQnhqYewVp1r5tK2ToPurQGhDTuAl9XVPPZswp2yMvQZa/6fbZsb9uYUbX+m2IukA9yVP7Aa4bs4bzsrxNFOy67LRnKs85gWjQ+6uNILJMf6hggH8cQT9QkJh9VlpXsn9AQ/ChGGLhtYgC/psidD6y4A7i2w0104nluqdk=
