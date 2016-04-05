@@ -3,8 +3,8 @@ Triangulation
 
 A C++ library to generate Delaunay and Voronoi triangulations
 
-![](other/voronoi.png)
-![](other/conforming_delaynay.png)
+[![Build Status](https://travis-ci.org/takram-design-engineering/takram-triangulation.svg)](https://travis-ci.org/takram-design-engineering/takram-triangulation) [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
+)](http://mit-license.org)
 
 ## Classes
 
