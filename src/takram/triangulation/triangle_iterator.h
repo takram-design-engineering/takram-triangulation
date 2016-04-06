@@ -49,8 +49,10 @@ class TriangleIterator final
   TriangleIterator& operator=(const TriangleIterator&) = default;
 
   // Comparison
-  bool operator==(const TriangleIterator& other) const;
-  bool operator!=(const TriangleIterator& other) const;
+  friend bool operator==(const TriangleIterator& lhs,
+                         const TriangleIterator& rhs);
+  friend bool operator!=(const TriangleIterator& lhs,
+                         const TriangleIterator& rhs);
 
   // Iterator
   const Triangle& operator*() const;
@@ -77,12 +79,14 @@ inline TriangleIterator::TriangleIterator()
 
 #pragma mark Comparison
 
-inline bool TriangleIterator::operator==(const TriangleIterator& other) const {
-  return current_ == other.current_;
+inline bool operator==(const TriangleIterator& lhs,
+                       const TriangleIterator& rhs) {
+  return lhs.current_ == rhs.current_;
 }
 
-inline bool TriangleIterator::operator!=(const TriangleIterator& other) const {
-  return !operator==(other);
+inline bool operator!=(const TriangleIterator& lhs,
+                       const TriangleIterator& rhs) {
+  return !(lhs == rhs);
 }
 
 #pragma mark Iterator

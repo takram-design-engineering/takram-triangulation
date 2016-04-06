@@ -51,8 +51,8 @@ class EdgeIterator final
   EdgeIterator& operator=(const EdgeIterator&) = default;
 
   // Comparison
-  bool operator==(const EdgeIterator& other) const;
-  bool operator!=(const EdgeIterator& other) const;
+  friend bool operator==(const EdgeIterator& lhs, const EdgeIterator& rhs);
+  friend bool operator!=(const EdgeIterator& lhs, const EdgeIterator& rhs);
 
   // Iterator
   const Edge& operator*() const;
@@ -76,12 +76,12 @@ inline EdgeIterator::EdgeIterator() : begin_(), current_(), derived_() {}
 
 #pragma mark Comparison
 
-inline bool EdgeIterator::operator==(const EdgeIterator& other) const {
-  return current_ == other.current_;
+inline bool operator==(const EdgeIterator& lhs, const EdgeIterator& rhs) {
+  return lhs.current_ == rhs.current_;
 }
 
-inline bool EdgeIterator::operator!=(const EdgeIterator& other) const {
-  return !operator==(other);
+inline bool operator!=(const EdgeIterator& lhs, const EdgeIterator& rhs) {
+  return !(lhs == rhs);
 }
 
 #pragma mark Iterator
