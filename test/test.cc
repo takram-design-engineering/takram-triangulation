@@ -1,9 +1,9 @@
 //
-//  test.xcconfig
+//  test.cc
 //
 //  The MIT License
 //
-//  Copyright (C) 2014-2015 Shota Matsuda
+//  Copyright (C) 2015 Shota Matsuda
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -24,8 +24,12 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-// Linking
-OTHER_LDFLAGS = $(inherited) "$(PROJECT_DIR)/build/googletest/libgtest.a" "$(PROJECT_DIR)/build/googletest/libgtest_main.a"
+#include "gtest/gtest.h"
 
-// Search Paths
-USER_HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/lib/googletest/googletest/include"
+#include "takram/triangulation.h"
+
+namespace takram {
+namespace triangulation {
+
+}  // namespace triangulation
+}  // namespace takram

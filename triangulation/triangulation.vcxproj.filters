@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{6e067234-9d9b-4b89-a47c-bf6f88215564}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{bf4db00c-9534-4bd4-95e3-a8b685793abd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\triangle">
+      <UniqueIdentifier>{97bf4ff5-76cf-4a85-b141-dde5d6425aeb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\takram\triangulation\delaunay_triangulator.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\takram\triangulation\edge_iterator.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\takram\triangulation\result.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\takram\triangulation\triangle_iterator.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\takram\triangulation\triangulator.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\takram\triangulation\voronoi_triangulator.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\takram\triangulation.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\triangle\triangle.c">
+      <Filter>lib\triangle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\takram\triangulation\delaunay_triangulator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\edge.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\edge_iterator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\library.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\point.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\result.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\triangle_iterator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\triangulator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation\voronoi_triangulator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\takram\triangulation.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\triangle\triangle.h">
+      <Filter>lib\triangle</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

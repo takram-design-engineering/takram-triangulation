@@ -34,6 +34,7 @@
 		935639E91B672215004C47E4 /* libtakram_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 935639D81B6721A9004C47E4 /* libtakram_math.a */; };
 		93694DBF1B48D46A000A5277 /* triangulation.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93694DBE1B48D46A000A5277 /* triangulation.cc */; };
 		93694DC01B48D46A000A5277 /* triangulation.cc in Sources */ = {isa = PBXBuildFile; fileRef = 93694DBE1B48D46A000A5277 /* triangulation.cc */; };
+		936AC3E21CB4B38B00D7363F /* test.cc in Sources */ = {isa = PBXBuildFile; fileRef = 936AC3E11CB4B38B00D7363F /* test.cc */; };
 		9397F5B51B647E7A00DFEDC9 /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = 93F8F36C1A284949007DDBE4 /* triangle.c */; settings = {COMPILER_FLAGS = "-w -D TRILIBRARY -D ANSI_DECLARATORS"; }; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		930959321A5062D400D09023 /* project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = project.xcconfig; sourceTree = "<group>"; };
 		935639431B624E2B004C47E4 /* libtakram_triangulation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtakram_triangulation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93694DBE1B48D46A000A5277 /* triangulation.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangulation.cc; sourceTree = "<group>"; };
+		936AC3E11CB4B38B00D7363F /* test.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cc; sourceTree = "<group>"; };
 		93C6B51519B22F5500A1CF93 /* libtakram_triangulation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtakram_triangulation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D7E39D1B2BCBEB006EA047 /* triangulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangulation.h; sourceTree = "<group>"; };
 		93E21F5E1B48EC47000A374A /* math.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = math.xcodeproj; path = "../takram-math/math.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -188,6 +190,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		936AC3E01CB4B38B00D7363F /* test */ = {
+			isa = PBXGroup;
+			children = (
+				936AC3E11CB4B38B00D7363F /* test.cc */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		93D7E38D1B2BCBEB006EA047 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				93D7E38D1B2BCBEB006EA047 /* src */,
+				936AC3E01CB4B38B00D7363F /* test */,
 				93F1BA03180283B9002A5A5C /* lib */,
 				930955021A4FB1E200D09023 /* config */,
 				93F8AD7017C8B39800310877 /* products */,
@@ -502,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936AC3E21CB4B38B00D7363F /* test.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
