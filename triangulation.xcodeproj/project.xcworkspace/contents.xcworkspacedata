@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/sgss/Dropbox/Github/takram/takram-triangulation/triangulation.xcodeproj">
+      location = "self:triangulation.xcodeproj">
    </FileRef>
 </Workspace>
